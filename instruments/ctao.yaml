@@ -2,29 +2,49 @@ schema_version: "0.2"
 id: ctao
 name: CTAO
 type: IACT
-site:
-  name: Paranal, Chile
+# Two sites: CTAO-North at the Roque de los Muchachos (La Palma) and
+# CTAO-South at Paranal (Chile). The configuration ids start with the site.
 configurations:
+  # Alpha configuration (Prod5 IRFs, Schwefer et al. 2024)
+  - id: north_alpha
+    description: CTAO-North, Alpha configuration, 4 Large-Sized Telescopes and 9 Medium-Sized Telescopes
+    mode: array
+    n_telescopes: 13
+  - id: north_alpha_lst
+    description: LST sub-array (4 LSTs) of the CTAO-North Alpha configuration
+    mode: array
+    n_telescopes: 4
+  - id: north_alpha_mst
+    description: MST sub-array (9 MSTs) of the CTAO-North Alpha configuration
+    mode: array
+    n_telescopes: 9
   - id: south_alpha
     description: >-
-      CTA southern array in the Alpha configuration: 14 Medium-Sized Telescopes
-      with FlashCam cameras and 37 Small-Sized Telescopes with SiPM cameras
-      based on the CHEC-S prototype design
+      CTAO-South, Alpha configuration: 14 Medium-Sized Telescopes with
+      FlashCam cameras and 37 Small-Sized Telescopes
     mode: array
     n_telescopes: 51
   - id: south_alpha_mst
-    description: >-
-      MST sub-array (14 FlashCam Medium-Sized Telescopes) of the CTA southern
-      Alpha configuration
+    description: MST sub-array (14 FlashCam MSTs) of the CTAO-South Alpha configuration
     mode: array
     n_telescopes: 14
   - id: south_alpha_sst
-    description: SST sub-array (37 Small-Sized Telescopes) of the CTA southern Alpha configuration
+    description: SST sub-array (37 SSTs) of the CTAO-South Alpha configuration
     mode: array
     n_telescopes: 37
+  # Beta configuration (Prod6 IRFs)
+  - id: north_beta
+    description: CTAO-North, Beta configuration, 4 LSTs and 9 MSTs
+    mode: array
+    n_telescopes: 13
+  - id: south_beta
+    description: CTAO-South, Beta configuration, 2 LSTs, 14 MSTs and 37 SSTs
+    mode: array
+    n_telescopes: 53
 references:
+  - 10.5281/zenodo.5499840
+  - 10.5281/zenodo.22871179
   - 10.1016/j.astropartphys.2024.103008
 notes: >-
-  The southern array is under construction at Paranal (Chile). The site and
-  telescope models of the Alpha configuration follow preliminary versions of
-  the CTAO Prod6 simulation configuration; no observations exist yet.
+  Under construction; no observations exist for the full arrays yet, all
+  values come from Monte Carlo simulations.

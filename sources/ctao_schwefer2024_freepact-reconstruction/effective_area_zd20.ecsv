@@ -18,6 +18,7 @@
 #       zenith_range: [20 deg, 20 deg]
 #     configuration: south_alpha
 #     data_kind: monte_carlo
+#     definition: no_direction_cut
 #     energy_type: 'true'
 #     instrument: ctao
 #     label: CTAO South Alpha full array on-axis effective area before gamma-hadron separation, event selection common to all reconstruction

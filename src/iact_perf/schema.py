@@ -263,6 +263,7 @@ DEFINITIONS: dict[str, set[str]] = {
     "angular_resolution": {"containment_68", "containment_80", "gaussian_sigma", "other"},
     "energy_resolution": {"gaussian_sigma", "rms", "containment_68", "other"},
     "energy_bias": {"gaussian_mean", "mean", "median", "other"},
+    "effective_area": {"no_direction_cut", "direction_cut", "other"},
 }
 
 #: Quantities that are a single value, not a curve versus energy.
@@ -353,7 +354,13 @@ class RecordMeta(Model):
         description="Analysis or production that made the curve, from references/analyses.yaml"
     )
     data_kind: Literal["monte_carlo", "real_data", "mixed"]
-    observation_time: TimeStr | None = None
+    observation_time: TimeStr | None = Field(
+        None,
+        description=(
+            "Observation time of a sensitivity; for IRF productions, also the time "
+            "the analysis cuts were optimised for, on every quantity"
+        ),
+    )
     sensitivity_criteria: SensitivityCriteria | None = None
     crab_reference: Identifier | None = Field(None, description="Required for values in CU")
     conditions: Conditions = Field(default_factory=Conditions)

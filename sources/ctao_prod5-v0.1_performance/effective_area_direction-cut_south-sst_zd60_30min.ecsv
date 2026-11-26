@@ -1,0 +1,58 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod5-official
+#     conditions:
+#       analysis_details: Eventdisplay analysis with BDT gamma/hadron separation (CTAO Prod5 v0.1), on-axis point-source gamma rays; CORSIKA
+#         7.71 (QGSJet-II-04, URQMD), sim_telarray
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 30 min
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [60 deg, 60 deg]
+#     configuration: south_alpha_sst
+#     data_kind: monte_carlo
+#     definition: direction_cut
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO-South Alpha SST sub-array, Prod5 v0.1, effective area direction-cut, zenith 60 deg, cuts optimised for 30 min
+#     observation_time: 30 min
+#     provenance: {location: 'Prod5-South-60deg-AverageAz-37SSTs.1800s-v0.1.root, histogram EffectiveAreaEtrue', method: official_data_file,
+#       original_column: histogram EffectiveAreaEtrue}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.316228 0.398107 7.265575
+0.398107 0.501187 159.14221
+0.501187 0.630957 1373.9779
+0.630957 0.794328 8658.873
+0.794328 1.0 44692.605
+1.0 1.25893 172149.73
+1.25893 1.58489 450069.25
+1.58489 1.99526 830800.1
+1.99526 2.51189 1160322.2
+2.51189 3.16228 1403540.0
+3.16228 3.98107 1579428.2
+3.98107 5.01187 1912454.5
+5.01187 6.30957 2138094.0
+6.30957 7.94328 2496115.0
+7.94328 10.0 2670878.0
+10.0 12.5893 2863013.5
+12.5893 15.8489 3295671.0
+15.8489 19.9526 3541180.5
+19.9526 25.1189 3912690.8
+25.1189 31.6228 3977268.5
+31.6228 39.8107 4159355.8
+39.8107 50.1187 4229159.5
+50.1187 63.0957 4259487.5
+63.0957 79.4328 4247747.0
+79.4328 100.0 4267342.0
+100.0 125.893 4224432.0
+125.893 158.489 4259211.0
+158.489 199.526 4361737.0

@@ -1,0 +1,32 @@
+schema_version: "0.2"
+title: CTAO Instrument Response Functions - Prod6 version v1.0
+authors: ["Cherenkov Telescope Array Observatory"]
+year: 2026
+doi: 10.5281/zenodo.22871179
+source_type: irf_release
+refereed: false
+instruments: [ctao]
+reproducible: true
+notes: >-
+  Official curves from the ROOT files of the full Zenodo bundle
+  (ctao-prod6-zenodo-v1.0.zip), read by extract.py: for both sites (Beta
+  configuration, North: 4 LSTs + 9 MSTs; South: 2 LSTs + 14 MSTs + 37
+  SSTs), every zenith angle (20, 40, 52, 60 deg), sky condition (dark, half
+  moon: five times the dark-sky brightness, stored as moon "moderate") and
+  optimisation time (50 h, 5 h, 30 min, 100 s), azimuth-averaged pointing,
+  the histograms behind the official figures: differential sensitivity
+  (DiffSens, E^2 dN/dE), angular resolution (68 % containment, AngResEtrue
+  vs true and AngRes vs reconstructed energy), energy resolution (ERes),
+  effective area vs true energy with and without direction cut, residual
+  background rate per square degree. The main histograms are on axis
+  (point-source gamma rays on the camera axis), unlike the FITS IRFs, which
+  describe 0-1 deg. Sensitivity criteria from the README: 5 standard
+  deviations, at least 10 gamma rays per bin, signal-to-background ratio at
+  least 0.05, five bins per decade; the significance formula is not stated.
+  ERes has no energy type on its axis and its y axis is labelled "RMS" in
+  the file; the README defines the energy resolution as the width of the
+  central 68 % interval of (E_R - E_T)/E_T and the official figure plots it
+  against true energy, which the records follow. Empty bins (0 in the file,
+  meaning no value) are dropped. Not extracted: North- and South-pointing
+  azimuths, off-axis histograms, integral sensitivity, sensitivity in Crab
+  units, energy bias, migration matrices and PSF.

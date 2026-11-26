@@ -42,7 +42,9 @@ def test_query(db):
     assert len(both) == 2  # zenith ranges include their bounds
 
     assert db.query(quantity=["energy_bias", "energy_resolution"], source=MAGIC, zenith="40 deg")
-    assert len(db.query(quantity="sensitivity", observation_time="3000 min")) == 20
+    assert (
+        len(db.query(quantity="sensitivity", instrument="magic", observation_time="3000 min")) == 20
+    )
     assert db.query(quantity="sensitivity", where=lambda r: len(r.table) > 100) == []
 
 

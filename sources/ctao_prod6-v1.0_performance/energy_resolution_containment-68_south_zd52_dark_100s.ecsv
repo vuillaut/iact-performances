@@ -1,0 +1,49 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod6-official
+#     conditions:
+#       analysis_details: Eventdisplay v5.17.0 with Eventdisplay-ML v1.0.0 stereo reconstruction (CTAO Prod6 v1.0), on-axis point-source
+#         gamma rays; CORSIKA 7.750 (QGSJET-II-04, URQMD), sim_telarray 2024.36.1
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 100 s; dark sky
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [52 deg, 52 deg]
+#     configuration: south_beta
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO-South Beta, Prod6 v1.0, energy resolution containment-68, zenith 52 deg, dark sky, cuts optimised for 100 s
+#     observation_time: 100 s
+#     provenance: {location: 'Prod6-CTAO-South-52deg-AverageAz-2LSTs14MSTs37SSTs-dark-100s-v1.0.root, histogram ERes', method: official_data_file,
+#       original_column: histogram ERes}
+#     quantity: energy_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.0316228 0.0501187 0.310492
+0.0501187 0.0794328 0.2326683
+0.0794328 0.125893 0.180909
+0.125893 0.199526 0.13898516
+0.199526 0.316228 0.105945125
+0.316228 0.501187 0.09214632
+0.501187 0.794328 0.08776537
+0.794328 1.25893 0.08025965
+1.25893 1.99526 0.07423093
+1.99526 3.16228 0.06560194
+3.16228 5.01187 0.057086166
+5.01187 7.94328 0.05187953
+7.94328 12.5893 0.05133408
+12.5893 19.9526 0.04606798
+19.9526 31.6228 0.046067983
+31.6228 50.1187 0.046067983
+50.1187 79.4328 0.04602654
+79.4328 125.893 0.0453176
+125.893 199.526 0.045530237

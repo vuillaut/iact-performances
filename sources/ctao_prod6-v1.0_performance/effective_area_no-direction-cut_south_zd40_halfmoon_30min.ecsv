@@ -1,0 +1,72 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod6-official
+#     conditions:
+#       analysis_details: Eventdisplay v5.17.0 with Eventdisplay-ML v1.0.0 stereo reconstruction (CTAO Prod6 v1.0), on-axis point-source
+#         gamma rays; CORSIKA 7.750 (QGSJET-II-04, URQMD), sim_telarray 2024.36.1
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 30 min; half moon (5x the dark-sky NSB level)
+#       moon: moderate
+#       offset: 0 deg
+#       zenith_range: [40 deg, 40 deg]
+#     configuration: south_beta
+#     data_kind: monte_carlo
+#     definition: no_direction_cut
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO-South Beta, Prod6 v1.0, effective area no-direction-cut, zenith 40 deg, half moon, cuts optimised for 30 min
+#     observation_time: 30 min
+#     provenance: {location: 'Prod6-CTAO-South-40deg-AverageAz-2LSTs14MSTs37SSTs-halfmoon-1800s-v1.0.root, histogram EffectiveAreaEtrueNoTheta2cut',
+#       method: official_data_file, original_column: histogram EffectiveAreaEtrueNoTheta2cut}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.0125893 0.0158489 6.503212
+0.0158489 0.0199526 29.495165
+0.0199526 0.0251189 166.6937
+0.0251189 0.0316228 876.7982
+0.0316228 0.0398107 4058.4998
+0.0398107 0.0501187 14447.825
+0.0501187 0.0630957 36039.387
+0.0630957 0.0794328 66103.414
+0.0794328 0.1 102726.805
+0.1 0.125893 150839.23
+0.125893 0.158489 210500.45
+0.158489 0.199526 272166.4
+0.199526 0.251189 334562.47
+0.251189 0.316228 395242.84
+0.316228 0.398107 461375.62
+0.398107 0.501187 542514.8
+0.501187 0.630957 665237.9
+0.630957 0.794328 866877.4
+0.794328 1.0 1134432.8
+1.0 1.25893 1406927.4
+1.25893 1.58489 1671893.5
+1.58489 1.99526 1909784.0
+1.99526 2.51189 2147183.5
+2.51189 3.16228 2360321.0
+3.16228 3.98107 2595144.2
+3.98107 5.01187 2845056.0
+5.01187 6.30957 3114393.5
+6.30957 7.94328 3403969.5
+7.94328 10.0 3685713.8
+10.0 12.5893 3931803.0
+12.5893 15.8489 4234983.0
+15.8489 19.9526 4469670.5
+19.9526 25.1189 4753123.0
+25.1189 31.6228 4971089.0
+31.6228 39.8107 4995419.5
+39.8107 50.1187 5206013.5
+50.1187 63.0957 5285260.5
+63.0957 79.4328 5291648.5
+79.4328 100.0 5365930.5
+100.0 125.893 5365600.5
+125.893 158.489 5335494.0
+158.489 199.526 5330301.0

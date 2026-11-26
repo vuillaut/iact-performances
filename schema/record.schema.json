@@ -350,6 +350,7 @@
         }
       ],
       "default": null,
+      "description": "Observation time of a sensitivity; for IRF productions, also the time the analysis cuts were optimised for, on every quantity",
       "title": "Observation Time"
     },
     "sensitivity_criteria": {

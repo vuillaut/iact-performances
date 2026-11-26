@@ -1,0 +1,56 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod5-official
+#     conditions:
+#       analysis_details: Eventdisplay analysis with BDT gamma/hadron separation (CTAO Prod5 v0.1), on-axis point-source gamma rays; CORSIKA
+#         7.71 (QGSJet-II-04, URQMD), sim_telarray
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 50 h
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [60 deg, 60 deg]
+#     configuration: south_alpha_sst
+#     data_kind: monte_carlo
+#     definition: no_direction_cut
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO-South Alpha SST sub-array, Prod5 v0.1, effective area no-direction-cut, zenith 60 deg, cuts optimised for 50 h
+#     observation_time: 50 h
+#     provenance: {location: 'Prod5-South-60deg-AverageAz-37SSTs.180000s-v0.1.root, histogram EffectiveAreaEtrueNoTheta2cut', method: official_data_file,
+#       original_column: histogram EffectiveAreaEtrueNoTheta2cut}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.501187 0.630957 5.9799805
+0.630957 0.794328 148.36339
+0.794328 1.0 1423.4905
+1.0 1.25893 11743.738
+1.25893 1.58489 68438.96
+1.58489 1.99526 246236.47
+1.99526 2.51189 551572.3
+2.51189 3.16228 820171.5
+3.16228 3.98107 985012.1
+3.98107 5.01187 1301090.1
+5.01187 6.30957 1467368.6
+6.30957 7.94328 1825510.9
+7.94328 10.0 1836051.6
+10.0 12.5893 1922060.0
+12.5893 15.8489 2338456.0
+15.8489 19.9526 2533664.5
+19.9526 25.1189 3075183.0
+25.1189 31.6228 3151256.2
+31.6228 39.8107 3560117.2
+39.8107 50.1187 3501117.2
+50.1187 63.0957 3575484.5
+63.0957 79.4328 3614431.0
+79.4328 100.0 3752842.5
+100.0 125.893 3707273.5
+125.893 158.489 3764981.0
+158.489 199.526 3921258.2

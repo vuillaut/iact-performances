@@ -1,0 +1,60 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod5-official
+#     conditions:
+#       analysis_details: Eventdisplay analysis with BDT gamma/hadron separation (CTAO Prod5 v0.1), on-axis point-source gamma rays; CORSIKA
+#         7.71 (QGSJet-II-04, URQMD), sim_telarray
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 5 h
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [40 deg, 40 deg]
+#     configuration: south_alpha_sst
+#     data_kind: monte_carlo
+#     definition: no_direction_cut
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO-South Alpha SST sub-array, Prod5 v0.1, effective area no-direction-cut, zenith 40 deg, cuts optimised for 5 h
+#     observation_time: 5 h
+#     provenance: {location: 'Prod5-South-40deg-AverageAz-37SSTs.18000s-v0.1.root, histogram EffectiveAreaEtrueNoTheta2cut', method: official_data_file,
+#       original_column: histogram EffectiveAreaEtrueNoTheta2cut}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.199526 0.251189 29.648663
+0.251189 0.316228 401.63785
+0.316228 0.398107 3157.7673
+0.398107 0.501187 17128.453
+0.501187 0.630957 72421.83
+0.630957 0.794328 216980.34
+0.794328 1.0 435039.06
+1.0 1.25893 698209.6
+1.25893 1.58489 935617.0
+1.58489 1.99526 1169803.5
+1.99526 2.51189 1424418.6
+2.51189 3.16228 1608024.9
+3.16228 3.98107 1735290.8
+3.98107 5.01187 2053940.9
+5.01187 6.30957 2211549.8
+6.30957 7.94328 2500533.2
+7.94328 10.0 2573655.8
+10.0 12.5893 2601057.8
+12.5893 15.8489 2989531.2
+15.8489 19.9526 3063873.2
+19.9526 25.1189 3273826.8
+25.1189 31.6228 3229985.5
+31.6228 39.8107 3398877.5
+39.8107 50.1187 3319494.2
+50.1187 63.0957 3296196.0
+63.0957 79.4328 3265335.5
+79.4328 100.0 3193306.2
+100.0 125.893 3343999.5
+125.893 158.489 3566557.5
+158.489 199.526 3578231.2

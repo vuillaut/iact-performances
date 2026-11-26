@@ -1,0 +1,50 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: erg / (s cm2), datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod6-official
+#     conditions:
+#       analysis_details: Eventdisplay v5.17.0 with Eventdisplay-ML v1.0.0 stereo reconstruction (CTAO Prod6 v1.0), on-axis point-source
+#         gamma rays; CORSIKA 7.750 (QGSJET-II-04, URQMD), sim_telarray 2024.36.1
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 100 s; half moon (5x the dark-sky NSB level)
+#       moon: moderate
+#       offset: 0 deg
+#       zenith_range: [60 deg, 60 deg]
+#     configuration: north_beta
+#     data_kind: monte_carlo
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: ctao
+#     label: CTAO-North Beta, Prod6 v1.0, sensitivity differential, zenith 60 deg, half moon, cuts optimised for 100 s
+#     observation_time: 100 s
+#     provenance: {location: 'Prod6-CTAO-North-60deg-AverageAz-4LSTs09MSTs-halfmoon-100s-v1.0.root, histogram DiffSens', method: official_data_file,
+#       original_column: histogram DiffSens}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 5.0, min_excess: 10.0, min_signal_to_background: 0.05, n_off_regions: unknown, significance: 5.0,
+#       significance_formula: unknown}
+# schema: astropy-2.0
+energy_min energy_max value
+0.0501187 0.0794328 7.0734676e-09
+0.0794328 0.125893 5.667914e-10
+0.125893 0.199526 1.8350092e-10
+0.199526 0.316228 9.151488e-11
+0.316228 0.501187 7.544306e-11
+0.501187 0.794328 6.047138e-11
+0.794328 1.25893 5.4649882e-11
+1.25893 1.99526 5.670131e-11
+1.99526 3.16228 7.072015e-11
+3.16228 5.01187 8.90474e-11
+5.01187 7.94328 1.2516445e-10
+7.94328 12.5893 1.8777342e-10
+12.5893 19.9526 2.8670688e-10
+19.9526 31.6228 4.673385e-10
+31.6228 50.1187 7.2029e-10
+50.1187 79.4328 1.1738521e-09
+79.4328 125.893 1.877422e-09
+125.893 199.526 2.9619929e-09

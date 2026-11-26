@@ -19,13 +19,14 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-extract = ["requests>=2.31"]
+extract = ["requests>=2.31", "uproot>=5.0"]
 
 [dependency-groups]
 dev = [
     "pytest>=8",
     "ruff>=0.6",
     "requests>=2.31",
+    "uproot>=5.0",
     "matplotlib>=3.11.2",
 ]
 

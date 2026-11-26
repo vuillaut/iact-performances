@@ -1,0 +1,53 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: erg / (s cm2), datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod5-official
+#     conditions:
+#       analysis_details: Eventdisplay analysis with BDT gamma/hadron separation (CTAO Prod5 v0.1), on-axis point-source gamma rays; CORSIKA
+#         7.71 (QGSJet-II-04, URQMD), sim_telarray
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 30 min
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: north_alpha
+#     data_kind: monte_carlo
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: ctao
+#     label: CTAO-North Alpha, Prod5 v0.1, sensitivity differential, zenith 20 deg, cuts optimised for 30 min
+#     observation_time: 30 min
+#     provenance: {location: 'Prod5-North-20deg-AverageAz-4LSTs09MSTs.1800s-v0.1.root, histogram DiffSens', method: official_data_file,
+#       original_column: histogram DiffSens}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 5.0, min_excess: 10.0, min_signal_to_background: 0.05, n_off_regions: unknown, significance: 5.0,
+#       significance_formula: unknown}
+# schema: astropy-2.0
+energy_min energy_max value
+0.0125893 0.0199526 2.8155028e-10
+0.0199526 0.0316228 4.80414e-11
+0.0316228 0.0501187 3.3227508e-11
+0.0501187 0.0794328 1.7443448e-11
+0.0794328 0.125893 1.0219349e-11
+0.125893 0.199526 7.138938e-12
+0.199526 0.316228 5.616835e-12
+0.316228 0.501187 4.8934966e-12
+0.501187 0.794328 4.7593735e-12
+0.794328 1.25893 5.3652404e-12
+1.25893 1.99526 6.160175e-12
+1.99526 3.16228 8.119759e-12
+3.16228 5.01187 1.1107624e-11
+5.01187 7.94328 1.5903069e-11
+7.94328 12.5893 2.3422545e-11
+12.5893 19.9526 3.478869e-11
+19.9526 31.6228 5.6706327e-11
+31.6228 50.1187 9.408217e-11
+50.1187 79.4328 1.3983419e-10
+79.4328 125.893 2.2159595e-10
+125.893 199.526 3.9589437e-10

@@ -59,3 +59,24 @@ analyses:
       area, which does not depend on the reconstruction method.
     references:
       - 10.1016/j.astropartphys.2024.103008
+
+  - id: prod5-official
+    name: CTAO Prod5 v0.1 official IRFs (Eventdisplay)
+    description: >-
+      Official CTAO instrument response functions of the Prod5 production
+      (Alpha configuration), from the Eventdisplay analysis with BDT
+      gamma/hadron separation; cuts optimised for point-source flux
+      sensitivity, separately per energy bin and observation time.
+    references:
+      - 10.5281/zenodo.5499840
+
+  - id: prod6-official
+    name: CTAO Prod6 v1.0 official IRFs (Eventdisplay + Eventdisplay-ML)
+    description: >-
+      Official CTAO instrument response functions of the Prod6 production
+      (Beta configuration), from Eventdisplay v5.17.0 with the
+      Eventdisplay-ML v1.0.0 stereo reconstruction; cuts optimised for
+      point-source flux sensitivity, separately per energy bin and
+      observation time.
+    references:
+      - 10.5281/zenodo.22871179

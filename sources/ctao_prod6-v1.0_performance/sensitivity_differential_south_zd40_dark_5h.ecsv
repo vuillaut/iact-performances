@@ -1,0 +1,53 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: erg / (s cm2), datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod6-official
+#     conditions:
+#       analysis_details: Eventdisplay v5.17.0 with Eventdisplay-ML v1.0.0 stereo reconstruction (CTAO Prod6 v1.0), on-axis point-source
+#         gamma rays; CORSIKA 7.750 (QGSJET-II-04, URQMD), sim_telarray 2024.36.1
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 5 h; dark sky
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [40 deg, 40 deg]
+#     configuration: south_beta
+#     data_kind: monte_carlo
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: ctao
+#     label: CTAO-South Beta, Prod6 v1.0, sensitivity differential, zenith 40 deg, dark sky, cuts optimised for 5 h
+#     observation_time: 5 h
+#     provenance: {location: 'Prod6-CTAO-South-40deg-AverageAz-2LSTs14MSTs37SSTs-dark-18000s-v1.0.root, histogram DiffSens', method: official_data_file,
+#       original_column: histogram DiffSens}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 5.0, min_excess: 10.0, min_signal_to_background: 0.05, n_off_regions: unknown, significance: 5.0,
+#       significance_formula: unknown}
+# schema: astropy-2.0
+energy_min energy_max value
+0.0125893 0.0199526 1.3981573e-09
+0.0199526 0.0316228 6.333091e-11
+0.0316228 0.0501187 1.8259875e-11
+0.0501187 0.0794328 7.338924e-12
+0.0794328 0.125893 2.788838e-12
+0.125893 0.199526 1.6505688e-12
+0.199526 0.316228 1.1310758e-12
+0.316228 0.501187 8.582609e-13
+0.501187 0.794328 6.8163183e-13
+0.794328 1.25893 5.2673144e-13
+1.25893 1.99526 4.84834e-13
+1.99526 3.16228 4.3806967e-13
+3.16228 5.01187 4.8935183e-13
+5.01187 7.94328 5.721119e-13
+7.94328 12.5893 7.338953e-13
+12.5893 19.9526 9.850043e-13
+19.9526 31.6228 1.3728769e-12
+31.6228 50.1187 1.8260278e-12
+50.1187 79.4328 2.790059e-12
+79.4328 125.893 4.300925e-12
+125.893 199.526 6.816782e-12

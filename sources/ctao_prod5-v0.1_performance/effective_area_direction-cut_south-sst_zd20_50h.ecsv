@@ -1,0 +1,60 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod5-official
+#     conditions:
+#       analysis_details: Eventdisplay analysis with BDT gamma/hadron separation (CTAO Prod5 v0.1), on-axis point-source gamma rays; CORSIKA
+#         7.71 (QGSJet-II-04, URQMD), sim_telarray
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 50 h
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: south_alpha_sst
+#     data_kind: monte_carlo
+#     definition: direction_cut
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO-South Alpha SST sub-array, Prod5 v0.1, effective area direction-cut, zenith 20 deg, cuts optimised for 50 h
+#     observation_time: 50 h
+#     provenance: {location: 'Prod5-South-20deg-AverageAz-37SSTs.180000s-v0.1.root, histogram EffectiveAreaEtrue', method: official_data_file,
+#       original_column: histogram EffectiveAreaEtrue}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.199526 0.251189 5.9110537
+0.251189 0.316228 61.517323
+0.316228 0.398107 763.39386
+0.398107 0.501187 4711.6797
+0.501187 0.630957 17915.936
+0.630957 0.794328 50461.848
+0.794328 1.0 115723.734
+1.0 1.25893 232653.3
+1.25893 1.58489 407158.2
+1.58489 1.99526 625882.9
+1.99526 2.51189 871533.4
+2.51189 3.16228 1078017.4
+3.16228 3.98107 1239678.2
+3.98107 5.01187 1482814.6
+5.01187 6.30957 1660941.8
+6.30957 7.94328 1837635.8
+7.94328 10.0 1954873.4
+10.0 12.5893 1878248.0
+12.5893 15.8489 2090439.4
+15.8489 19.9526 2044061.5
+19.9526 25.1189 2244205.0
+25.1189 31.6228 2228892.2
+31.6228 39.8107 2276019.8
+39.8107 50.1187 2257948.2
+50.1187 63.0957 2463403.2
+63.0957 79.4328 2559260.0
+79.4328 100.0 2635406.0
+100.0 125.893 2629524.5
+125.893 158.489 2591807.2
+158.489 199.526 2451160.2

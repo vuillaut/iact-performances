@@ -101,7 +101,7 @@ PANELS: dict[str, dict] = {
     "effective_area": {
         "label_words": ("area",),
         "unit": u.m**2,
-        "definition": None,
+        "definition": "no_direction_cut",
         "stem": "effective_area",
         "what": "on-axis effective area",
     },

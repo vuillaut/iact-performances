@@ -1,0 +1,51 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: erg / (s cm2), datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod5-official
+#     conditions:
+#       analysis_details: Eventdisplay analysis with BDT gamma/hadron separation (CTAO Prod5 v0.1), on-axis point-source gamma rays; CORSIKA
+#         7.71 (QGSJet-II-04, URQMD), sim_telarray
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 5 h
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [40 deg, 40 deg]
+#     configuration: north_alpha_mst
+#     data_kind: monte_carlo
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: ctao
+#     label: CTAO-North Alpha MST sub-array, Prod5 v0.1, sensitivity differential, zenith 40 deg, cuts optimised for 5 h
+#     observation_time: 5 h
+#     provenance: {location: 'Prod5-North-40deg-AverageAz-09MSTs.18000s-v0.1.root, histogram DiffSens', method: official_data_file, original_column: histogram
+#         DiffSens}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 5.0, min_excess: 10.0, min_signal_to_background: 0.05, n_off_regions: unknown, significance: 5.0,
+#       significance_formula: unknown}
+# schema: astropy-2.0
+energy_min energy_max value
+0.0316228 0.0501187 1.4706264e-09
+0.0501187 0.0794328 1.00840954e-10
+0.0794328 0.125893 1.0700971e-11
+0.125893 0.199526 3.7812344e-12
+0.199526 0.316228 2.2882122e-12
+0.316228 0.501187 1.5474594e-12
+0.501187 0.794328 1.2869148e-12
+0.794328 1.25893 1.0223255e-12
+1.25893 1.99526 1.0036748e-12
+1.99526 3.16228 1.0412215e-12
+3.16228 5.01187 1.070585e-12
+5.01187 7.94328 1.3724007e-12
+7.94328 12.5893 1.8098146e-12
+12.5893 19.9526 2.6634103e-12
+19.9526 31.6228 4.033031e-12
+31.6228 50.1187 6.3900955e-12
+50.1187 79.4328 1.0607507e-11
+79.4328 125.893 1.728072e-11
+125.893 199.526 2.6642768e-11

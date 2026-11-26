@@ -1,0 +1,48 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: erg / (s cm2), datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod6-official
+#     conditions:
+#       analysis_details: Eventdisplay v5.17.0 with Eventdisplay-ML v1.0.0 stereo reconstruction (CTAO Prod6 v1.0), on-axis point-source
+#         gamma rays; CORSIKA 7.750 (QGSJET-II-04, URQMD), sim_telarray 2024.36.1
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 50 h; half moon (5x the dark-sky NSB level)
+#       moon: moderate
+#       offset: 0 deg
+#       zenith_range: [60 deg, 60 deg]
+#     configuration: south_beta
+#     data_kind: monte_carlo
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: ctao
+#     label: CTAO-South Beta, Prod6 v1.0, sensitivity differential, zenith 60 deg, half moon, cuts optimised for 50 h
+#     observation_time: 50 h
+#     provenance: {location: 'Prod6-CTAO-South-60deg-AverageAz-2LSTs14MSTs37SSTs-halfmoon-180000s-v1.0.root, histogram DiffSens', method: official_data_file,
+#       original_column: histogram DiffSens}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 5.0, min_excess: 10.0, min_signal_to_background: 0.05, n_off_regions: unknown, significance: 5.0,
+#       significance_formula: unknown}
+# schema: astropy-2.0
+energy_min energy_max value
+0.125893 0.199526 3.545142e-12
+0.199526 0.316228 1.4239401e-12
+0.316228 0.501187 6.3331436e-13
+0.501187 0.794328 3.544458e-13
+0.794328 1.25893 2.363683e-13
+1.25893 1.99526 1.9842349e-13
+1.99526 3.16228 1.6654945e-13
+3.16228 5.01187 1.5052937e-13
+5.01187 7.94328 1.532784e-13
+7.94328 12.5893 1.6658432e-13
+12.5893 19.9526 1.8257367e-13
+19.9526 31.6228 2.1959961e-13
+31.6228 50.1187 2.6638354e-13
+50.1187 79.4328 3.7120464e-13
+79.4328 125.893 4.8257687e-13
+125.893 199.526 7.204094e-13

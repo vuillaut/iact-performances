@@ -1,0 +1,53 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: erg / (s cm2), datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod6-official
+#     conditions:
+#       analysis_details: Eventdisplay v5.17.0 with Eventdisplay-ML v1.0.0 stereo reconstruction (CTAO Prod6 v1.0), on-axis point-source
+#         gamma rays; CORSIKA 7.750 (QGSJET-II-04, URQMD), sim_telarray 2024.36.1
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 50 h; half moon (5x the dark-sky NSB level)
+#       moon: moderate
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: south_beta
+#     data_kind: monte_carlo
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: ctao
+#     label: CTAO-South Beta, Prod6 v1.0, sensitivity differential, zenith 20 deg, half moon, cuts optimised for 50 h
+#     observation_time: 50 h
+#     provenance: {location: 'Prod6-CTAO-South-20deg-AverageAz-2LSTs14MSTs37SSTs-halfmoon-180000s-v1.0.root, histogram DiffSens', method: official_data_file,
+#       original_column: histogram DiffSens}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 5.0, min_excess: 10.0, min_signal_to_background: 0.05, n_off_regions: unknown, significance: 5.0,
+#       significance_formula: unknown}
+# schema: astropy-2.0
+energy_min energy_max value
+0.0125893 0.0199526 3.0588346e-10
+0.0199526 0.0316228 2.0399321e-11
+0.0316228 0.0501187 8.308113e-12
+0.0501187 0.0794328 2.1758671e-12
+0.0794328 0.125893 8.81908e-13
+0.125893 0.199526 5.219557e-13
+0.199526 0.316228 3.745344e-13
+0.316228 0.501187 2.6400935e-13
+0.501187 0.794328 2.0023955e-13
+0.794328 1.25893 1.5473525e-13
+1.25893 1.99526 1.2291166e-13
+1.99526 3.16228 1.13120986e-13
+3.16228 5.01187 1.0559074e-13
+5.01187 7.94328 1.1627355e-13
+7.94328 12.5893 1.3602982e-13
+12.5893 19.9526 1.5611266e-13
+19.9526 31.6228 2.09716e-13
+31.6228 50.1187 2.6638354e-13
+50.1187 79.4328 4.1458482e-13
+79.4328 125.893 5.991863e-13
+125.893 199.526 8.6612266e-13

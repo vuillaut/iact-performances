@@ -1,0 +1,63 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: prod5-official
+#     conditions:
+#       analysis_details: Eventdisplay analysis with BDT gamma/hadron separation (CTAO Prod5 v0.1), on-axis point-source gamma rays; CORSIKA
+#         7.71 (QGSJet-II-04, URQMD), sim_telarray
+#       azimuth: average
+#       cuts: cuts optimised for point-source flux sensitivity in each energy bin, for 50 h
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [60 deg, 60 deg]
+#     configuration: south_alpha
+#     data_kind: monte_carlo
+#     definition: direction_cut
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO-South Alpha, Prod5 v0.1, effective area direction-cut, zenith 60 deg, cuts optimised for 50 h
+#     observation_time: 50 h
+#     provenance: {location: 'Prod5-South-60deg-AverageAz-14MSTs37SSTs.180000s-v0.1.root, histogram EffectiveAreaEtrue', method: official_data_file,
+#       original_column: histogram EffectiveAreaEtrue}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.1 0.125893 0.58559066
+0.125893 0.158489 72.718155
+0.158489 0.199526 1065.5002
+0.199526 0.251189 9068.135
+0.251189 0.316228 45021.867
+0.316228 0.398107 118025.79
+0.398107 0.501187 207678.78
+0.501187 0.630957 291934.38
+0.630957 0.794328 343406.56
+0.794328 1.0 396160.25
+1.0 1.25893 488091.34
+1.25893 1.58489 630614.4
+1.58489 1.99526 796979.44
+1.99526 2.51189 908062.94
+2.51189 3.16228 1002915.4
+3.16228 3.98107 1104997.8
+3.98107 5.01187 1430382.0
+5.01187 6.30957 1572150.1
+6.30957 7.94328 1939697.2
+7.94328 10.0 1978077.4
+10.0 12.5893 2101905.2
+12.5893 15.8489 2430523.8
+15.8489 19.9526 2612857.5
+19.9526 25.1189 2993825.2
+25.1189 31.6228 3044869.5
+31.6228 39.8107 3377398.2
+39.8107 50.1187 3419531.8
+50.1187 63.0957 3567224.8
+63.0957 79.4328 3634200.0
+79.4328 100.0 3779726.5
+100.0 125.893 3733120.0
+125.893 158.489 3865048.0
+158.489 199.526 4091261.5

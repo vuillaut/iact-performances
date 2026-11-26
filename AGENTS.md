@@ -11,6 +11,8 @@ before you start:
 
 - `sources/magic_aleksic2016_performance-upgrade/`: LaTeX tables.
 - `sources/ctao_schwefer2024_freepact-reconstruction/`: vector figures.
+- `sources/ctao_prod6-v1.0_performance/`: official data files (ROOT
+  histograms in a Zenodo bundle).
 
 ## Ground rules
 
@@ -59,7 +61,7 @@ then extract each from the best available form, in this order:
 
 | Form | `provenance.method` | Tools |
 |---|---|---|
-| Official machine-readable file (Zenodo, collaboration page) | `official_data_file` | astropy, requests |
+| Official machine-readable file (Zenodo, collaboration page) | `official_data_file` | `iact_perf.extract.zenodo` (download + md5, archives read in memory), `.root` (uproot), `.eventdisplay` (CTAO IRF ROOT files) |
 | Table in the arXiv LaTeX source | `latex_table` | `iact_perf.extract.latex` |
 | Table in a PDF only | `pdf_table` | a PDF table parser called from `extract.py` |
 | Vector figure (PDF/EPS paths) | `vector_figure` | `iact_perf.extract.vector` (matplotlib PDF figures) |
