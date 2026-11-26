@@ -739,6 +739,7 @@ dev = [
     { name = "pytest" },
     { name = "requests" },
     { name = "ruff" },
+    { name = "tomli-w" },
     { name = "uproot" },
 ]
 docs = [
@@ -765,6 +766,7 @@ dev = [
     { name = "pytest", specifier = ">=8" },
     { name = "requests", specifier = ">=2.31" },
     { name = "ruff", specifier = ">=0.6" },
+    { name = "tomli-w", specifier = ">=1.0" },
     { name = "uproot", specifier = ">=5.0" },
 ]
 docs = [
