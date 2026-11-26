@@ -1,0 +1,49 @@
+schema_version: "0.2"
+title: >-
+  A hybrid approach to event reconstruction for atmospheric Cherenkov
+  telescopes combining machine learning and likelihood fitting
+authors: ["Schwefer, G.", "Parsons, R.", "Hinton, J."]
+year: 2024
+doi: 10.1016/j.astropartphys.2024.103008
+arxiv: "2406.17502"
+source_type: article
+refereed: true
+instruments: [ctao]
+reproducible: true
+notes: >-
+  Performance of the FreePACT, ImPACT and Hillas/Random Forest event
+  reconstruction algorithms on Monte Carlo simulations of the CTAO southern
+  array in the Alpha configuration (14 MST/FlashCam + 37 SST, site and
+  telescope models following a preliminary version of the CTA Prod6
+  configuration, CORSIKA/sim_telarray, ctapipe v0.20, curves computed with
+  pyirf v0.10.1). This is an algorithm-performance study by CTA
+  collaborators, not an official CTAO production release; do not compare the
+  records directly with the official CTAO prod-series IRFs, whose event
+  selection differs. All values are recovered from the vector PDF figures of
+  the arXiv source by extract.py: the curve paths carry the exact plotted
+  coordinates, the axes are calibrated on the tick marks and their labels
+  (iact_perf.extract.vector).
+  Extracted: Figure 3 (on-axis effective area, 20 deg zenith, full array,
+  before gamma-hadron separation, event selection common to all
+  reconstruction methods), Figure 4 (angular resolution, energy resolution
+  and energy bias versus true energy, on-axis, 20 deg zenith, full array,
+  four reconstruction methods), Figure 12 (same as Figure 4 after a 75%
+  gamma-ray efficiency gamma-hadron separation cut), Figures 13 and 14 (MST
+  and SST sub-arrays, 20 deg zenith), Figure 15 (full array, 50 deg zenith).
+  Not extracted: the official CTA Prod5 reference curves shown in the same
+  figures (published by the CTAO with their own event selection, they belong
+  to their own source), the Xmax resolution (Figure 5, no matching quantity
+  in the schema), the NSB and field-of-view-offset dependence (Figures 6 and
+  7: resolution versus observation condition at fixed energies, not versus
+  energy), the fit-uncertainty correlations (Figures 8 and 9) and the
+  charge-PDF comparisons (Figures 2 and 11). Angular resolution is the 68%
+  containment radius, energy resolution half of the central 68% interval and
+  energy bias the mean of (E_reco - E_true) / E_true, all versus MC true
+  energy, without gamma-hadron separation unless stated.
+  The figure files also contain curve points outside the axes limits,
+  hidden in print (mostly the energy bias of the Hillas/Random Forest analysis at the
+  lowest energy, and 1-4 low or high-energy points per curve at 50 deg
+  zenith); readers of the paper cannot see them, so they are dropped. The
+  vertical calibration of the angular resolution panels is checked at each
+  extraction against their right-hand axis in arcmin.
+  The figures carry no statistical uncertainties, so the records have none.

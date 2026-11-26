@@ -1,0 +1,39 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: GeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# - {name: value_err_low, unit: deg, datatype: float64}
+# - {name: value_err_high, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: magic-mars-standard
+#     conditions:
+#       analysis_details: MARS (standard MAGIC analysis)
+#       azimuth: unknown
+#       cuts: unknown
+#       moon: unknown
+#       offset: 0.4 deg
+#       zenith_range: [0 deg, 30 deg]
+#     configuration: stereo_upgraded
+#     data_kind: real_data
+#     definition: gaussian_sigma
+#     energy_type: reconstructed
+#     instrument: magic
+#     label: MAGIC stereo angular resolution, sigma of a 2D Gaussian fit of the Crab excess, zd00-30
+#     provenance: {location: 'Table A.4 (tab:angres)', method: latex_table, original_column: 'Theta_Gaus, zenith < 30 deg'}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value value_err_low value_err_high
+95.0 0.087 0.004 0.004
+150.0 0.075 0.002 0.002
+238.0 0.067 0.001 0.001
+378.0 0.058 0.001 0.001
+599.0 0.052 0.001 0.001
+949.0 0.046 0.001 0.001
+1504.0 0.044 0.001 0.001
+2383.0 0.042 0.002 0.002
+3777.0 0.042 0.003 0.003
+5986.0 0.041 0.004 0.004
+9487.0 0.04 0.005 0.005

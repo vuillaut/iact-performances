@@ -1,0 +1,45 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: GeV, datatype: float64}
+# - {name: value, unit: 1e-13 / (s cm2), datatype: float64}
+# - {name: value_err_low, unit: 1e-13 / (s cm2), datatype: float64}
+# - {name: value_err_high, unit: 1e-13 / (s cm2), datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: magic-mars-standard
+#     conditions:
+#       analysis_details: MARS (standard MAGIC analysis)
+#       azimuth: unknown
+#       cuts: unknown
+#       moon: unknown
+#       offset: 0.4 deg
+#       zenith_range: [0 deg, 30 deg]
+#     configuration: stereo_upgraded
+#     data_kind: real_data
+#     energy_integration: integral
+#     energy_type: 'true'
+#     instrument: magic
+#     label: MAGIC stereo integral sensitivity, 50 h, excess-over-sqrt-bkg, flux, zd00-30
+#     observation_time: 50 h
+#     provenance: {location: 'Table A.5 (tab:intsens)', method: latex_table, original_column: 'S_Nex/sqrt(Nbkg) [1e-13 / (s cm2)]'}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {min_excess: 10.0, min_signal_to_background: 0.05, significance: 5.0, significance_formula: excess_over_sqrt_background}
+# schema: astropy-2.0
+energy value value_err_low value_err_high
+84.0 156.5 1.7 1.7
+86.0 137.1 1.5 1.5
+104.0 75.9 0.8 0.8
+146.0 28.6 0.8 0.8
+218.0 13.4 0.7 0.7
+289.0 7.6 0.5 0.5
+404.0 4.4 0.3 0.3
+523.0 3.2 0.3 0.3
+803.0 1.78 0.1 0.1
+1233.0 1.12 0.08 0.08
+1935.0 0.83 0.1 0.1
+2938.0 0.51 0.08 0.08
+4431.0 0.41 0.07 0.07
+6718.0 0.34 0.11 0.11
+8760.0 0.3 0.05 0.05

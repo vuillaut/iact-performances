@@ -1,0 +1,15 @@
+schema_version: "0.2"
+spectra:
+  - id: magic_aleksic2016
+    description: >-
+      Crab Nebula spectrum measured by MAGIC after the upgrade (low + medium
+      zenith samples, 65 GeV - 13.5 TeV). The paper writes it as
+      f0 (E/1 TeV)^(a + b log10(E/1 TeV)) with a = -2.51, b = -0.21.
+      Defines the C.U. of the MAGIC performance paper.
+    reference: 10.1016/j.astropartphys.2015.02.005
+    model: log_parabola_log10
+    amplitude: 3.39e-11 cm-2 s-1 TeV-1
+    reference_energy: 1 TeV
+    index: 2.51
+    curvature: 0.21
+    energy_range: [65 GeV, 13.5 TeV]

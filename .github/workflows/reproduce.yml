@@ -1,0 +1,33 @@
+name: Reproduce extractions
+
+# Re-runs every extract.py against its original source (arXiv, Zenodo, ...)
+# and fails if the produced records differ from the committed ones.
+# Not part of the PR checks: it needs the network and depends on external sites.
+
+on:
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: "Space-separated source slugs (empty: all reproducible sources)"
+        required: false
+        default: ""
+  schedule:
+    - cron: "0 4 * * 1" # Mondays 04:00 UTC
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: sources-${{ hashFiles('sources/**/extract.py') }}
+          restore-keys: sources-
+      - name: Reproduce
+        env:
+          SLUGS: ${{ github.event.inputs.slugs }}
+        # SLUGS is split on spaces on purpose; slugs contain no spaces
+        run: uv run iact-perf reproduce $SLUGS

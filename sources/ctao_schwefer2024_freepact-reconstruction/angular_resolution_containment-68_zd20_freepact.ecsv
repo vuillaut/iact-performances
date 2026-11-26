@@ -1,0 +1,57 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: freepact
+#     conditions:
+#       analysis_details: FreePACT likelihood fit (neural-network charge PDF, neural ratio estimation)
+#       azimuth: unknown
+#       cuts: 'at least 4 telescope images passing quality cuts: more than 3 pixels surviving image cleaning (tail-cuts 10/5 p.e.), intensity
+#         > 50 p.e., less than 10% of the intensity in the two outermost pixel rings, Hillas centroid within 3 deg of the camera centre;
+#         no gamma-hadron separation'
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: south_alpha
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO South Alpha full array angular resolution, 68% containment radius, FreePACT reconstruction, on-axis, 20 deg zenith
+#     provenance: {location: 'Figure 4 (fig:full_cta_resolution curves)', method: vector_figure, original_column: orange curve (FreePACT)}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.0582774 0.124884
+0.0775727 0.106832
+0.103257 0.0937746
+0.137444 0.0813391
+0.182951 0.0685545
+0.243526 0.0591406
+0.324156 0.0536384
+0.431482 0.0472935
+0.574343 0.0437528
+0.764506 0.0403768
+1.01763 0.0363851
+1.35456 0.0333619
+1.80305 0.0299897
+2.40003 0.0271323
+3.19467 0.024209
+4.2524 0.0215363
+5.66035 0.0196688
+7.53446 0.0178922
+10.0291 0.0172307
+13.3497 0.0159407
+17.7697 0.0151323
+23.6531 0.0144863
+31.4845 0.013415
+41.9089 0.0111672
+55.7847 0.0102393
+74.2547 0.0107971
+98.8401 0.00977807
+131.565 0.00888162
+175.126 0.00867707

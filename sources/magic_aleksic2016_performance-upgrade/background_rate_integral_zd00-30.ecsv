@@ -1,0 +1,43 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: GeV, datatype: float64}
+# - {name: value, unit: 1 / min, datatype: float64}
+# - {name: value_err_low, unit: 1 / min, datatype: float64}
+# - {name: value_err_high, unit: 1 / min, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: magic-mars-standard
+#     conditions:
+#       analysis_details: MARS (standard MAGIC analysis)
+#       azimuth: unknown
+#       cuts: unknown
+#       moon: unknown
+#       offset: 0.4 deg
+#       zenith_range: [0 deg, 30 deg]
+#     configuration: stereo_upgraded
+#     data_kind: real_data
+#     energy_integration: integral
+#     energy_type: 'true'
+#     instrument: magic
+#     label: MAGIC stereo integral residual background rate after sensitivity cuts, zd00-30
+#     provenance: {location: 'Table A.5 (tab:intsens)', method: latex_table, original_column: 'bkg-rate [min-1]'}
+#     quantity: background_rate
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value value_err_low value_err_high
+84.0 8.73 0.07 0.07
+86.0 7.8 0.06 0.06
+104.0 4.88 0.05 0.05
+146.0 0.32 0.013 0.013
+218.0 0.07 0.006 0.006
+289.0 0.032 0.004 0.004
+404.0 0.03 0.004 0.004
+523.0 0.023 0.003 0.003
+803.0 0.0109 0.001 0.001
+1233.0 0.0062 0.0007 0.0007
+1935.0 0.0053 0.0011 0.0011
+2938.0 0.0027 0.0008 0.0008
+4431.0 0.0022 0.0006 0.0006
+6718.0 0.0018 0.001 0.001
+8760.0 0.0005 0.0005 0.0005

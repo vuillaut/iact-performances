@@ -1,0 +1,42 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: GeV, datatype: float64}
+# - {name: energy_max, unit: GeV, datatype: float64}
+# - {name: value, unit: '%', datatype: float64}
+# - {name: value_err_low, unit: '%', datatype: float64}
+# - {name: value_err_high, unit: '%', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: magic-mars-standard
+#     conditions:
+#       analysis_details: MARS (standard MAGIC analysis)
+#       azimuth: unknown
+#       cuts: unknown
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [0 deg, 30 deg]
+#     configuration: stereo_upgraded
+#     data_kind: monte_carlo
+#     definition: gaussian_sigma
+#     energy_type: 'true'
+#     instrument: magic
+#     label: MAGIC stereo, Energy resolution, sigma of a Gaussian fit of (E_est - E_true)/E_true, zd00-30
+#     provenance: {location: 'Table A.2 (tab:enreslz)', method: latex_table, original_column: 'sigma [%]'}
+#     quantity: energy_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value value_err_low value_err_high
+47.0 75.0 21.8 1.1 1.1
+75.0 119.0 19.8 0.5 0.5
+119.0 189.0 18.0 0.3 0.3
+189.0 299.0 16.8 0.3 0.3
+299.0 475.0 15.5 0.2 0.2
+475.0 753.0 14.8 0.2 0.2
+753.0 1194.0 15.4 0.2 0.2
+1194.0 1892.0 16.1 0.3 0.3
+1892.0 2999.0 18.1 0.4 0.4
+2999.0 4754.0 19.6 0.5 0.5
+4754.0 7535.0 21.9 0.6 0.6
+7535.0 11943.0 22.7 0.9 0.9
+11943.0 18928.0 20.7 0.9 0.9

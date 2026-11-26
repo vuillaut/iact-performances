@@ -1,0 +1,61 @@
+schema_version: "0.2"
+# One entry per analysis chain or production a user would want to select or
+# compare. Records name one of these ids in their `analysis` field.
+# Reuse an id across sources when it is the same analysis (e.g. a future
+# prod5-official for every record of the official CTAO Prod5 IRFs).
+analyses:
+  - id: magic-mars-standard
+    name: MAGIC standard analysis (MARS)
+    description: >-
+      Standard MAGIC stereo analysis with MARS: Random Forest gamma/hadron
+      separation (Hadronness), DISP direction reconstruction, look-up-table
+      energy estimation.
+    references:
+      - 10.1016/j.astropartphys.2015.02.005
+
+  - id: ctapipe-hillas-rf
+    name: Hillas / Random Forest (ctapipe)
+    description: >-
+      Geometric direction reconstruction from the Hillas parameters and
+      Random Forest energy regression, in ctapipe. In Schwefer et al. 2024 it
+      is also the seed of the ImPACT and FreePACT likelihood fits.
+    references:
+      - 10.1016/j.astropartphys.2024.103008
+
+  - id: impact
+    name: ImPACT
+    description: >-
+      Image Pixel-wise fit for Atmospheric Cherenkov Telescopes: likelihood
+      fit of the camera images to shower templates, with an analytical
+      convolved pixel charge PDF.
+    references:
+      - 10.1016/j.astropartphys.2014.03.002
+      - 10.1016/j.astropartphys.2024.103008
+
+  - id: freepact
+    name: FreePACT
+    description: >-
+      Likelihood fit of the camera images where the per-pixel likelihood is
+      learned by a neural network (neural ratio estimation), seeded by the
+      Hillas / Random Forest reconstruction.
+    references:
+      - 10.1016/j.astropartphys.2024.103008
+
+  - id: impact-freepact-templates
+    name: ImPACT with FreePACT templates
+    description: >-
+      ImPACT likelihood fit using templates generated from the FreePACT
+      neural network models instead of classical template simulations.
+    references:
+      - 10.1016/j.astropartphys.2024.103008
+
+  - id: schwefer2024-event-selection
+    name: Event selection of Schwefer et al. 2024
+    description: >-
+      Image quality cuts common to all the reconstruction methods of
+      Schwefer et al. 2024 (tail-cuts 10/5 p.e., intensity > 50 p.e.,
+      leakage < 10 %, centroid within 3 deg, at least 4 images), before any
+      reconstruction and gamma/hadron separation. Used for the effective
+      area, which does not depend on the reconstruction method.
+    references:
+      - 10.1016/j.astropartphys.2024.103008

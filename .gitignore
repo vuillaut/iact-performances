@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+
+# Downloaded sources (papers, arXiv tarballs, IRFs): never committed
+.cache/
+
+# Verification overlays contain copyrighted figures
+overlays/

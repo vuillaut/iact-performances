@@ -1,0 +1,61 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: ctapipe-hillas-rf
+#     conditions:
+#       analysis_details: Hillas geometric direction reconstruction and Random Forest energy regression (ctapipe v0.20), also used as
+#         the seed of the likelihood fits
+#       azimuth: unknown
+#       cuts: 'at least 4 telescope images passing quality cuts: more than 3 pixels surviving image cleaning (tail-cuts 10/5 p.e.), intensity
+#         > 50 p.e., less than 10% of the intensity in the two outermost pixel rings, Hillas centroid within 3 deg of the camera centre;
+#         gamma-hadron separation cut at 75% gamma-ray efficiency (Random Forest classifier, 10 bins in reconstructed energy)'
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: south_alpha
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO South Alpha full array energy resolution, half of the central 68% interval of (E_reco-E_true)/E_true, Hillas/Random
+#       Forest reconstruction, on-axis, 20 deg zenith
+#     provenance: {location: 'Figure 12 (fig:full_cta_resolution curves_gh_cut)', method: vector_figure, original_column: dark green curve
+#         (Hillas/Random Forest)}
+#     quantity: energy_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.0574122 0.159575
+0.075696 0.13971
+0.0998026 0.12341
+0.131586 0.115786
+0.173492 0.115913
+0.228743 0.105731
+0.30159 0.0964837
+0.397635 0.0888349
+0.524268 0.0835662
+0.69123 0.0802429
+0.911362 0.0780003
+1.2016 0.0757627
+1.58427 0.074607
+2.0888 0.0736883
+2.75401 0.0749988
+3.63107 0.0756621
+4.78744 0.0708232
+6.31207 0.0659186
+8.32224 0.0668297
+10.9726 0.0688749
+14.467 0.066102
+19.0742 0.0624737
+25.1487 0.0615782
+33.1576 0.0583987
+43.7172 0.0591419
+57.6396 0.0485429
+75.9958 0.0551207
+100.198 0.0574844
+132.107 0.0609497
+174.179 0.0509877

@@ -1,0 +1,159 @@
+{
+  "$defs": {
+    "SourceType": {
+      "enum": [
+        "article",
+        "proceedings",
+        "irf_release",
+        "webpage",
+        "thesis",
+        "report"
+      ],
+      "title": "SourceType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Content of ``sources/<slug>/source.yaml``.",
+  "properties": {
+    "schema_version": {
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "authors": {
+      "description": "Author list, may end with 'et al.'",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Authors",
+      "type": "array"
+    },
+    "year": {
+      "title": "Year",
+      "type": "integer"
+    },
+    "doi": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Publisher DOI preferred over the arXiv DOI",
+      "title": "Doi"
+    },
+    "url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Url"
+    },
+    "accessed": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Required when there is no DOI",
+      "title": "Accessed"
+    },
+    "arxiv": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Arxiv"
+    },
+    "ads_bibcode": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ads Bibcode"
+    },
+    "source_type": {
+      "$ref": "#/$defs/SourceType"
+    },
+    "refereed": {
+      "title": "Refereed",
+      "type": "boolean"
+    },
+    "instruments": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Instruments",
+      "type": "array"
+    },
+    "superseded_by": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Superseded By"
+    },
+    "reproducible": {
+      "title": "Reproducible",
+      "type": "boolean"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "schema_version",
+    "title",
+    "authors",
+    "year",
+    "source_type",
+    "refereed",
+    "instruments",
+    "reproducible"
+  ],
+  "title": "Source",
+  "type": "object"
+}

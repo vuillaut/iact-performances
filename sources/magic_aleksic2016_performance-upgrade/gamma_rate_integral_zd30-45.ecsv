@@ -1,0 +1,42 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: GeV, datatype: float64}
+# - {name: value, unit: 1 / min, datatype: float64}
+# - {name: value_err_low, unit: 1 / min, datatype: float64}
+# - {name: value_err_high, unit: 1 / min, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: magic-mars-standard
+#     conditions:
+#       analysis_details: MARS (standard MAGIC analysis)
+#       azimuth: unknown
+#       cuts: unknown
+#       moon: unknown
+#       offset: 0.4 deg
+#       zenith_range: [30 deg, 45 deg]
+#     configuration: stereo_upgraded
+#     data_kind: real_data
+#     energy_integration: integral
+#     energy_type: 'true'
+#     instrument: magic
+#     label: MAGIC stereo integral Crab gamma-ray rate after sensitivity cuts, zd30-45
+#     provenance: {location: 'Table A.6 (tab:intsens2)', method: latex_table, original_column: 'gamma-rate [min-1]'}
+#     quantity: gamma_rate
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value value_err_low value_err_high
+114.0 19.7 0.4 0.4
+119.0 19.3 0.3 0.3
+141.0 17.4 0.3 0.3
+210.0 5.6 0.16 0.16
+310.0 3.59 0.12 0.12
+401.0 3.19 0.12 0.12
+435.0 3.31 0.12 0.12
+546.0 2.98 0.11 0.11
+821.0 2.24 0.1 0.1
+1262.0 1.19 0.07 0.07
+1955.0 0.84 0.06 0.06
+2891.0 0.6 0.05 0.05
+4479.0 0.31 0.04 0.04
+7133.0 0.14 0.02 0.02

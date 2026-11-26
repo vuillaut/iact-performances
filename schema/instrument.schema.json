@@ -1,0 +1,202 @@
+{
+  "$defs": {
+    "Configuration": {
+      "additionalProperties": false,
+      "description": "One way the instrument was operated: telescopes used, mode, period.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "mode": {
+          "$ref": "#/$defs/Mode"
+        },
+        "n_telescopes": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "N Telescopes"
+        },
+        "period_start": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "YYYY, YYYY-MM or YYYY-MM-DD",
+          "title": "Period Start"
+        },
+        "period_end": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "YYYY, YYYY-MM or YYYY-MM-DD; absent if ongoing",
+          "title": "Period End"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "mode"
+      ],
+      "title": "Configuration",
+      "type": "object"
+    },
+    "InstrumentType": {
+      "enum": [
+        "IACT",
+        "WCD",
+        "space",
+        "other"
+      ],
+      "title": "InstrumentType",
+      "type": "string"
+    },
+    "Mode": {
+      "enum": [
+        "mono",
+        "stereo",
+        "array",
+        "other"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "Site": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "latitude": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latitude"
+        },
+        "longitude": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Longitude"
+        },
+        "altitude": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Altitude"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Site",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/$defs/InstrumentType"
+    },
+    "site": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Site"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "configurations": {
+      "items": {
+        "$ref": "#/$defs/Configuration"
+      },
+      "minItems": 1,
+      "title": "Configurations",
+      "type": "array"
+    },
+    "references": {
+      "description": "DOIs or URLs",
+      "items": {
+        "type": "string"
+      },
+      "title": "References",
+      "type": "array"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "type",
+    "configurations"
+  ],
+  "title": "Instrument",
+  "type": "object"
+}

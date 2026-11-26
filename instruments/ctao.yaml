@@ -1,0 +1,30 @@
+schema_version: "0.2"
+id: ctao
+name: CTAO
+type: IACT
+site:
+  name: Paranal, Chile
+configurations:
+  - id: south_alpha
+    description: >-
+      CTA southern array in the Alpha configuration: 14 Medium-Sized Telescopes
+      with FlashCam cameras and 37 Small-Sized Telescopes with SiPM cameras
+      based on the CHEC-S prototype design
+    mode: array
+    n_telescopes: 51
+  - id: south_alpha_mst
+    description: >-
+      MST sub-array (14 FlashCam Medium-Sized Telescopes) of the CTA southern
+      Alpha configuration
+    mode: array
+    n_telescopes: 14
+  - id: south_alpha_sst
+    description: SST sub-array (37 Small-Sized Telescopes) of the CTA southern Alpha configuration
+    mode: array
+    n_telescopes: 37
+references:
+  - 10.1016/j.astropartphys.2024.103008
+notes: >-
+  The southern array is under construction at Paranal (Chile). The site and
+  telescope models of the Alpha configuration follow preliminary versions of
+  the CTAO Prod6 simulation configuration; no observations exist yet.

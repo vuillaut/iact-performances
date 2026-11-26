@@ -1,0 +1,39 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: GeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# - {name: value_err_low, unit: deg, datatype: float64}
+# - {name: value_err_high, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: magic-mars-standard
+#     conditions:
+#       analysis_details: MARS (standard MAGIC analysis)
+#       azimuth: unknown
+#       cuts: unknown
+#       moon: unknown
+#       offset: 0.4 deg
+#       zenith_range: [30 deg, 45 deg]
+#     configuration: stereo_upgraded
+#     data_kind: real_data
+#     definition: containment_68
+#     energy_type: reconstructed
+#     instrument: magic
+#     label: MAGIC stereo angular resolution, 68% containment radius of the Crab excess, zd30-45
+#     provenance: {location: 'Table A.4 (tab:angres)', method: latex_table, original_column: 'Theta_0.68, zenith 30-45 deg'}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value value_err_low value_err_high
+95.0 0.129 0.021 0.009
+150.0 0.148 0.013 0.017
+238.0 0.12 0.007 0.009
+378.0 0.097 0.006 0.008
+599.0 0.083 0.007 0.007
+949.0 0.082 0.005 0.006
+1504.0 0.077 0.004 0.007
+2383.0 0.068 0.006 0.01
+3777.0 0.061 0.008 0.011
+5986.0 0.059 0.011 0.031
+9487.0 0.055 0.005 0.209

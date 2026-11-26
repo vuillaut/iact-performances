@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "iact-perf: a database of published Cherenkov telescope performances"
+message: >-
+  If you use values from this database, cite the original source of each
+  value (given in its source.yaml) in priority, and this database as well.
+type: dataset
+authors:
+  - given-names: Thomas
+    family-names: Vuillaume
+    affiliation: "LAPP, CNRS"
+    orcid: "https://orcid.org/0000-0002-5686-2078"
+license: CC-BY-4.0
+keywords:
+  - gamma-ray astronomy
+  - Cherenkov telescopes
+  - IACT
+  - instrument performance

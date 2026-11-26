@@ -1,0 +1,9 @@
+The data in the `instruments/`, `sources/` and `references/` directories are
+licensed under the Creative Commons Attribution 4.0 International licence
+(CC-BY-4.0): https://creativecommons.org/licenses/by/4.0/
+
+The numbers are taken from published sources. When you use them, cite the
+original source given in each `source.yaml` as well as this database.
+
+The code (including the `extract.py` scripts in `sources/`) is licensed under
+the BSD 3-Clause licence, see LICENSE.

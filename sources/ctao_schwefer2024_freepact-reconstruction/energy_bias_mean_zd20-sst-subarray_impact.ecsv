@@ -1,0 +1,53 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: impact
+#     conditions:
+#       analysis_details: ImPACT likelihood fit with the convolved analytical pixel PDF and classical templates
+#       azimuth: unknown
+#       cuts: 'at least 3 telescope images passing quality cuts: more than 3 pixels surviving image cleaning (tail-cuts 10/5 p.e.), intensity
+#         > 50 p.e., less than 10% of the intensity in the two outermost pixel rings, Hillas centroid within 3 deg of the camera centre;
+#         no gamma-hadron separation'
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: south_alpha_sst
+#     data_kind: monte_carlo
+#     definition: mean
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO South Alpha SST sub-array energy bias, mean of (E_reco-E_true)/E_true, ImPACT reconstruction, on-axis, 20 deg zenith
+#     provenance: {location: 'Figure 14 (fig:sst_resolution curves)', method: vector_figure, original_column: lime green curve (ImPACT)}
+#     quantity: energy_bias
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.783821 0.331428
+0.982775 0.104664
+1.23223 0.100891
+1.545 0.0789032
+1.93716 0.0605968
+2.42886 0.0502123
+3.04537 0.0425874
+3.81837 0.0317448
+4.78757 0.0242119
+6.00278 0.0251214
+7.52644 0.0225499
+9.43684 0.0149002
+11.8322 0.0123104
+14.8355 0.0123104
+18.6011 0.0149465
+23.3225 0.0090659
+29.2424 0.00917201
+36.6649 0.00763981
+45.9714 0.0117195
+57.6401 0.00627815
+72.2707 0.00278519
+90.6149 0.00940103
+113.615 0.00265903
+142.454 -0.00241106
+178.612 -0.0140611

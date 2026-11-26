@@ -1,0 +1,57 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: impact-freepact-templates
+#     conditions:
+#       analysis_details: ImPACT likelihood fit with templates generated from the FreePACT models
+#       azimuth: unknown
+#       cuts: 'at least 4 telescope images passing quality cuts: more than 3 pixels surviving image cleaning (tail-cuts 10/5 p.e.), intensity
+#         > 50 p.e., less than 10% of the intensity in the two outermost pixel rings, Hillas centroid within 3 deg of the camera centre;
+#         no gamma-hadron separation'
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [50 deg, 50 deg]
+#     configuration: south_alpha
+#     data_kind: monte_carlo
+#     definition: mean
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO South Alpha full array energy bias, mean of (E_reco-E_true)/E_true, ImPACT from FreePACT reconstruction, on-axis, 50
+#       deg zenith
+#     provenance: {location: 'Figure 15 (fig:full_cta_resolution curves_z50)', method: vector_figure, original_column: light blue curve
+#         (ImPACT from FreePACT)}
+#     quantity: energy_bias
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.115252 0.222994
+0.153091 0.0425996
+0.203352 0.0108674
+0.270114 0.00241598
+0.358794 0.0036901
+0.47659 0.00239323
+0.633058 -0.00555387
+0.840896 -0.0113982
+1.11697 -0.0136609
+1.48368 -0.00595204
+1.97079 0.00205724
+2.61781 -0.00062165
+3.47726 -0.00253297
+4.61888 -0.00722284
+6.1353 -0.0143214
+8.14957 -0.0143214
+10.8251 -0.0196068
+14.3791 -0.00395752
+19.0999 0.00346069
+25.3706 0.00865207
+33.7 0.00360798
+44.764 0.00136735
+59.4604 0.00993886
+78.9817 0.00850669
+104.912 0.00811616
+139.356 0.00954696
+185.107 0.00825911

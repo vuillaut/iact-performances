@@ -1,0 +1,46 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: GeV, datatype: float64}
+# - {name: value, unit: CU %, datatype: float64}
+# - {name: value_err_low, unit: CU %, datatype: float64}
+# - {name: value_err_high, unit: CU %, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: magic-mars-standard
+#     conditions:
+#       analysis_details: MARS (standard MAGIC analysis)
+#       azimuth: unknown
+#       cuts: unknown
+#       moon: unknown
+#       offset: 0.4 deg
+#       zenith_range: [0 deg, 30 deg]
+#     configuration: stereo_upgraded
+#     crab_reference: magic_aleksic2016
+#     data_kind: real_data
+#     energy_integration: integral
+#     energy_type: 'true'
+#     instrument: magic
+#     label: MAGIC stereo integral sensitivity, 50 h, li-ma-1off, Crab units, zd00-30
+#     observation_time: 50 h
+#     provenance: {location: 'Table A.5 (tab:intsens)', method: latex_table, original_column: 'S_Li&Ma,1Off [%C.U.]'}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {min_excess: 10.0, min_signal_to_background: 0.05, n_off_regions: 1, significance: 5.0, significance_formula: li_ma_eq17}
+# schema: astropy-2.0
+energy value value_err_low value_err_high
+84.0 2.29 0.03 0.03
+86.0 2.07 0.03 0.03
+104.0 1.71 0.02 0.02
+146.0 1.25 0.03 0.03
+218.0 1.06 0.04 0.04
+289.0 0.93 0.05 0.05
+404.0 0.87 0.04 0.04
+523.0 0.95 0.05 0.05
+803.0 1.12 0.04 0.04
+1233.0 1.53 0.06 0.06
+1935.0 2.5 0.16 0.16
+2938.0 3.7 0.3 0.3
+4431.0 6.6 0.6 0.6
+6718.0 12.9 1.7 1.7
+8760.0 17.0 2.0 2.0

@@ -1,0 +1,410 @@
+{
+  "$defs": {
+    "Conditions": {
+      "additionalProperties": false,
+      "description": "Observation and analysis conditions. ``unknown`` when the source does not say.",
+      "properties": {
+        "zenith_range": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "const": "unknown",
+              "type": "string"
+            }
+          ],
+          "default": "unknown",
+          "title": "Zenith Range"
+        },
+        "azimuth": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "const": "unknown",
+              "type": "string"
+            }
+          ],
+          "default": "unknown",
+          "title": "Azimuth"
+        },
+        "offset": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "const": "unknown",
+              "type": "string"
+            }
+          ],
+          "default": "unknown",
+          "title": "Offset"
+        },
+        "moon": {
+          "default": "unknown",
+          "enum": [
+            "dark",
+            "moderate",
+            "high",
+            "any",
+            "unknown"
+          ],
+          "title": "Moon",
+          "type": "string"
+        },
+        "analysis_details": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "const": "unknown",
+              "type": "string"
+            }
+          ],
+          "default": "unknown",
+          "description": "Software, algorithms and settings, in words",
+          "title": "Analysis Details"
+        },
+        "cuts": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "const": "unknown",
+              "type": "string"
+            }
+          ],
+          "default": "unknown",
+          "title": "Cuts"
+        }
+      },
+      "title": "Conditions",
+      "type": "object"
+    },
+    "PerformanceQuantity": {
+      "enum": [
+        "sensitivity",
+        "angular_resolution",
+        "energy_resolution",
+        "energy_bias",
+        "effective_area",
+        "background_rate",
+        "gamma_rate",
+        "energy_threshold",
+        "field_of_view"
+      ],
+      "title": "PerformanceQuantity",
+      "type": "string"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "enum": [
+            "latex_table",
+            "pdf_table",
+            "vector_figure",
+            "raster_digitized",
+            "official_data_file"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "location": {
+          "description": "Where in the source, e.g. 'Table A7 (tab:diffsens)'",
+          "title": "Location",
+          "type": "string"
+        },
+        "original_column": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Column"
+        },
+        "digitization_uncertainty": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Digitization Uncertainty"
+        }
+      },
+      "required": [
+        "method",
+        "location"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "SensitivityCriteria": {
+      "additionalProperties": false,
+      "description": "How a sensitivity was defined. All of these change the curve.",
+      "properties": {
+        "significance": {
+          "description": "Required significance, in sigma",
+          "title": "Significance",
+          "type": "number"
+        },
+        "significance_formula": {
+          "enum": [
+            "excess_over_sqrt_background",
+            "li_ma_eq17",
+            "other",
+            "unknown"
+          ],
+          "title": "Significance Formula",
+          "type": "string"
+        },
+        "n_off_regions": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "const": "unknown",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Absent if not applicable",
+          "title": "N Off Regions"
+        },
+        "min_excess": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "enum": [
+                "none",
+                "unknown"
+              ],
+              "type": "string"
+            }
+          ],
+          "description": "Minimum number of excess events, 'none' if no such condition",
+          "title": "Min Excess"
+        },
+        "min_signal_to_background": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "enum": [
+                "none",
+                "unknown"
+              ],
+              "type": "string"
+            }
+          ],
+          "description": "Minimum excess / background ratio (0.05 for 5 %), 'none' if no condition",
+          "title": "Min Signal To Background"
+        },
+        "bins_per_decade": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "const": "unknown",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Energy bins per decade, differential sensitivity only",
+          "title": "Bins Per Decade"
+        }
+      },
+      "required": [
+        "significance",
+        "significance_formula",
+        "min_excess",
+        "min_signal_to_background"
+      ],
+      "title": "SensitivityCriteria",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Header of one record (one value or curve of one quantity from one source).\n\nStored in the ECSV ``meta`` under the key ``iact_perf``. The columns of the\ntable are checked by :func:`iact_perf.records.check_columns`.",
+  "properties": {
+    "schema_version": {
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "label": {
+      "description": "Short human-readable description",
+      "title": "Label",
+      "type": "string"
+    },
+    "quantity": {
+      "$ref": "#/$defs/PerformanceQuantity"
+    },
+    "definition": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Definition"
+    },
+    "energy_integration": {
+      "anyOf": [
+        {
+          "enum": [
+            "differential",
+            "integral"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Energy Integration"
+    },
+    "energy_type": {
+      "anyOf": [
+        {
+          "enum": [
+            "true",
+            "reconstructed",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Energy Type"
+    },
+    "instrument": {
+      "title": "Instrument",
+      "type": "string"
+    },
+    "configuration": {
+      "title": "Configuration",
+      "type": "string"
+    },
+    "analysis": {
+      "description": "Analysis or production that made the curve, from references/analyses.yaml",
+      "title": "Analysis",
+      "type": "string"
+    },
+    "data_kind": {
+      "enum": [
+        "monte_carlo",
+        "real_data",
+        "mixed"
+      ],
+      "title": "Data Kind",
+      "type": "string"
+    },
+    "observation_time": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Observation Time"
+    },
+    "sensitivity_criteria": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SensitivityCriteria"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "crab_reference": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Required for values in CU",
+      "title": "Crab Reference"
+    },
+    "conditions": {
+      "$ref": "#/$defs/Conditions"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "schema_version",
+    "label",
+    "quantity",
+    "instrument",
+    "configuration",
+    "analysis",
+    "data_kind",
+    "provenance"
+  ],
+  "title": "RecordMeta",
+  "type": "object"
+}

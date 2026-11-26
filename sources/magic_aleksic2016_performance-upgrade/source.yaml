@@ -1,0 +1,18 @@
+schema_version: "0.2"
+title: "The major upgrade of the MAGIC telescopes, Part II: A performance study using observations of the Crab Nebula"
+authors: ["Aleksić, J.", "et al."]
+year: 2016
+doi: 10.1016/j.astropartphys.2015.02.005
+arxiv: "1409.5594"
+ads_bibcode: 2016APh....72...76A
+source_type: article
+refereed: true
+instruments: [magic]
+reproducible: true
+notes: >-
+  Values from the appendix tables A2-A8 of the arXiv version (v2, Feb 2015),
+  parsed from the LaTeX source by extract.py. Crab Nebula data from
+  October 2013 to January 2014, wobble offset 0.4 deg.
+  Replaces the earlier hand-made extraction in
+  github.com/vuillaut/MAGIC_performances_2015_data_tables, which has shifted
+  columns and units in tables A5-A7 and lacks the first row of table A8.

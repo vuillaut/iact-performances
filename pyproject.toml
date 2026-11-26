@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "iact-perf"
+version = "0.1.0.dev0"
+description = "A community database of published Cherenkov telescope performances"
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE", "LICENSE-DATA"]
+authors = [{ name = "Thomas Vuillaume" }]
+requires-python = ">=3.11"
+dependencies = [
+    "astropy>=6.0",
+    "numpy>=2.0",
+    "pydantic>=2.6",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+extract = ["requests>=2.31"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+    "requests>=2.31",
+    "matplotlib>=3.11.2",
+]
+
+[project.scripts]
+iact-perf = "iact_perf.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/iact_perf"]
+
+# The wheel ships the database itself (records, metadata and extraction scripts)
+[tool.hatch.build.targets.wheel.force-include]
+"instruments" = "iact_perf/data/instruments"
+"references" = "iact_perf/data/references"
+"sources" = "iact_perf/data/sources"
+"schema" = "iact_perf/data/schema"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["network: needs internet access (deselect with -m 'not network')"]
+addopts = "-m 'not network'"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# extraction scripts keep one table column per line, even when long
+"sources/**/extract.py" = ["E501"]

@@ -1,0 +1,60 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: ctapipe-hillas-rf
+#     conditions:
+#       analysis_details: Hillas geometric direction reconstruction and Random Forest energy regression (ctapipe v0.20), also used as
+#         the seed of the likelihood fits
+#       azimuth: unknown
+#       cuts: 'at least 4 telescope images passing quality cuts: more than 3 pixels surviving image cleaning (tail-cuts 10/5 p.e.), intensity
+#         > 50 p.e., less than 10% of the intensity in the two outermost pixel rings, Hillas centroid within 3 deg of the camera centre;
+#         no gamma-hadron separation'
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: south_alpha
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: 'true'
+#     instrument: ctao
+#     label: CTAO South Alpha full array angular resolution, 68% containment radius, Hillas/Random Forest reconstruction, on-axis, 20
+#       deg zenith
+#     provenance: {location: 'Figure 4 (fig:full_cta_resolution curves)', method: vector_figure, original_column: dark green curve (Hillas/Random
+#         Forest)}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.0582774 0.177386
+0.0775727 0.161522
+0.103257 0.147369
+0.137444 0.128335
+0.182951 0.108863
+0.243526 0.0945208
+0.324156 0.0838361
+0.431482 0.0769093
+0.574343 0.0731173
+0.764506 0.0716819
+1.01763 0.0675762
+1.35456 0.0650458
+1.80305 0.059199
+2.40003 0.0549031
+3.19467 0.0481207
+4.2524 0.0430215
+5.66035 0.0386722
+7.53446 0.0354065
+10.0291 0.0372983
+13.3497 0.0320649
+17.7697 0.032033
+23.6531 0.0271323
+31.4845 0.0262071
+41.9089 0.0245716
+55.7847 0.0254392
+74.2547 0.0240057
+98.8401 0.0235112
+131.565 0.029082
+175.126 0.0320808

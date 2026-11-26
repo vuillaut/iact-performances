@@ -1,0 +1,58 @@
+{
+  "$defs": {
+    "Analysis": {
+      "additionalProperties": false,
+      "description": "An analysis chain or production, shared by all the records it produced.\n\nRecords are queried by instrument and by analysis: e.g. ``freepact``,\n``prod5-official``, ``magic-mars-standard``. Use one id per analysis that\na user would want to select or compare, not one per paper.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "references": {
+          "description": "DOIs or URLs",
+          "items": {
+            "type": "string"
+          },
+          "title": "References",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description"
+      ],
+      "title": "Analysis",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Content of ``references/analyses.yaml``.",
+  "properties": {
+    "schema_version": {
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "analyses": {
+      "items": {
+        "$ref": "#/$defs/Analysis"
+      },
+      "title": "Analyses",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "analyses"
+  ],
+  "title": "Analyses",
+  "type": "object"
+}

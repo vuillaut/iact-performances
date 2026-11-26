@@ -1,0 +1,28 @@
+schema_version: "0.2"
+id: magic
+name: MAGIC
+type: IACT
+site:
+  name: Roque de los Muchachos, La Palma
+  latitude: 28.76 deg
+  longitude: -17.89 deg
+  altitude: 2200 m
+configurations:
+  - id: mono
+    description: MAGIC-I alone, before MAGIC-II
+    mode: mono
+    n_telescopes: 1
+    period_end: "2009"
+  - id: stereo
+    description: MAGIC-I + MAGIC-II in stereo, before the 2011-2012 upgrade
+    mode: stereo
+    n_telescopes: 2
+    period_start: "2009"
+    period_end: "2011"
+  - id: stereo_upgraded
+    description: MAGIC-I + MAGIC-II in stereo, after the 2011-2012 upgrade (new MAGIC-I camera, new readout)
+    mode: stereo
+    n_telescopes: 2
+    period_start: "2012"
+references:
+  - 10.1016/j.astropartphys.2015.02.005

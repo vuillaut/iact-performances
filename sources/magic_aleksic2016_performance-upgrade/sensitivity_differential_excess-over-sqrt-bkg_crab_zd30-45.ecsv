@@ -1,0 +1,43 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: GeV, datatype: float64}
+# - {name: energy_max, unit: GeV, datatype: float64}
+# - {name: value, unit: CU %, datatype: float64}
+# - {name: value_err_low, unit: CU %, datatype: float64}
+# - {name: value_err_high, unit: CU %, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: magic-mars-standard
+#     conditions:
+#       analysis_details: MARS (standard MAGIC analysis)
+#       azimuth: unknown
+#       cuts: unknown
+#       moon: unknown
+#       offset: 0.4 deg
+#       zenith_range: [30 deg, 45 deg]
+#     configuration: stereo_upgraded
+#     crab_reference: magic_aleksic2016
+#     data_kind: real_data
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: magic
+#     label: MAGIC stereo differential sensitivity, 50 h, excess-over-sqrt-bkg, Crab units, zd30-45
+#     observation_time: 50 h
+#     provenance: {location: 'Table A.8 (tab:diffsens2)', method: latex_table, original_column: 'S_Nex/sqrt(Nbkg) [%C.U.]'}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 5.0, min_excess: 10.0, min_signal_to_background: 0.05, significance: 5.0, significance_formula: excess_over_sqrt_background}
+# schema: astropy-2.0
+energy_min energy_max value value_err_low value_err_high
+63.0 100.0 39.0 16.0 16.0
+100.0 158.0 4.9 0.4 0.4
+158.0 251.0 2.52 0.19 0.19
+251.0 398.0 1.76 0.14 0.14
+398.0 631.0 1.5 0.2 0.2
+631.0 1000.0 1.23 0.13 0.13
+1000.0 1585.0 1.36 0.12 0.12
+1585.0 2512.0 1.43 0.16 0.16
+2512.0 3981.0 2.8 0.4 0.4
+3981.0 6310.0 2.9 0.6 0.6
+6310.0 10000.0 6.7 1.9 1.9
