@@ -57,6 +57,17 @@ db.summary()  # one row per record
 db.query(instrument="ctao", analysis="freepact")  # by instrument and analysis
 ```
 
+## Website
+
+```bash
+uv sync --group docs
+uv run iact-perf site --serve     # http://127.0.0.1:8000, comparison page under /compare/
+```
+
+`iact-perf site` writes a [Zensical](https://zensical.org) project to `build/site/` from the
+database; the `Website` workflow publishes it on GitHub Pages at every push
+to `main`.
+
 ## Contributing a source
 
 See [AGENTS.md](AGENTS.md): the step-by-step ingestion procedure, written for

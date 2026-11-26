@@ -126,6 +126,28 @@ def cmd_new(args) -> int:
     return 0
 
 
+def cmd_site(args) -> int:
+    import subprocess
+
+    from .site.build import build
+
+    summary = build(args.root, args.out, args.repo_url)
+    print(f"{args.out}: {summary['records']} records in {summary['groups']} groups")
+    for s in summary["skipped"]:
+        print(f"  not exported: {s}")
+    if args.build or args.serve:
+        cmd = [
+            "zensical",
+            "serve" if args.serve else "build",
+            "-f",
+            str(args.out / "zensical.toml"),
+        ]
+        if args.build:
+            cmd += ["--clean", "--strict"]
+        return subprocess.call(cmd)
+    return 0
+
+
 def cmd_export_schema(args) -> int:
     for p in write_json_schemas((args.root or default_root()) / "schema"):
         print(p)
@@ -160,6 +182,13 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("new", help="create a source directory from templates")
     p.add_argument("slug")
     p.set_defaults(func=cmd_new)
+
+    p = sub.add_parser("site", help="generate the website (Zensical project)")
+    p.add_argument("--out", type=Path, default=Path("build/site"))
+    p.add_argument("--repo-url", help="GitHub URL shown on the site")
+    p.add_argument("--build", action="store_true", help="also run zensical build (strict)")
+    p.add_argument("--serve", action="store_true", help="also run zensical serve")
+    p.set_defaults(func=cmd_site)
 
     p = sub.add_parser("export-schema", help="regenerate schema/*.schema.json")
     p.set_defaults(func=cmd_export_schema)

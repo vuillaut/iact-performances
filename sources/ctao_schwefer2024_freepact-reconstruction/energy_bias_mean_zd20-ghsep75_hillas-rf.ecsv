@@ -22,7 +22,7 @@
 #     energy_type: 'true'
 #     instrument: ctao
 #     label: CTAO South Alpha full array energy bias, mean of (E_reco-E_true)/E_true, Hillas/Random Forest reconstruction, on-axis, 20
-#       deg zenith
+#       deg zenith, after a 75% efficiency gamma-hadron cut
 #     provenance: {location: 'Figure 12 (fig:full_cta_resolution curves_gh_cut)', method: vector_figure, original_column: dark green curve
 #         (Hillas/Random Forest)}
 #     quantity: energy_bias

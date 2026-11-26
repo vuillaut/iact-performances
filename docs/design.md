@@ -152,7 +152,7 @@ The wheel bundles the data; `IACT_PERF_ROOT` points the library elsewhere.
 - Python package `iact-perf` (uv, Python >= 3.11, pydantic with JSON Schema
   export, astropy, pytest, ruff): queries returning `QTable`s, comparison plots.
 - Extraction CLI for contributors.
-- MkDocs Material site on GitHub Pages: one page per source, instrument and
+- Zensical site on GitHub Pages: one page per source, instrument and
   quantity, plus a Plotly.js comparison page reading a JSON export.
 - Interoperability later: ctaplot reads its reference curves from here;
   sensitivity and resolutions exportable to gammapy.

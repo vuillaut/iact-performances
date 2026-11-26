@@ -225,6 +225,7 @@ def meta(spec: dict, panel: dict, method: dict | None) -> RecordMeta:
         label = (
             f"{CONFIG_NAME[config]} {panel['what']}, {method['method']} "
             f"reconstruction, on-axis, {zd} deg zenith"
+            + (", after a 75% efficiency gamma-hadron cut" if spec["gh_cut"] else "")
         )
     return RecordMeta(
         schema_version=SCHEMA_VERSION,
