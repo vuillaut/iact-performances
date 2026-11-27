@@ -1,0 +1,48 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: impact
+#     conditions:
+#       analysis_details: ImPACT likelihood fit of the CT5 images only (images of the other telescopes removed), templates from Monte
+#         Carlo simulations; seeded by a Hillas-parameter mono analysis (both head-tail solutions tried, the one of highest likelihood
+#         kept); two-step fit (first all parameters free except Xmax, fixed at its expectation for the current energy, then the source
+#         position fixed); background rejection with neural networks trained on Hillas parameters (Murach et al., ICRC 2015)
+#       azimuth: unknown
+#       cuts: 'Table 1 (tab-cuts), ''ImPACT mono Loose'': Amp 40, Npix 4, Local distance 1.15 deg, theta^2 0.045 deg^2, zeta > 0.44, MSCW
+#         n/a, MSCL n/a'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: hess2_mono
+#     data_kind: monte_carlo
+#     definition: other
+#     energy_type: 'true'
+#     instrument: hess
+#     label: H.E.S.S. II ImPACT (mono, Loose cuts) energy bias, simulated gamma rays at 20 deg zenith
+#     notes: The paper does not define the energy bias (relative or absolute, mean or median), hence the definition 'other'. The y axis
+#       has no unit; the values range from -0.5 to 0.5, which suggests a relative bias.
+#     provenance: {location: 'Figure 3, left (fig-enperformance, file Ebias.pdf)', method: vector_figure, original_column: 'Energy Bias;
+#         blue dashed curve with open triangles (legend: Loose Mono)'}
+#     quantity: energy_bias
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.0376 0.209
+0.0531 0.136
+0.0751 0.0861
+0.106 0.0621
+0.15 0.0331
+0.212 0.0257
+0.298 0.00471
+0.422 -0.0212
+0.596 -0.0465
+0.843 -0.0675
+1.19 -0.0958
+1.68 -0.114
+2.37 -0.13
+3.35 -0.133
+4.73 -0.0872

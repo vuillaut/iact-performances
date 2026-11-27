@@ -1,0 +1,49 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: impact
+#     conditions:
+#       analysis_details: Monte Carlo simulations of the four-telescope H.E.S.S. array with mirrors at 70% of their nominal optical efficiency
+#         (roughly the state of the array when written). ImPACT likelihood fit of the camera images to Monte Carlo image templates (CORSIKA
+#         and sim_telarray), seeded by the Hillas reconstruction; background rejection with boosted decision trees on the Hillas parameters;
+#         standard cuts, optimised for a source of 10% Crab strength with an E^-2.6 spectrum
+#       azimuth: unknown
+#       cuts: 'Table 1 (tab-cuts), ''ImPACT Std'': Amp 60 p.e., theta^2 0.005 deg^2, zeta 0.83; image centroid within 2 deg of the camera
+#         centre (text)'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: hess1_stereo
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: 'true'
+#     instrument: hess
+#     label: H.E.S.S. I ImPACT, standard cuts angular resolution (68% containment radius), simulated gamma rays at 20 deg zenith
+#     notes: 'Caption: ''Angular resolution (68% containment radius) of the ImPACT method versus simulated energy at 20 deg zenith angle
+#       (left)''. The spectrum average of the caption (''averaging over a spectrum of the form dN/dE ~ E^-2'') is stated for the zenith-angle
+#       panel; the paper does not say if it also applies to the energy panel.'
+#     provenance: {location: 'Figure 4, left (fig-angZen, file Ang68.eps)', method: vector_figure, original_column: 'Angular Resolution
+#         (deg); red curve with open squares (legend: ImPACT std)'}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.126 0.0916
+0.199 0.0818
+0.316 0.0725
+0.501 0.06
+0.795 0.0543
+1.26 0.0519
+2.0 0.0515
+3.17 0.05
+5.02 0.0436
+7.95 0.0374
+12.6 0.0339
+20.0 0.0292
+31.7 0.0292
+50.2 0.03
+79.3 0.0331

@@ -1,0 +1,61 @@
+schema_version: "0.2"
+title: H.E.S.S. II Data Analysis with ImPACT
+authors: ["Parsons, R. D.", "Gajdus, M.", "Murach, T."]
+year: 2015
+doi: 10.22323/1.236.0826
+arxiv: "1509.06322"
+source_type: proceedings
+refereed: false
+instruments: [hess]
+reproducible: true
+notes: >-
+  ICRC 2015 proceedings (PoS(ICRC2015)826): adaptation of the ImPACT
+  likelihood reconstruction to H.E.S.S. II, mono (CT5 only) and stereo.
+  Not refereed (PoS proceedings). The performance values exist only as ROOT
+  figures (vector PDF made by ROOT 5.28 and Ghostscript) in the arXiv source;
+  extract.py reads them with iact_perf.extract.rootpdf: the data points are
+  the markers of the TGraphs, the axes are calibrated on the tick labels.
+  Extracted: Figure 2 (effective area, angular resolution as 68 %
+  containment radius from a double Gaussian fit), Figure 3 (energy bias,
+  energy resolution), all versus the simulated (true) gamma-ray energy, for a
+  point-like source at 20 deg zenith, for the three mono cut sets (Safe, Std,
+  Loose; Table 1) and the stereo analysis. The figures have no error bars, so
+  the records have none. Records are named zd20-mono-safe, zd20-mono-std,
+  zd20-mono-loose and zd20-stereo.
+  Precision: the ROOT file stores positions to 0.05 pt and the tick marks are
+  off by up to 0.25 pt, so values are good to about 1 part in 4000 of the axis
+  range; they are rounded to 3 significant digits, not the usual 6.
+  Points outside the axes: ROOT draws no marker outside the frame, so such
+  points are not in the file and cannot be counted. The line of each curve
+  continues to the frame edge (one clipped vertex per curve, not a data
+  point, not extracted).
+  Unknown or unstated: the y axes carry no unit (m2 for the effective area
+  from the text; degrees and dimensionless ratios for the others, from the
+  text and the value range); the energy resolution and energy bias are not
+  defined in the paper (definition recorded as other); the paper does not say
+  whether the theta^2 cut of Table 1 is applied to the effective area;
+  azimuth, offset, Moon and NSB of the simulations are not given. Table 1
+  gives the cuts (Amp, Npix, local distance, theta^2, zeta, MSCW, MSCL as
+  printed, no unit for Amp; stereo Amp and local distance have two values,
+  not explained); they are copied in the conditions of each record.
+  Inconsistency in the paper: the introduction says stereo events have
+  images in CT5 and at least one other telescope, the Performance section
+  says images in any two telescopes of the array. The hess2_stereo
+  configuration follows the second statement.
+  Not extracted: the Crab Nebula results (7.2 h of 2014 data, 47 deg mean
+  zenith, 0.5 deg offset, std mono cuts: 96 sigma, excess above 7700 events,
+  signal/background 2.3; excess distribution versus energy, log-parabola fit):
+  they are observations of one source, not performance curves of the database
+  (a significance and a rate for a given spectrum); the significance map and
+  theta^2 distribution (Figure 4, a PSF check on data, no values); the
+  likelihood surface (Figure 1).
+  Checks against the text (run at every extraction): 10^4 m2 of effective area
+  down to 30 GeV with the Loose cuts (data: 9930 m2 at 32.7 GeV); angular
+  resolution below 0.16 deg for most of the energy range for Safe and Std (the
+  medians are below it) and about 0.2 deg for Loose (0.18-0.22 deg below 300
+  GeV); stereo effective area above all mono ones above 300 GeV; stereo
+  angular and energy resolutions better than all mono ones; mono energy bias
+  positive at low and negative at high energy. The legend of Eres.pdf is
+  missing in the file; its curves are identified by the colour and shape of
+  the markers of Ebias.pdf, the other panel of Figure 3, and the energies of
+  both files coincide.
