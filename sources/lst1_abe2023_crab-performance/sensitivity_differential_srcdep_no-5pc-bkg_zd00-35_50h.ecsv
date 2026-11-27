@@ -1,0 +1,40 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: CU %, datatype: float64}
+# - {name: value_err_low, unit: CU %, datatype: float64}
+# - {name: value_err_high, unit: CU %, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: lstchain-srcdep
+#     conditions:
+#       analysis_details: cta-lstchain v0.9.9, source-dependent analysis
+#       azimuth: unknown
+#       cuts: gammaness and theta/alpha cuts optimised per energy bin on one half of the Crab events, sensitivity computed on the other
+#         half
+#       moon: dark
+#       offset: 0.4 deg
+#       zenith_range: [0 deg, 35 deg]
+#     configuration: mono
+#     crab_reference: lst1_abe2023_observed
+#     data_kind: real_data
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: lst1
+#     label: LST-1 differential sensitivity, 50 h, source-dependent analysis, Crab data at zenith < 35 deg, without the signal/background
+#       >= 5 % condition
+#     notes: Errors are the total uncertainty band of the paper (statistics and a 1 % systematic uncertainty on the background normalisation).
+#     observation_time: 50 h
+#     provenance: {location: 'Figure 15 (fig:diff_sensitivity); lst-crab-performance-paper-2023 v1.1.0 (10.5281/zenodo.8430774): 6_results/6.1_flux_sensitivity/data/sensitivity_src_dep_without_5percentbg.txt',
+#       method: official_data_file, original_column: 'columns 1 (sensitivity) and 5-6 (band edges, converted to error sizes), % C.U.'}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 5.0, min_excess: 10.0, min_signal_to_background: none, n_off_regions: 5, significance: 5.0,
+#       significance_formula: unknown}
+# schema: astropy-2.0
+energy value value_err_low value_err_high
+0.03162277660168379 17.41601365443241 7.4892066875302135 53.50841441669721
+0.050118723362727234 17.664672732544883 5.328231017403716 13.430169443424102
+0.07943282347242815 16.49600706665622 3.369735062508518 5.697428681550253
+0.12589254117941676 6.873713515039892 0.27073807201369604 0.29388916359255646

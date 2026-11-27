@@ -1,0 +1,44 @@
+schema_version: "0.2"
+title: "Observations of the Crab Nebula and Pulsar with the Large-sized Telescope Prototype of the Cherenkov Telescope Array"
+authors: ["Abe, H.", "et al."]
+year: 2023
+doi: 10.3847/1538-4357/ace89d
+arxiv: "2306.12960"
+source_type: article
+refereed: true
+instruments: [lst1]
+reproducible: true
+notes: >-
+  Values from the data repository of the paper
+  (github.com/cta-observatory/lst-crab-performance-paper-2023, v1.1.0,
+  archived as 10.5281/zenodo.8430774; identical to the main branch), read by
+  extract.py with the selections of the notebooks that draw the figures.
+  Extracted: the 50 h differential sensitivity on Crab data, source-dependent
+  and source-independent, with and without the signal/background >= 5 %
+  condition (Fig. 15), in % C.U. with the total uncertainty band (1 %
+  systematics on the background) as errors; the MC IRF tables of the files
+  drawn in Figs. 4 and 5 (zenith 10 deg with 40, 70, 90 % gamma efficiency,
+  and 70 % at zenith 10, 23.63, 32.06, 43.2 deg): effective area, energy
+  resolution (68 % containment of |dE|/E), energy bias (median), and for the
+  source-independent analysis the angular resolution, computed on the
+  well-oriented gamma rays only (the paper's choice to describe the central
+  part of the PSF). The Crab unit is the Crab observed in the same data: the
+  paper, its repository and cta-lstchain v0.9.9 give no analytic spectrum
+  for it, so the sensitivity cannot be converted to an absolute flux. The
+  significance formula is not stated; the ON/OFF ratio of 0.2 is recorded
+  as 5 OFF regions. Columns 3-4 of the sensitivity files (narrower bounds,
+  likely statistical only) are not documented and not extracted. The IRF
+  tables of the source-dependent files also hold an angular resolution, but
+  the paper states it cannot be computed for that analysis: not extracted.
+  Not extracted either: the integral sensitivities quoted in the text (1.1 %
+  C.U. above 250 GeV in 50 h, 12.4 % in 0.5 h), the energy threshold, the
+  Crab spectrum and light curve.
+  Checks against the text: the angular resolution spans 0.120-0.396 deg
+  (abstract: 0.12 to 0.40 deg); at 10 deg zenith in the TeV range it is
+  0.12/0.17/0.22 deg for 40/70/90 % efficiency (text: between 0.1 and 0.2
+  deg). Disagreements: the conclusion quotes an optimal source-independent
+  sensitivity of about 1.7 % C.U. at 800 GeV, the data file gives 1.99 % at
+  0.794 TeV (minimum 1.89 % at 0.50 TeV), unchanged in every version of the
+  repository; the abstract quotes an energy resolution from 15 to 50 %, the
+  files of Fig. 4 span 13.6-59 %; the text quotes a bias of 5 % in the TeV
+  range at 10 deg, the 70 % efficiency file gives -2 to -4 %.

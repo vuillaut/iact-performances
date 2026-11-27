@@ -2,7 +2,7 @@
   "$defs": {
     "CrabSpectrum": {
       "additionalProperties": false,
-      "description": "A reference Crab spectrum, used to interpret values given in Crab units.\n\nModels (E0 = ``reference_energy``, A = ``amplitude``):\n\n- ``power_law``: A (E/E0)^-index\n- ``log_parabola_log10``: A (E/E0)^(-index - curvature log10(E/E0))\n- ``log_parabola_ln``: A (E/E0)^(-index - curvature ln(E/E0))",
+      "description": "A reference Crab spectrum, used to interpret values given in Crab units.\n\nModels (E0 = ``reference_energy``, A = ``amplitude``):\n\n- ``power_law``: A (E/E0)^-index\n- ``log_parabola_log10``: A (E/E0)^(-index - curvature log10(E/E0))\n- ``log_parabola_ln``: A (E/E0)^(-index - curvature ln(E/E0))\n- ``observed``: no analytic model. The Crab unit is the Crab flux observed\n  in the same data set (e.g. a sensitivity computed on Crab observations);\n  the values cannot be converted to an absolute flux.",
       "properties": {
         "id": {
           "title": "Id",
@@ -13,7 +13,7 @@
           "type": "string"
         },
         "reference": {
-          "description": "DOI or URL of the publication of the fit",
+          "description": "DOI or URL of the publication of the fit or data",
           "title": "Reference",
           "type": "string"
         },
@@ -21,22 +21,47 @@
           "enum": [
             "power_law",
             "log_parabola_log10",
-            "log_parabola_ln"
+            "log_parabola_ln",
+            "observed"
           ],
           "title": "Model",
           "type": "string"
         },
         "amplitude": {
-          "title": "Amplitude",
-          "type": "string"
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Amplitude"
         },
         "reference_energy": {
-          "title": "Reference Energy",
-          "type": "string"
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reference Energy"
         },
         "index": {
-          "title": "Index",
-          "type": "number"
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Index"
         },
         "curvature": {
           "anyOf": [
@@ -77,10 +102,7 @@
         "id",
         "description",
         "reference",
-        "model",
-        "amplitude",
-        "reference_energy",
-        "index"
+        "model"
       ],
       "title": "CrabSpectrum",
       "type": "object"

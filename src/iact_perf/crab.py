@@ -24,8 +24,17 @@ ENERGY_FLUX = u.Unit("erg cm-2 s-1")
 INTEGRAL_EMAX = 1000 * u.TeV
 
 
+class NoCrabModel(ValueError):
+    """The Crab unit of a record is the observed Crab: no flux to convert to."""
+
+
 def dnde(spectrum: CrabSpectrum, energy: u.Quantity) -> u.Quantity:
     """Differential Crab flux at ``energy``, in cm-2 s-1 TeV-1."""
+    if not spectrum.is_model:
+        raise NoCrabModel(
+            f"Crab reference {spectrum.id!r} is the observed Crab, without a spectral model: "
+            "values in Crab units cannot be converted to an absolute flux"
+        )
     a = u.Quantity(spectrum.amplitude).to(DIFF_FLUX)
     x = (u.Quantity(energy) / u.Quantity(spectrum.reference_energy)).to_value(u.one)
     if spectrum.model == "power_law":

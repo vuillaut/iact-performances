@@ -1,0 +1,44 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: lstchain-srcdep
+#     conditions:
+#       analysis_details: cta-lstchain v0.9.9, source-dependent analysis; IRFs computed with pyirf
+#       azimuth: unknown
+#       cuts: intensity > 50 p.e.; gammaness cut keeping 90 % of the MC gamma rays in each bin of reconstructed energy; alpha cut keeping
+#         70 % of the gamma rays (effective area, energy resolution and bias)
+#       moon: dark
+#       offset: 0.4 deg
+#       zenith_range: [10.00 deg, 10.00 deg]
+#     configuration: mono
+#     data_kind: monte_carlo
+#     definition: other
+#     energy_type: 'true'
+#     instrument: lst1
+#     label: LST-1 effective area, source-dependent analysis, zenith 10 deg, 90 % gamma efficiency
+#     provenance: {location: 'Figure 5 (fig:irfs_src_dep); lst-crab-performance-paper-2023 v1.1.0 (10.5281/zenodo.8430774): 3_pipeline/3.4_irfs/irfs_srcdep/irfs_zen_10.00_gh-eff_0.9_srcdep.fits.gz,
+#         HDU EFFECTIVE_AREA', method: official_data_file, original_column: EFFAREA}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.020000000000000004 0.03169786384922227 23755.559530731087
+0.03169786384922227 0.050237728630191596 47684.546882196766
+0.050237728630191596 0.07962143411069944 73858.17799995214
+0.07962143411069944 0.1261914688960386 100746.57784117386
+0.1261914688960386 0.20000000000000004 130345.4255111249
+0.20000000000000004 0.3169786384922226 165127.10438063514
+0.3169786384922226 0.5023772863019155 202587.23916039657
+0.5023772863019155 0.796214341106994 241457.39513366946
+0.796214341106994 1.2619146889603863 275110.5399526658
+1.2619146889603863 1.9999999999999982 301995.46633331594
+1.9999999999999982 3.1697863849222223 313919.9216950781
+3.1697863849222223 5.023772863019155 323941.7047450186
+5.023772863019155 7.962143411069939 329163.9815086126
+7.962143411069939 12.619146889603835 323150.2567823933
+12.619146889603835 19.99999999999996 310182.92356308765

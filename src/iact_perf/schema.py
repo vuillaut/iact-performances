@@ -189,20 +189,34 @@ class CrabSpectrum(Model):
     - ``power_law``: A (E/E0)^-index
     - ``log_parabola_log10``: A (E/E0)^(-index - curvature log10(E/E0))
     - ``log_parabola_ln``: A (E/E0)^(-index - curvature ln(E/E0))
+    - ``observed``: no analytic model. The Crab unit is the Crab flux observed
+      in the same data set (e.g. a sensitivity computed on Crab observations);
+      the values cannot be converted to an absolute flux.
     """
 
     id: Identifier
     description: str
-    reference: str = Field(description="DOI or URL of the publication of the fit")
-    model: Literal["power_law", "log_parabola_log10", "log_parabola_ln"]
-    amplitude: DiffFluxStr
-    reference_energy: EnergyStr
-    index: float
+    reference: str = Field(description="DOI or URL of the publication of the fit or data")
+    model: Literal["power_law", "log_parabola_log10", "log_parabola_ln", "observed"]
+    amplitude: DiffFluxStr | None = None
+    reference_energy: EnergyStr | None = None
+    index: float | None = None
     curvature: float | None = None
     energy_range: tuple[EnergyStr, EnergyStr] | None = None
 
+    @property
+    def is_model(self) -> bool:
+        return self.model != "observed"
+
     @model_validator(mode="after")
-    def _curvature(self):
+    def _parameters(self):
+        params = (self.amplitude, self.reference_energy, self.index)
+        if not self.is_model:
+            if any(p is not None for p in (*params, self.curvature)):
+                raise ValueError("an 'observed' Crab reference has no spectral parameters")
+            return self
+        if any(p is None for p in params):
+            raise ValueError("'amplitude', 'reference_energy' and 'index' are required")
         if (self.model == "power_law") != (self.curvature is None):
             raise ValueError("'curvature' is required for log-parabolas and forbidden otherwise")
         return self

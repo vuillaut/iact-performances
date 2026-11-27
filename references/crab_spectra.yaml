@@ -13,3 +13,13 @@ spectra:
     index: 2.51
     curvature: 0.21
     energy_range: [65 GeV, 13.5 TeV]
+
+  - id: lst1_abe2023_observed
+    description: >-
+      The Crab Nebula as observed by LST-1 in the same data set. The
+      sensitivity of Abe et al. 2023 is computed on the Crab observations
+      themselves (one half of the events to optimise the cuts, the other to
+      compute the sensitivity); the paper, its figure repository and
+      cta-lstchain v0.9.9 give no analytic spectrum for its Crab units.
+    reference: 10.3847/1538-4357/ace89d
+    model: observed

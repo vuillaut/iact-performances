@@ -1,0 +1,19 @@
+schema_version: "0.2"
+id: lst1
+name: LST-1
+type: IACT
+site:
+  name: Roque de los Muchachos, La Palma
+configurations:
+  - id: mono
+    description: >-
+      LST-1 alone (single telescope, monoscopic reconstruction), prototype
+      Large-Sized Telescope of CTAO-North, during its commissioning phase
+    mode: mono
+    n_telescopes: 1
+    period_start: "2019-11"
+references:
+  - 10.3847/1538-4357/ace89d
+notes: >-
+  Astronomical observations started in November 2019, during the
+  commissioning phase (Abe et al. 2023).

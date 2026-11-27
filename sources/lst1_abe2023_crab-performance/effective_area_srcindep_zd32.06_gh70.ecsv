@@ -1,0 +1,44 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: lstchain-srcindep
+#     conditions:
+#       analysis_details: cta-lstchain v0.9.9, source-independent analysis; IRFs computed with pyirf
+#       azimuth: unknown
+#       cuts: intensity > 50 p.e.; gammaness cut keeping 70 % of the MC gamma rays in each bin of reconstructed energy; theta cut keeping
+#         70 % of the well-oriented gamma rays (effective area, energy resolution and bias)
+#       moon: dark
+#       offset: 0.4 deg
+#       zenith_range: [32.06 deg, 32.06 deg]
+#     configuration: mono
+#     data_kind: monte_carlo
+#     definition: direction_cut
+#     energy_type: 'true'
+#     instrument: lst1
+#     label: LST-1 effective area, source-independent analysis, zenith 32.06 deg, 70 % gamma efficiency
+#     provenance: {location: 'Figure 4 (fig:irfs_srcindep); lst-crab-performance-paper-2023 v1.1.0 (10.5281/zenodo.8430774): 3_pipeline/3.4_irfs/irfs/irfs_zen_32.06_gh-eff_0.7.fits.gz,
+#         HDU EFFECTIVE_AREA', method: official_data_file, original_column: EFFAREA}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.020000000000000004 0.03169786384922227 6374.532504956671
+0.03169786384922227 0.050237728630191596 17537.752870910444
+0.050237728630191596 0.07962143411069944 35450.617067186715
+0.07962143411069944 0.1261914688960386 64550.261954578105
+0.1261914688960386 0.20000000000000004 104942.40577285456
+0.20000000000000004 0.3169786384922226 143817.7823759845
+0.3169786384922226 0.5023772863019155 185417.5306755578
+0.5023772863019155 0.796214341106994 232118.59775027898
+0.796214341106994 1.2619146889603863 277805.11271367565
+1.2619146889603863 1.9999999999999982 313570.3538272008
+1.9999999999999982 3.1697863849222223 342633.5669985854
+3.1697863849222223 5.023772863019155 361325.6140545428
+5.023772863019155 7.962143411069939 376068.4086963572
+7.962143411069939 12.619146889603835 395854.76594396186
+12.619146889603835 19.99999999999996 378482.98640985845

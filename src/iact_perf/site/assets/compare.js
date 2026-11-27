@@ -53,6 +53,7 @@
     if (r.obs_time) parts.push(r.obs_time);
     if (r.moon && r.moon !== "dark" && r.moon !== "unknown") parts.push(`moon ${r.moon}`);
     if (r.definition) parts.push(r.definition.replace(/_/g, " "));
+    if (r.min_s2b === "none") parts.push("no S/B condition");
     return parts.join(" · ");
   }
 
@@ -110,7 +111,13 @@
     for (const [key, name, get, show] of FILTERS) {
       // options available given the other filters, so that no choice gives nothing
       const values = [...new Set(recs.filter((r) => matches(r, key)).map(get))].sort(sortValues);
-      if (values.length < 2 && !state.filters[key]) continue;
+      // instruments with no curve of this quantity: listed apart, picking one
+      // switches to the first quantity where it has curves
+      const elsewhere =
+        key === "instrument"
+          ? [...new Set(state.data.records.map(get))].filter((v) => !values.includes(v)).sort(sortValues)
+          : [];
+      if (values.length + elsewhere.length < 2 && !state.filters[key]) continue;
       const s = el("select", { "aria-label": name });
       s.append(el("option", { value: "" }, "Any"));
       for (const v of values) {
@@ -118,8 +125,22 @@
         if (state.filters[key] === v) o.selected = true;
         s.append(o);
       }
+      if (elsewhere.length) {
+        const og = el("optgroup", { label: "Not in this quantity" });
+        for (const v of elsewhere) og.append(el("option", { value: v }, show(v)));
+        s.append(og);
+      }
       s.addEventListener("change", () => {
-        state.filters[key] = s.value || undefined;
+        const v = s.value || undefined;
+        if (v && elsewhere.includes(v)) {
+          const g = state.data.groups.find((x) =>
+            state.data.records.some((r) => r.group === x.key && get(r) === v),
+          );
+          state.group = g.key;
+          state.filters = {};
+          state.selected.clear();
+        }
+        state.filters[key] = v;
         update();
       });
       bar.append(labelled(name, s));
@@ -295,6 +316,7 @@
         rec.obs_time && `time ${rec.obs_time}`,
         `moon ${rec.moon}`,
         rec.provenance,
+        rec.crab,
         rec.converted,
       ].filter(Boolean);
       li.append(el("div", { class: "ic-meta" }, facts.join(" · ")));

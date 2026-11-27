@@ -65,7 +65,9 @@ Values are stored as published, with their unit, including scaled units such
 as `1e-13 cm-2 s-1`. Crab units use the custom astropy unit `CU` (`% CU` for
 "% C.U."), which astropy never converts on its own: a record in CU must name a
 `crab_reference` from `references/crab_spectra.yaml`, and the library does
-the conversion at read time. Error columns hold positive sizes.
+the conversion at read time. A reference can also be `observed`: the C.U. is
+the Crab observed in the same data, with no model, and the values cannot be
+converted. The website compares values in C.U. in their own group. Error columns hold positive sizes.
 
 Record metadata (ECSV `meta`):
 

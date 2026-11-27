@@ -1,0 +1,44 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: lstchain-srcdep
+#     conditions:
+#       analysis_details: cta-lstchain v0.9.9, source-dependent analysis; IRFs computed with pyirf
+#       azimuth: unknown
+#       cuts: intensity > 50 p.e.; gammaness cut keeping 70 % of the MC gamma rays in each bin of reconstructed energy; alpha cut keeping
+#         70 % of the gamma rays (effective area, energy resolution and bias)
+#       moon: dark
+#       offset: 0.4 deg
+#       zenith_range: [10.00 deg, 10.00 deg]
+#     configuration: mono
+#     data_kind: monte_carlo
+#     definition: other
+#     energy_type: 'true'
+#     instrument: lst1
+#     label: LST-1 effective area, source-dependent analysis, zenith 10 deg, 70 % gamma efficiency
+#     provenance: {location: 'Figure 5 (fig:irfs_src_dep); lst-crab-performance-paper-2023 v1.1.0 (10.5281/zenodo.8430774): 3_pipeline/3.4_irfs/irfs_srcdep/irfs_zen_10.00_gh-eff_0.7_srcdep.fits.gz,
+#         HDU EFFECTIVE_AREA', method: official_data_file, original_column: EFFAREA}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.020000000000000004 0.03169786384922227 18713.93755069802
+0.03169786384922227 0.050237728630191596 37630.01445746675
+0.050237728630191596 0.07962143411069944 57807.634838995225
+0.07962143411069944 0.1261914688960386 78054.1556182997
+0.1261914688960386 0.20000000000000004 101412.16871556028
+0.20000000000000004 0.3169786384922226 128085.18489741071
+0.3169786384922226 0.5023772863019155 157489.41792757716
+0.5023772863019155 0.796214341106994 188173.61774427185
+0.796214341106994 1.2619146889603863 215639.44387296826
+1.2619146889603863 1.9999999999999982 236855.39276535853
+1.9999999999999982 3.1697863849222223 245338.71212355254
+3.1697863849222223 5.023772863019155 250432.28392736474
+5.023772863019155 7.962143411069939 253733.32202333235
+7.962143411069939 12.619146889603835 245172.54305892534
+12.619146889603835 19.99999999999996 232180.79725241286

@@ -19,7 +19,8 @@ def data(tmp_path_factory):
 def test_every_record_is_exported(data):
     summary, d = data
     assert summary["skipped"] == []
-    assert len(d["records"]) == len(iact_perf.load())
+    exported = {r["uid"].removesuffix("@cu") for r in d["records"]}
+    assert exported == {f"{r.source}/{r.id}" for r in iact_perf.load().records}
     groups = {g["key"] for g in d["groups"]}
     assert all(r["group"] in groups for r in d["records"])
 
@@ -29,7 +30,9 @@ def test_sensitivities_share_one_unit(data):
     sens = [
         r
         for r in d["records"]
-        if r["quantity"] == "sensitivity" and r["integration"] == "differential"
+        if r["quantity"] == "sensitivity"
+        and r["integration"] == "differential"
+        and not r["group"].endswith("% CU")
     ]
     assert {r["group"] for r in sens} == {"sensitivity|differential|erg / (s cm2)"}
     crab = [r for r in sens if r["converted"] and "Crab" in r["converted"]]
@@ -74,3 +77,25 @@ def test_build_project(tmp_path):
         assert (docs / "sources" / f"{slug}.md").exists()
         assert list((docs / "data" / "sources" / slug).glob("*.ecsv"))
     assert (docs / "assets" / "compare.js").exists()
+
+
+def test_crab_unit_group(data):
+    _, d = data
+    cu = [r for r in d["records"] if r["group"] == "sensitivity|differential|% CU"]
+    sources = {r["source"] for r in cu}
+    assert {"lst1_abe2023_crab-performance", "magic_aleksic2016_performance-upgrade"} <= sources
+    # LST-1 (observed Crab) is only in the % C.U. group; MAGIC (model) is in both
+    lst = [
+        r
+        for r in d["records"]
+        if r["source"] == "lst1_abe2023_crab-performance" and r["quantity"] == "sensitivity"
+    ]
+    assert {r["group"] for r in lst} == {"sensitivity|differential|% CU"}
+    assert not any(r["uid"].endswith("@cu") for r in lst)  # its only entry keeps the plain id
+    magic_uids = {
+        r["uid"]
+        for r in d["records"]
+        if r["source"].startswith("magic") and r["quantity"] == "sensitivity"
+    }
+    assert any(uid.endswith("@cu") for uid in magic_uids)
+    assert len({r["uid"] for r in d["records"]}) == len(d["records"])  # uids stay unique

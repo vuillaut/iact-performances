@@ -1,0 +1,44 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: lstchain-srcdep
+#     conditions:
+#       analysis_details: cta-lstchain v0.9.9, source-dependent analysis; IRFs computed with pyirf
+#       azimuth: unknown
+#       cuts: intensity > 50 p.e.; gammaness cut keeping 70 % of the MC gamma rays in each bin of reconstructed energy; alpha cut keeping
+#         70 % of the gamma rays (effective area, energy resolution and bias)
+#       moon: dark
+#       offset: 0.4 deg
+#       zenith_range: [43.20 deg, 43.20 deg]
+#     configuration: mono
+#     data_kind: monte_carlo
+#     definition: other
+#     energy_type: 'true'
+#     instrument: lst1
+#     label: LST-1 effective area, source-dependent analysis, zenith 43.2 deg, 70 % gamma efficiency
+#     provenance: {location: 'Figure 5 (fig:irfs_src_dep); lst-crab-performance-paper-2023 v1.1.0 (10.5281/zenodo.8430774): 3_pipeline/3.4_irfs/irfs_srcdep/irfs_zen_43.20_gh-eff_0.7_srcdep.fits.gz,
+#         HDU EFFECTIVE_AREA', method: official_data_file, original_column: EFFAREA}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.020000000000000004 0.03169786384922227 2520.07767372604
+0.03169786384922227 0.050237728630191596 12957.142726146194
+0.050237728630191596 0.07962143411069944 39563.01373720128
+0.07962143411069944 0.1261914688960386 78009.21829636519
+0.1261914688960386 0.20000000000000004 120359.04944637365
+0.20000000000000004 0.3169786384922226 170646.2292909557
+0.3169786384922226 0.5023772863019155 230943.47956387364
+0.5023772863019155 0.796214341106994 297261.4357125092
+0.796214341106994 1.2619146889603863 366663.00526406994
+1.2619146889603863 1.9999999999999982 435312.915560987
+1.9999999999999982 3.1697863849222223 488853.89988410455
+3.1697863849222223 5.023772863019155 531994.8428997156
+5.023772863019155 7.962143411069939 563091.7370753667
+7.962143411069939 12.619146889603835 559214.3932921042
+12.619146889603835 19.99999999999996 562063.4937209487

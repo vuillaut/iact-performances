@@ -1,0 +1,44 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: lstchain-srcdep
+#     conditions:
+#       analysis_details: cta-lstchain v0.9.9, source-dependent analysis; IRFs computed with pyirf
+#       azimuth: unknown
+#       cuts: intensity > 50 p.e.; gammaness cut keeping 70 % of the MC gamma rays in each bin of reconstructed energy; alpha cut keeping
+#         70 % of the gamma rays (effective area, energy resolution and bias)
+#       moon: dark
+#       offset: 0.4 deg
+#       zenith_range: [32.06 deg, 32.06 deg]
+#     configuration: mono
+#     data_kind: monte_carlo
+#     definition: other
+#     energy_type: 'true'
+#     instrument: lst1
+#     label: LST-1 effective area, source-dependent analysis, zenith 32.06 deg, 70 % gamma efficiency
+#     provenance: {location: 'Figure 5 (fig:irfs_src_dep); lst-crab-performance-paper-2023 v1.1.0 (10.5281/zenodo.8430774): 3_pipeline/3.4_irfs/irfs_srcdep/irfs_zen_32.06_gh-eff_0.7_srcdep.fits.gz,
+#         HDU EFFECTIVE_AREA', method: official_data_file, original_column: EFFAREA}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value
+0.020000000000000004 0.03169786384922227 9779.278205520042
+0.03169786384922227 0.050237728630191596 29066.765460318584
+0.050237728630191596 0.07962143411069944 55961.670005968524
+0.07962143411069944 0.1261914688960386 84548.14514107228
+0.1261914688960386 0.20000000000000004 116811.41199076897
+0.20000000000000004 0.3169786384922226 154211.81051223815
+0.3169786384922226 0.5023772863019155 196202.6936952153
+0.5023772863019155 0.796214341106994 239574.9636467508
+0.796214341106994 1.2619146889603863 285274.1835735957
+1.2619146889603863 1.9999999999999982 324738.78205672675
+1.9999999999999982 3.1697863849222223 355730.47876323597
+3.1697863849222223 5.023772863019155 367608.8120551613
+5.023772863019155 7.962143411069939 378865.01830780634
+7.962143411069939 12.619146889603835 386840.370078541
+12.619146889603835 19.99999999999996 372502.4426065424

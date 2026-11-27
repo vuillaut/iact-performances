@@ -137,3 +137,12 @@ def test_crab_integral_power_law():
     # analytic: A E0 / (index - 1) (E/E0)^(1 - index), up to 1000 TeV
     expected = 1e-11 / 1.5 * (1 - 1000**-1.5)
     assert crab.integral_flux(spec, 1 * u.TeV)[0].value == pytest.approx(expected, rel=1e-4)
+
+
+def test_observed_crab_cannot_be_converted(db):
+    from iact_perf.crab import NoCrabModel
+
+    rec = db.get("lst1_abe2023_crab-performance", "sensitivity_differential_srcindep_zd00-35_50h")
+    assert db.convert(rec, "CU")["value"][0].unit == u.Unit("CU")  # same family: fine
+    with pytest.raises(NoCrabModel, match="observed Crab"):
+        db.convert(rec, "erg cm-2 s-1")

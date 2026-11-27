@@ -80,3 +80,21 @@ analyses:
       observation time.
     references:
       - 10.5281/zenodo.22871179
+
+  - id: lstchain-srcindep
+    name: cta-lstchain source-independent analysis
+    description: >-
+      Monoscopic LST-1 analysis with cta-lstchain (random forests for energy,
+      direction via disp and gamma/hadron separation), not using the
+      position of the source; selection with gammaness and theta cuts.
+    references:
+      - 10.3847/1538-4357/ace89d
+
+  - id: lstchain-srcdep
+    name: cta-lstchain source-dependent analysis
+    description: >-
+      Monoscopic LST-1 analysis with cta-lstchain using the known position of
+      the source in the reconstruction and classification; selection with
+      gammaness and alpha cuts. No angular resolution can be defined.
+    references:
+      - 10.3847/1538-4357/ace89d

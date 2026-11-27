@@ -128,7 +128,11 @@ A value in Crab units needs `crab_reference`, an id in
 `references/crab_spectra.yaml`. Find in the paper which Crab spectrum defines
 its C.U. (its own fit, HEGRA 2004, H.E.S.S. 2006, ...). Add the spectrum
 exactly as the cited paper writes it, with its reference. If the paper does
-not say which spectrum it uses, do not pick one: stop and ask.
+not say which spectrum it uses, do not pick one: stop and ask. A sensitivity
+computed on Crab observations often has no model at all: its C.U. is the Crab
+observed in the same data. With the human's agreement, record it as a
+reference with `model: observed` (see `lst1_abe2023_observed`); such values
+stay in C.U. and the library refuses to convert them to an absolute flux.
 
 ### 7. Write `extract.py`
 

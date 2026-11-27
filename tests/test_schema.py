@@ -151,3 +151,12 @@ def test_crab_spectrum_curvature():
         CrabSpectrum(model="log_parabola_log10", **base)
     with pytest.raises(ValidationError, match="not convertible"):
         CrabSpectrum(model="power_law", **(base | {"amplitude": "3e-11 cm-2 s-1"}))
+
+
+def test_observed_crab_reference():
+    base = dict(id="x", description="d", reference="10.1/x")
+    CrabSpectrum(model="observed", **base)
+    with pytest.raises(ValidationError, match="no spectral parameters"):
+        CrabSpectrum(model="observed", index=2.5, **base)
+    with pytest.raises(ValidationError, match="required"):
+        CrabSpectrum(model="power_law", **base)
