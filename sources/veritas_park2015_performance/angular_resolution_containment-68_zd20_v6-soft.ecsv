@@ -1,0 +1,40 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: veritas-standard
+#     conditions:
+#       analysis_details: 'VERITAS standard analysis (Daniel et al. 2007): moment analysis, box cuts on scaled parameters, energy from
+#         look-up tables. The paper does not say which of the two VERITAS analysis packages made this figure; the cuts were used ''after
+#         consistency check with an independent analysis package''.'
+#       azimuth: unknown
+#       cuts: 'soft cuts: box cuts optimised for sources with a spectral index of -3.5 to -4.0, with a low energy threshold (cut values
+#         not given in the paper)'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: v6
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: reconstructed
+#     instrument: veritas
+#     label: VERITAS V6 angular resolution (68 % containment), soft cuts, simulated gamma rays at 70 deg elevation
+#     notes: 'Radius containing 68 % of the simulated gamma-ray events of a point source in each energy bin, 70 deg elevation, events
+#       above the energy threshold. The x axis is E_REC (reconstructed energy). No visible marker of this series at E = 0.999, 1.44, 2.08,
+#       3, 4.34, 6.3, 9.1 TeV, where another series of the figure has one: covered by other markers, or no point; not extracted.'
+#     provenance: {digitization_uncertainty: 'Marker centres placed to about 1 pixel of the 796 x 572 pixel bitmap: 0.0032 in log10(E/TeV)
+#         (0.74 %), 0.00023 deg. Axis calibration on the tick marks: largest residual 0.46 pixel (x), 0.52 pixel (y).', location: 'Figure
+#         4, page 5', method: raster_digitized, original_column: '68% containment radius (deg); blue circles (legend: V6, Soft cuts)'}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.109 0.1614
+0.159 0.1592
+0.229 0.1445
+0.331 0.1305
+0.478 0.1167
+0.69 0.1029

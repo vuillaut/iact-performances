@@ -1,0 +1,40 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: veritas-standard
+#     conditions:
+#       analysis_details: 'VERITAS standard analysis (Daniel et al. 2007): moment analysis, box cuts on scaled parameters, energy from
+#         look-up tables. The paper does not say which of the two VERITAS analysis packages made this figure; the cuts were used ''after
+#         consistency check with an independent analysis package''.'
+#       azimuth: unknown
+#       cuts: 'soft cuts: box cuts optimised for sources with a spectral index of -3.5 to -4.0, with a low energy threshold (cut values
+#         not given in the paper)'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: v6
+#     data_kind: monte_carlo
+#     definition: median
+#     energy_type: 'true'
+#     instrument: veritas
+#     label: VERITAS V6 energy bias (median of (E_rec - E_true)/E_true), soft cuts, simulated gamma rays at 70 deg elevation
+#     notes: 'Median of the (E_rec - E_true)/E_true distribution versus true energy. No visible marker of this series at E = 0.33, 0.479,
+#       0.687, 0.995, 1.44, 2.09, 3, 4.34, 6.29, 9.11, 13.1, 18.9 TeV, where another series of the figure has one: covered by other markers,
+#       or no point; not extracted. 3 marker(s) partly covered (visible fraction 0.61 to 0.77), placed by their visible part. Dropped:
+#       0 marker(s) centred outside the axes, 6 visible below 30 %.'
+#     provenance: {digitization_uncertainty: 'Marker centres placed to about 1 pixel of the 796 x 574 pixel bitmap: 0.0042 in log10(E/TeV)
+#         (0.98 %), 0.0044. Axis calibration on the tick marks: largest residual 0.45 pixel (x), 0.49 pixel (y).', location: 'Figure 5
+#         (a), page 6', method: raster_digitized, original_column: '(E_REC - E_true)/E_true; blue circles (legend: V6, Soft cuts)'}
+#     quantity: energy_bias
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.11 0.211
+0.158 0.02
+0.229 -0.024
+27.6 -0.133
+40.0 -0.198

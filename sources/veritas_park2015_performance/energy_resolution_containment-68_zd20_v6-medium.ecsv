@@ -1,0 +1,51 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: veritas-standard
+#     conditions:
+#       analysis_details: 'VERITAS standard analysis (Daniel et al. 2007): moment analysis, box cuts on scaled parameters, energy from
+#         look-up tables. The paper does not say which of the two VERITAS analysis packages made this figure; the cuts were used ''after
+#         consistency check with an independent analysis package''.'
+#       azimuth: unknown
+#       cuts: 'medium cuts: box cuts optimised for sources of 2-10 % of the Crab Nebula strength with an index of -2.5 to -3.0, adjusted
+#         to similar energy thresholds in all epochs (cut values not given in the paper)'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: v6
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: 'true'
+#     instrument: veritas
+#     label: VERITAS V6 energy resolution (68 % containment around the median), medium cuts, simulated gamma rays at 70 deg elevation
+#     notes: 68 % containment radius of the (E_rec - E_true)/E_true distribution around its median, versus true energy (caption of Figure
+#       5). The values lie on a 0.02 grid (checked by extract.py). 7 marker(s) partly covered (visible fraction 0.39 to 0.42), placed
+#       by their visible part.
+#     provenance: {digitization_uncertainty: 'Marker centres placed to about 1 pixel of the 796 x 574 pixel bitmap: 0.0042 in log10(E/TeV)
+#         (0.98 %), 0.0011. Axis calibration on the tick marks: largest residual 0.45 pixel (x), 0.49 pixel (y).', location: 'Figure 5
+#         (b), page 6', method: raster_digitized, original_column: 'Energy resolution; green squares (legend: V6, Med cuts)'}
+#     quantity: energy_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.11 0.2
+0.157 0.18
+0.228 0.18
+0.33 0.18
+0.479 0.16
+0.687 0.16
+0.995 0.14
+1.44 0.14
+2.09 0.16
+3.0 0.16
+4.34 0.18
+6.29 0.2
+9.11 0.22
+13.1 0.24
+18.9 0.28
+27.5 0.32
+39.8 0.361

@@ -1,0 +1,48 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: CU, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: veritas-standard
+#     conditions: {analysis_details: 'Second VERITAS analysis package (not named in the paper): box cuts and BDT cuts are both defined
+#         and calculated with it (caption of Figure 6). Events with a small energy bias selected for the sensitivity calculation.', azimuth: unknown,
+#       cuts: 'soft cuts: box cuts optimised for sources with a spectral index of -3.5 to -4.0, with a low energy threshold (cut values
+#         not given in the paper)', moon: unknown, offset: unknown, zenith_range: unknown}
+#     configuration: v6
+#     crab_reference: veritas_park2015_observed
+#     data_kind: real_data
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: veritas
+#     label: VERITAS V6 differential sensitivity (5 sigma, 50 h), soft cuts (second analysis package), Crab data at high elevation
+#     notes: 'Caption of Figure 6: Crab data taken at high elevation, cuts optimised for soft index sources, 50 h, ''the same conditions
+#       described in Section 3'' (5 sigma, Li & Ma, at least 10 excess events per bin, four bins per decade). The markers are 0.2 apart
+#       in log10(E), i.e. five per decade, not four: bins_per_decade is set to unknown. ''High elevation'' is not quantified (Figure 1
+#       uses elevation above 70 deg): zenith range unknown. The energy type is not stated (reconstructed, as for any sensitivity measured
+#       on data). Error bars not extracted. No visible marker of this series at E = 3.95 TeV, where another series of the figure has one:
+#       covered by other markers, or no point; not extracted. 5 marker(s) partly covered (visible fraction 0.39 to 0.80), placed by their
+#       visible part. Dropped: 0 marker(s) centred outside the axes, 1 visible below 30 %.'
+#     observation_time: 50 h
+#     provenance: {digitization_uncertainty: 'Marker centres placed to about 1 pixel of the 796 x 574 pixel bitmap: 0.0041 in log10(E/TeV)
+#         (0.95 %), 0.005 in log10 of the value (1.2 %). Axis calibration on the tick marks: largest residual 0.52 pixel (x), 0.51 pixel
+#         (y).', location: 'Figure 6, page 7', method: raster_digitized, original_column: 'Source strength (Crab Unit); blue circles (legend:
+#         V6, Soft cuts)'}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: unknown, min_excess: 10.0, min_signal_to_background: unknown, n_off_regions: unknown, significance: 5.0,
+#       significance_formula: li_ma_eq17}
+# schema: astropy-2.0
+energy value
+0.0992 0.0707
+0.157 0.0315
+0.25 0.019
+0.396 0.0149
+0.627 0.0137
+0.995 0.0149
+1.58 0.0156
+2.5 0.0278
+6.29 0.0921
+9.97 0.214
+15.8 0.604
