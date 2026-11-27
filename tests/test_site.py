@@ -65,12 +65,18 @@ def test_build_project(tmp_path):
 
     config = tomllib.loads((out / "zensical.toml").read_text())["project"]
     assert config["nav"][1] == {"Compare": "compare.md"}
+    guide = config["nav"][2]["User guide"]
+    assert guide[0] == {"Getting started": "user/index.md"}
+    assert guide[-1] == {"API reference": "user/api.md"}
     for page in (
         "index.md",
         "compare.md",
         "analyses.md",
         "sources/index.md",
         "about/contributing.md",
+        "user/index.md",
+        "user/how-to/compare.md",
+        "user/api.md",
     ):
         assert (docs / page).exists(), page
     for slug in iact_perf.load().sources:

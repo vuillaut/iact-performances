@@ -57,6 +57,11 @@ db.summary()  # one row per record
 db.query(instrument="ctao", analysis="freepact")  # by instrument and analysis
 ```
 
+The user guide ([docs/user/](docs/user/index.md), also on the website) has
+how-to pages (find records, plot, convert Crab units, compare fairly, cite,
+read the files without the library) and an API reference generated from the
+code.
+
 ## Website
 
 ```bash
