@@ -131,6 +131,7 @@ class Instrument(Model):
         return self
 
     def configuration(self, config_id: str) -> Configuration | None:
+        """The configuration with this id, or None."""
         return next((c for c in self.configurations if c.id == config_id), None)
 
 
@@ -206,6 +207,7 @@ class CrabSpectrum(Model):
 
     @property
     def is_model(self) -> bool:
+        """False for an ``observed`` reference, which has no spectral model."""
         return self.model != "observed"
 
     @model_validator(mode="after")

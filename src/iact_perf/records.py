@@ -29,6 +29,7 @@ class Record:
 
     @property
     def id(self) -> str:
+        """Name of the record file without ``.ecsv``, unique within its source."""
         return self.path.stem if self.path else ""
 
     @property

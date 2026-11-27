@@ -45,6 +45,14 @@ META_FILTERS = (
 
 @dataclass
 class Database:
+    """The whole database in memory. Get it with :func:`iact_perf.load`.
+
+    The attributes map identifiers to objects: ``instruments["magic"]``,
+    ``sources["magic_aleksic2016_performance-upgrade"]``,
+    ``crab_spectra["magic_aleksic2016"]``, ``analyses["prod6-official"]``.
+    ``records`` lists every record, superseded ones included.
+    """
+
     instruments: dict[str, Instrument]
     sources: dict[str, Source]
     records: list[Record]
@@ -61,9 +69,11 @@ class Database:
         )
 
     def source_of(self, record: Record) -> Source:
+        """The publication a record comes from: title, authors, DOI, notes."""
         return self.sources[record.source]
 
     def is_superseded(self, record: Record) -> bool:
+        """True if a newer source replaces the source of this record."""
         return self.source_of(record).superseded_by is not None
 
     def query(
@@ -115,12 +125,17 @@ class Database:
         return out
 
     def get(self, source: str, record_id: str) -> Record:
+        """The record ``record_id`` (its file name without ``.ecsv``) of ``source``.
+
+        Raises ``KeyError`` if there is none.
+        """
         for rec in self.records:
             if rec.source == source and rec.id == record_id:
                 return rec
         raise KeyError(f"no record {source}/{record_id}")
 
     def crab_spectrum(self, record: Record) -> CrabSpectrum | None:
+        """The Crab spectrum that defines the Crab unit of a record, or None."""
         ref = record.meta.crab_reference
         return self.crab_spectra[ref] if ref else None
 
@@ -134,6 +149,10 @@ class Database:
         ``crab_reference``, or ``crab_reference`` given here (needed to
         express an absolute flux in CU). Other quantities convert with
         astropy only.
+
+        Raises :class:`iact_perf.crab.NoCrabModel` when the record's Crab
+        unit is the observed Crab (``model: observed``): such values have no
+        absolute flux. The record itself is never modified.
         """
         table = QTable(record.table, copy=True)
         unit = u.Unit(unit)

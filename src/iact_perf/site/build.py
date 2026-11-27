@@ -1,8 +1,10 @@
 """Generate the Zensical project of the website from the database.
 
 ``build(root, out)`` writes ``out/zensical.toml`` and ``out/docs/``: a home page,
-the comparison page, one page per source and per instrument, the analyses,
-the design and contribution docs, the JSON export and the record files. Then
+the comparison page, the user guide (``docs/user/`` of the repository, plus an
+API reference generated from the code), one page per source and per
+instrument, the analyses, the design and contribution docs, the JSON export
+and the record files. Then
 ``zensical build -f out/zensical.toml`` makes the static site in ``out/site/``.
 """
 
@@ -15,7 +17,19 @@ from pathlib import Path
 
 from ..catalog import default_root
 from ..database import Database, load
+from .apidoc import api_reference
 from .export import QUANTITY_NAMES, export
+
+#: Pages of the user guide, in navigation order, relative to ``docs/user/``.
+USER_GUIDE = [
+    ("Getting started", "index.md"),
+    ("Find records", "how-to/find-records.md"),
+    ("Plot a curve", "how-to/plot.md"),
+    ("Convert Crab units", "how-to/crab-units.md"),
+    ("Compare results fairly", "how-to/compare.md"),
+    ("Cite a value", "how-to/cite.md"),
+    ("Use the data without the library", "how-to/without-python.md"),
+]
 
 #: Curves selected when the comparison page opens without a shared link.
 DEFAULT_CURVES = [
@@ -75,13 +89,14 @@ def build(root: Path | None = None, out: Path = Path("build/site"), repo_url: st
     _sources(db, root, docs)
     _instruments(db, docs)
     (docs / "analyses.md").write_text(_analyses(db))
+    _user_guide(root, docs)
     (docs / "about").mkdir()
     for name, target in (("docs/design.md", "design.md"), ("AGENTS.md", "contributing.md")):
         src = root / name
         if src.exists():
             (docs / "about" / target).write_text(src.read_text())
 
-    (out / "zensical.toml").write_text(_zensical_toml(db, repo_url))
+    (out / "zensical.toml").write_text(_zensical_toml(db, repo_url, _user_nav(root)))
     return summary
 
 
@@ -105,6 +120,7 @@ conditions it was obtained under and where it was taken from.
 
 [Compare curves](compare.md){{ .md-button .md-button--primary }}
 [Browse the sources](sources/index.md){{ .md-button }}
+[User guide](user/index.md){{ .md-button }}
 
 **{len(db.records)} records** from **{len(db.sources)} sources**, {len(db.instruments)} instruments,
 {len(db.analyses)} analyses.
@@ -113,7 +129,7 @@ conditions it was obtained under and where it was taken from.
 ## Use the data
 
 ```bash
-pip install iact-perf
+pip install git+https://github.com/vuillaut/iact-performances
 ```
 
 ```python
@@ -125,7 +141,9 @@ recs = db.query(instrument="ctao", analysis="prod6-official", quantity="sensitiv
 recs[0].table  # astropy QTable, values as published
 ```
 
-Each source page links its records as ECSV files.
+Each source page links its records as ECSV files. The [user guide](user/index.md)
+shows how to query, plot, convert Crab units and compare records, and lists
+the API.
 
 ## Cite
 
@@ -270,6 +288,24 @@ def _analyses(db: Database) -> str:
     )
 
 
+def _user_guide(root: Path, docs: Path) -> None:
+    """Copy the user guide and write the API reference next to it."""
+    folder = docs / "user"
+    for _, page in USER_GUIDE:
+        src = root / "docs" / "user" / page
+        if not src.exists():  # wheel install: the guide is not bundled
+            continue
+        (folder / page).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, folder / page)
+    folder.mkdir(exist_ok=True)
+    (folder / "api.md").write_text(api_reference())
+
+
+def _user_nav(root: Path) -> list[dict]:
+    pages = [{t: f"user/{p}"} for t, p in USER_GUIDE if (root / "docs" / "user" / p).exists()]
+    return pages + [{"API reference": "user/api.md"}]
+
+
 def _nav_name(db: Database, slug: str) -> str:
     """Short navigation label from the slug: 'MAGIC aleksic2016 performance-upgrade'."""
     inst, who, topic = slug.split("_")
@@ -277,7 +313,7 @@ def _nav_name(db: Database, slug: str) -> str:
     return f"{name} {who} {topic}"
 
 
-def _zensical_toml(db: Database, repo_url: str | None) -> str:
+def _zensical_toml(db: Database, repo_url: str | None, user_nav: list[dict]) -> str:
     import tomli_w
 
     sources = sorted(db.sources.items(), key=lambda kv: (-kv[1].year, kv[0]))
@@ -294,6 +330,7 @@ def _zensical_toml(db: Database, repo_url: str | None) -> str:
         "nav": [
             {"Home": "index.md"},
             {"Compare": "compare.md"},
+            {"User guide": user_nav},
             {"Sources": [{"All sources": "sources/index.md"}]
              + [{_nav_name(db, slug): f"sources/{slug}.md"} for slug, _ in sources]},
             {"Instruments": [{db.instruments[i].name: f"instruments/{i}.md"}
