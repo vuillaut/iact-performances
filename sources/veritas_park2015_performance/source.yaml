@@ -1,0 +1,86 @@
+schema_version: "0.2"
+title: Performance of the VERITAS experiment
+authors: ["Park, N.", "et al."]
+year: 2015
+doi: 10.22323/1.236.0771
+arxiv: "1508.07070"
+source_type: proceedings
+refereed: false
+instruments: [veritas]
+reproducible: true
+notes: >-
+  ICRC 2015 proceedings (PoS(ICRC2015)771), N. Park for the VERITAS
+  Collaboration: performance of the four-telescope array in its three
+  hardware epochs, V4 (2007-09 to 2009-08), V5 (after the relocation of
+  telescope 1, to 2012-08) and V6 (after the camera upgrade with high
+  quantum efficiency PMTs). Chosen over the VERITAS specifications web page
+  (veritas.sao.arizona.edu/about-veritas/veritas-specifications), which
+  cites no publication and shows its curves as PNG images only.
+  Not refereed. The arXiv e-print is a PDF made with Word, with no LaTeX
+  source and no tables: every figure is a ROOT plot embedded as a 796 x 574
+  bitmap. extract.py reads the bitmaps from the PDF and digitizes the
+  markers with iact_perf.extract.raster (provenance raster_digitized): axes
+  calibrated on the tick marks, series identified by the colours of the
+  legend, markers placed by template fitting to about 1 pixel (about 1 % in
+  energy, 1.2 % on the log sensitivity axis, 0.0002 deg, 0.004 in energy
+  bias and 0.001 in energy resolution; see digitization_uncertainty of each
+  record). The tick labels and legend texts are typed in extract.py from the
+  figures (the digitizer reads no text) and checked against the tick marks
+  and legend colours.
+  Extracted: Figure 1a, V6 differential sensitivity with soft and hard cuts;
+  Figure 1b, V4, V5 and V6 differential sensitivity with medium cuts (the V6
+  medium curve is also in Figure 1a, where markers of the hard cuts cover
+  part of it; the two readings agree within one pixel); Figure 4, V6 angular
+  resolution (68 % containment, simulations at 70 deg elevation, versus
+  reconstructed energy); Figure 5a, V6 energy bias (median of
+  (E_rec - E_true)/E_true, versus true energy); Figure 5b, V6 energy
+  resolution (68 % containment around the median, versus true energy);
+  Figure 6, V6 differential sensitivity with soft box cuts and soft BDT cuts
+  (second analysis package). The sensitivities are in Crab units
+  (fraction of the Crab flux), relative to the Crab Nebula observed in the
+  same data (no analytic spectrum: crab_reference
+  veritas_park2015_observed).
+  Points not extracted: markers covered by markers of other series are not
+  visible, so not extracted (each record lists the energies where another
+  series has a marker and it has none). The worst cases: V5 medium has no
+  visible marker above 1.3 TeV (Figure 1b, under the V6 triangles); soft
+  cuts in Figures 4, 5a and 5b, where the three curves overlap above about
+  0.3-1 TeV (soft bias: 5 points; soft resolution: 8 of 16). Markers
+  partly covered are placed by their visible part when at least 30 % is
+  visible. No point outside the axes was found. Error bars and the hatched
+  bands of Figures 1 and 6 are not extracted: the paper does not say what
+  the bands show, and most error bars are hidden by the markers.
+  Not extracted: Figure 2a (energy threshold versus zenith angle: the
+  database has no quantity for a curve versus zenith), Figures 2b and 3
+  (sensitivity in sigma per square root of hour for a 1 % Crab source versus
+  zenith angle and wobble offset: not a database quantity), and the numbers
+  of the text (energy range 85 GeV to above 30 TeV, 1 % Crab in 25 h,
+  angular resolution below 0.1 deg at 1 TeV, energy resolution 15-20 %
+  rising to 25 % at 10 TeV, 10-25 % less observation time with the BDTs).
+  Unknown or unstated: the analysis package of Figures 1-5 (two VERITAS
+  packages exist; the paper only says the cuts were cross-checked with the
+  other one); the cut values; the number of OFF regions and any
+  signal/background condition of the sensitivity; azimuth, offset and Moon
+  conditions; the elevation of the Figure 6 data ('high elevation'); the
+  energy type of the sensitivity bins (reconstructed, since they are
+  measured on data, but not stated).
+  Inconsistencies: Figure 6 uses 'the same conditions described in
+  Section 3' (four bins per decade), but its markers are five per decade
+  (bins_per_decade unknown). The text says soft cuts give the highest
+  sensitivity at a few hundred GeV, but in Figure 1a the medium cuts are
+  better than the soft cuts at 237 GeV (0.0149 vs 0.0192 C.U.); the soft
+  curve only reaches the lowest energy (133 GeV). The text says the BDT
+  improvement is seen over the whole energy range, but at 1.57 TeV the BDT
+  point is above the box-cut point (0.0169 vs 0.0156 C.U.). The site
+  latitude printed in the paper (30 deg 40' N) is one degree off the
+  VERITAS web page (31 deg 40' N).
+  Checks run by extract.py: md5 of the PDF; the V6 medium curve of Figures
+  1a and 1b agree within one pixel; energy bias and resolution share their
+  true energy bins; every energy resolution value is within one pixel of a
+  multiple of 0.02; hard cuts give the best sensitivity above 600 GeV and
+  not at 420 GeV; the soft curve reaches the lowest energy; the best
+  differential sensitivity is about 1 % C.U.; medium and hard angular
+  resolutions are below 0.1 deg at 1 TeV (the soft marker there is
+  covered); energy resolution between 0.14 and 0.20 (median, 0.3-3 TeV)
+  and 0.2-0.3 near 10 TeV; |bias| below 0.1 between 0.5 and 20 TeV; the
+  largest BDT gain is at the lowest energies.

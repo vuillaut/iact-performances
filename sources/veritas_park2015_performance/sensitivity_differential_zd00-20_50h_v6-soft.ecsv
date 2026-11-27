@@ -1,0 +1,49 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: CU, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: veritas-standard
+#     conditions:
+#       analysis_details: 'VERITAS standard analysis (Daniel et al. 2007): moment analysis, box cuts on scaled parameters, energy from
+#         look-up tables. The paper does not say which of the two VERITAS analysis packages made this figure; the cuts were used ''after
+#         consistency check with an independent analysis package''. Events with a small energy bias selected for the sensitivity calculation.'
+#       azimuth: unknown
+#       cuts: 'soft cuts: box cuts optimised for sources with a spectral index of -3.5 to -4.0, with a low energy threshold (cut values
+#         not given in the paper)'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [0 deg, 20 deg]
+#     configuration: v6
+#     crab_reference: veritas_park2015_observed
+#     data_kind: real_data
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: veritas
+#     label: VERITAS V6 differential sensitivity (5 sigma, 50 h), soft cuts, Crab data at elevation above 70 deg
+#     notes: 'Differential sensitivity from Crab Nebula data with elevation higher than 70 deg: the strength of a source, as a fraction
+#       of the Crab Nebula flux in each energy bin, detected at 5 sigma in 50 h (Li & Ma, at least 10 excess events per bin, four bins
+#       per decade). The energy is the position of the marker; the paper does not give the bin edges. The energy type is not stated: the
+#       bins of a sensitivity measured on data can only be in reconstructed energy. The error bars and the hatched bands are not extracted
+#       (the paper does not say what they show).'
+#     observation_time: 50 h
+#     provenance: {digitization_uncertainty: 'Marker centres placed to about 1 pixel of the 796 x 574 pixel bitmap: 0.0036 in log10(E/TeV)
+#         (0.84 %), 0.005 in log10 of the value (1.2 %). Axis calibration on the tick marks: largest residual 0.55 pixel (x), 0.51 pixel
+#         (y).', location: 'Figure 1 (a), page 3', method: raster_digitized, original_column: 'Source strength (Crab Unit); blue circles
+#         (legend: V6, Soft cuts)'}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 4.0, min_excess: 10.0, min_signal_to_background: unknown, n_off_regions: unknown, significance: 5.0,
+#       significance_formula: li_ma_eq17}
+# schema: astropy-2.0
+energy value
+0.133 0.0291
+0.237 0.0192
+0.42 0.0167
+0.753 0.0169
+1.34 0.0199
+2.37 0.0297
+4.21 0.0542
+7.48 0.12

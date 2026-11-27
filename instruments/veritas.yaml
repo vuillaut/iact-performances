@@ -1,0 +1,44 @@
+schema_version: "0.2"
+id: veritas
+name: VERITAS
+type: IACT
+site:
+  name: Fred Lawrence Whipple Observatory, southern Arizona
+  altitude: 1268 m
+configurations:
+  - id: v4
+    description: >-
+      Four 12 m telescopes in the original array layout, before the
+      relocation of telescope 1 ("V4" epoch of Park et al. 2015). 499-pixel
+      PMT cameras with a 3.5 deg field of view; an array trigger needs at
+      least two of the four telescopes.
+    mode: stereo
+    n_telescopes: 4
+    period_start: "2007-09-01"
+    period_end: "2009-08-31"
+  - id: v5
+    description: >-
+      Four telescopes after the relocation of telescope 1 in 2009, which made
+      the array more symmetric, and before the camera upgrade ("V5" epoch of
+      Park et al. 2015).
+    mode: stereo
+    n_telescopes: 4
+    period_start: "2009-09-01"
+    period_end: "2012-08-31"
+  - id: v6
+    description: >-
+      Four telescopes after the 2012 camera upgrade, which replaced the PMTs
+      with high quantum efficiency PMTs (about 50 % more Cherenkov photons
+      collected) ("V6" epoch of Park et al. 2015, ongoing at the time of
+      that paper).
+    mode: stereo
+    n_telescopes: 4
+    period_start: "2012-09-01"
+references:
+  - 10.22323/1.236.0771
+notes: >-
+  Epoch dates and hardware facts from Park et al. 2015 (ICRC, PoS 236, 771).
+  Site latitude and longitude are left out: the paper prints 30 deg 40' N,
+  110 deg 57' W, but the VERITAS specifications page
+  (veritas.sao.arizona.edu, accessed 2026-11-27) gives 31 deg 40' 30.21" N,
+  110 deg 57' 7.77" W; the two disagree by one degree in latitude.
