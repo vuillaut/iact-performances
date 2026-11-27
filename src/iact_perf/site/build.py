@@ -165,7 +165,6 @@ Crab spectrum of their source (noted under the plot).
 </div>
 
 <script src="{PLOTLY}" charset="utf-8"></script>
-<script src="../assets/compare.js"></script>
 """
 
 
@@ -288,6 +287,10 @@ def _zensical_toml(db: Database, repo_url: str | None) -> str:
         "docs_dir": "docs",
         "site_dir": "site",
         "extra_css": ["assets/compare.css"],
+        # declared here, not in compare.md: Zensical resolves these paths against
+        # the site root, while a <script src> in Markdown is not reliably rewritten
+        # (it broke the page when served under /iact-performances/)
+        "extra_javascript": ["assets/compare.js"],
         "nav": [
             {"Home": "index.md"},
             {"Compare": "compare.md"},

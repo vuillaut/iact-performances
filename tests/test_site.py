@@ -77,6 +77,11 @@ def test_build_project(tmp_path):
         assert (docs / "sources" / f"{slug}.md").exists()
         assert list((docs / "data" / "sources" / slug).glob("*.ecsv"))
     assert (docs / "assets" / "compare.js").exists()
+    # the script must go through extra_javascript: a <script src> written in
+    # compare.md was resolved outside the site when it is served under a
+    # subpath (GitHub Pages)
+    assert "assets/compare.js" in config["extra_javascript"]
+    assert "compare.js" not in (docs / "compare.md").read_text()
 
 
 def test_crab_unit_group(data):
