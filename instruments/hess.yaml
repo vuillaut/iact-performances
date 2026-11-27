@@ -1,0 +1,34 @@
+schema_version: "0.2"
+id: hess
+name: H.E.S.S.
+type: IACT
+site:
+  name: Namibia
+configurations:
+  - id: hess1_stereo
+    description: >-
+      H.E.S.S. I four-telescope array (CT1-4),
+      stereoscopic analysis
+    mode: stereo
+    n_telescopes: 4
+  - id: hess2_mono
+    description: >-
+      H.E.S.S. II, monoscopic analysis: CT5 alone (the central telescope with
+      a mirror area of about 600 m2), images of the other telescopes removed
+    mode: mono
+    n_telescopes: 1
+  - id: hess2_stereo
+    description: >-
+      H.E.S.S. II five-telescope array (the four H.E.S.S. I telescopes CT1-4
+      and CT5), stereoscopic analysis of events with images in at least two
+      telescopes
+    mode: stereo
+    n_telescopes: 5
+references:
+  - 10.22323/1.236.0826
+notes: >-
+  A fifth telescope of about 600 m2 mirror area (CT5) was added to the centre
+  of the four H.E.S.S. I telescopes, making H.E.S.S. II the first operational
+  IACT array with several telescope designs (Parsons et al. 2015). Site
+  coordinates and commissioning dates are not given in the sources ingested so
+  far and are left out.

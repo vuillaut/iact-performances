@@ -38,11 +38,11 @@ def test_list(capsys):
 
 
 def test_new(repo_copy, capsys):
-    assert main(["--root", str(repo_copy), "new", "hess_doe2020_performance"]) == 0
-    src = repo_copy / "sources" / "hess_doe2020_performance"
+    assert main(["--root", str(repo_copy), "new", "veritas_doe2020_performance"]) == 0
+    src = repo_copy / "sources" / "veritas_doe2020_performance"
     assert (src / "source.yaml").exists() and (src / "extract.py").exists()
     out = capsys.readouterr().out
-    assert "instruments/hess.yaml does not exist" in out
+    assert "instruments/veritas.yaml does not exist" in out
     # the template must not pass validation before it is filled
     assert main(["--root", str(repo_copy), "validate"]) == 1
     assert main(["--root", str(repo_copy), "new", "Bad Slug"]) == 1

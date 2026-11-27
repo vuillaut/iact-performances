@@ -120,6 +120,11 @@ vector extraction (the points come from the drawn paths); the calibration is
 checked against something it did not use: a twin axis, a number quoted in the
 text. Contributors are responsible for checking their values.
 
+ROOT figures (TGraph plots drawn by ROOT and converted by Ghostscript) are read
+with `iact_perf.extract.rootpdf`: the points are the markers, each checked
+against a vertex of the polyline of its colour. ROOT rounds positions, so the
+axis fit has a tolerance in device units and values keep 3 significant digits.
+
 `iact-perf reproduce <slug>` runs `extract.py` (Python only) in a temporary
 directory and compares the output with the committed records. Contract: the
 script defines `extract(out: Path, cache_dir: Path | None = None)`, downloads

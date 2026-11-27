@@ -1,0 +1,44 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: impact
+#     conditions:
+#       analysis_details: ImPACT likelihood fit of events with images in at least two telescopes (CT5 and CT1-4, one template library
+#         per telescope type), seeded by the Hillas-parameter analysis, as for H.E.S.S. I; background rejection with box cuts on the mean
+#         scaled width and length (MSCW, MSCL)
+#       azimuth: unknown
+#       cuts: 'Table 1 (tab-cuts), ''ImPACT stereo'': Amp 70, 75, Npix n/a, Local distance 2 deg, 1.15 deg, theta^2 0.0075 deg^2, zeta
+#         n/a, MSCW < 0.6, MSCL < 1.9'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: hess2_stereo
+#     data_kind: monte_carlo
+#     definition: other
+#     energy_type: 'true'
+#     instrument: hess
+#     label: H.E.S.S. II ImPACT (stereo) energy bias, simulated gamma rays at 20 deg zenith
+#     notes: The paper does not define the energy bias (relative or absolute, mean or median), hence the definition 'other'. The y axis
+#       has no unit; the values range from -0.5 to 0.5, which suggests a relative bias.
+#     provenance: {location: 'Figure 3, left (fig-enperformance, file Ebias.pdf)', method: vector_figure, original_column: 'Energy Bias;
+#         green dashed curve with bold crosses (legend: Stereo)'}
+#     quantity: energy_bias
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.106 0.262
+0.15 0.169
+0.212 0.102
+0.298 0.0615
+0.422 0.0522
+0.596 0.0504
+0.843 0.0485
+1.19 0.0405
+1.68 0.0356
+2.37 0.022
+3.35 0.0103
+4.73 0.00594

@@ -1,0 +1,47 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: impact
+#     conditions:
+#       analysis_details: ImPACT likelihood fit of the CT5 images only (images of the other telescopes removed), templates from Monte
+#         Carlo simulations; seeded by a Hillas-parameter mono analysis (both head-tail solutions tried, the one of highest likelihood
+#         kept); two-step fit (first all parameters free except Xmax, fixed at its expectation for the current energy, then the source
+#         position fixed); background rejection with neural networks trained on Hillas parameters (Murach et al., ICRC 2015)
+#       azimuth: unknown
+#       cuts: 'Table 1 (tab-cuts), ''ImPACT mono Loose'': Amp 40, Npix 4, Local distance 1.15 deg, theta^2 0.045 deg^2, zeta > 0.44, MSCW
+#         n/a, MSCL n/a'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: hess2_mono
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: 'true'
+#     instrument: hess
+#     label: H.E.S.S. II ImPACT (mono, Loose cuts) angular resolution, 68% containment radius from a double Gaussian fit, simulated gamma
+#       rays at 20 deg zenith
+#     notes: 68% containment radius calculated from a double Gaussian fit (caption). The y axis has no unit; degrees come from the text
+#       (0.16 deg).
+#     provenance: {location: 'Figure 2, right (fig-performance, file PSF.pdf)', method: vector_figure, original_column: 'Angular Resolution
+#         (68% Containment); blue dashed curve with open triangles (legend: Loose Mono)'}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.0389 0.216
+0.0589 0.218
+0.0893 0.205
+0.135 0.197
+0.205 0.18
+0.31 0.158
+0.468 0.151
+0.709 0.142
+1.07 0.142
+1.62 0.155
+2.46 0.163
+3.72 0.172
+5.62 0.275

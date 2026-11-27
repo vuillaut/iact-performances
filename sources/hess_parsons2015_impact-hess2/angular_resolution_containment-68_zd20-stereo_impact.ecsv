@@ -1,0 +1,43 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: impact
+#     conditions:
+#       analysis_details: ImPACT likelihood fit of events with images in at least two telescopes (CT5 and CT1-4, one template library
+#         per telescope type), seeded by the Hillas-parameter analysis, as for H.E.S.S. I; background rejection with box cuts on the mean
+#         scaled width and length (MSCW, MSCL)
+#       azimuth: unknown
+#       cuts: 'Table 1 (tab-cuts), ''ImPACT stereo'': Amp 70, 75, Npix n/a, Local distance 2 deg, 1.15 deg, theta^2 0.0075 deg^2, zeta
+#         n/a, MSCW < 0.6, MSCL < 1.9'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: hess2_stereo
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: 'true'
+#     instrument: hess
+#     label: H.E.S.S. II ImPACT (stereo) angular resolution, 68% containment radius from a double Gaussian fit, simulated gamma rays at
+#       20 deg zenith
+#     notes: 68% containment radius calculated from a double Gaussian fit (caption). The y axis has no unit; degrees come from the text
+#       (0.16 deg).
+#     provenance: {location: 'Figure 2, right (fig-performance, file PSF.pdf)', method: vector_figure, original_column: 'Angular Resolution
+#         (68% Containment); green dashed curve with bold crosses (legend: Stereo)'}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.135 0.111
+0.205 0.0946
+0.31 0.0787
+0.468 0.0655
+0.709 0.0557
+1.07 0.0517
+1.62 0.0481
+2.46 0.0472
+3.72 0.0422
+5.62 0.0417

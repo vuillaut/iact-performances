@@ -1,0 +1,46 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: impact
+#     conditions:
+#       analysis_details: ImPACT likelihood fit of the CT5 images only (images of the other telescopes removed), templates from Monte
+#         Carlo simulations; seeded by a Hillas-parameter mono analysis (both head-tail solutions tried, the one of highest likelihood
+#         kept); two-step fit (first all parameters free except Xmax, fixed at its expectation for the current energy, then the source
+#         position fixed); background rejection with neural networks trained on Hillas parameters (Murach et al., ICRC 2015)
+#       azimuth: unknown
+#       cuts: 'Table 1 (tab-cuts), ''ImPACT mono Std'': Amp 60, Npix 6, Local distance 1.15 deg, theta^2 0.024 deg^2, zeta > 0.78, MSCW
+#         n/a, MSCL n/a'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: hess2_mono
+#     data_kind: monte_carlo
+#     definition: other
+#     energy_type: 'true'
+#     instrument: hess
+#     label: H.E.S.S. II ImPACT (mono, Std cuts) energy resolution, simulated gamma rays at 20 deg zenith
+#     notes: The paper does not define the energy resolution (Gaussian sigma, RMS or 68% interval of the relative error), hence the definition
+#       'other'. The y axis has no unit; the values range from 0.08 to 0.3, which suggests a relative resolution.
+#     provenance: {location: 'Figure 3, right (fig-enperformance, file Eres.pdf)', method: vector_figure, original_column: 'Energy Resolution;
+#         red dashed curve with open squares (legend: Std Mono)'}
+#     quantity: energy_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.0751 0.229
+0.106 0.247
+0.15 0.245
+0.212 0.244
+0.298 0.233
+0.422 0.23
+0.596 0.225
+0.843 0.233
+1.19 0.225
+1.68 0.208
+2.37 0.208
+3.35 0.26
+4.73 0.302

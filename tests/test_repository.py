@@ -39,9 +39,9 @@ def test_detects_forbidden_files(repo_copy):
 
 def test_detects_bad_slug_and_unknown_instrument(repo_copy):
     src = repo_copy / "sources" / "magic_aleksic2016_performance-upgrade"
-    src.rename(repo_copy / "sources" / "hess_aleksic2016_performance")
+    src.rename(repo_copy / "sources" / "veritas_aleksic2016_performance")
     errors = validate_repository(repo_copy)
-    assert any("slug starts with 'hess'" in e for e in errors)
+    assert any("slug starts with 'veritas'" in e for e in errors)
 
 
 def test_detects_unknown_analysis_and_old_schema(repo_copy):

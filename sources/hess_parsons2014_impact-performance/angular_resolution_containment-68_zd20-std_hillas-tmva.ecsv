@@ -1,0 +1,49 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: hillas-tmva
+#     conditions:
+#       analysis_details: Monte Carlo simulations of the four-telescope H.E.S.S. array with mirrors at 70% of their nominal optical efficiency
+#         (roughly the state of the array when written). Standard H.E.S.S. Hillas-parameter reconstruction with multivariate (TMVA boosted
+#         decision trees) background rejection (Ohm et al. 2009); standard cuts, optimised for a source of 10% Crab strength with an E^-2.6
+#         spectrum
+#       azimuth: unknown
+#       cuts: 'Table 1 (tab-cuts), ''Hillas Std'': Amp 60 p.e., theta^2 0.0125 deg^2, zeta 0.84; image centroid within 2 deg of the camera
+#         centre (text)'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: hess1_stereo
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: 'true'
+#     instrument: hess
+#     label: H.E.S.S. I Hillas, standard cuts angular resolution (68% containment radius), simulated gamma rays at 20 deg zenith
+#     notes: 'Caption: ''Angular resolution (68% containment radius) of the ImPACT method versus simulated energy at 20 deg zenith angle
+#       (left)''. The spectrum average of the caption (''averaging over a spectrum of the form dN/dE ~ E^-2'') is stated for the zenith-angle
+#       panel; the paper does not say if it also applies to the energy panel.'
+#     provenance: {location: 'Figure 4, left (fig-angZen, file Ang68.eps)', method: vector_figure, original_column: 'Angular Resolution
+#         (deg); black curve with open circles (legend: Hillas std)'}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.126 0.148
+0.199 0.125
+0.316 0.109
+0.501 0.0964
+0.795 0.0899
+1.26 0.086
+2.0 0.0794
+3.17 0.0721
+5.02 0.0616
+7.95 0.0553
+12.6 0.0524
+20.0 0.0519
+31.7 0.0504
+50.2 0.049
+79.3 0.0561

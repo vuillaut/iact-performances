@@ -1,0 +1,46 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: impact
+#     conditions:
+#       analysis_details: ImPACT likelihood fit of the CT5 images only (images of the other telescopes removed), templates from Monte
+#         Carlo simulations; seeded by a Hillas-parameter mono analysis (both head-tail solutions tried, the one of highest likelihood
+#         kept); two-step fit (first all parameters free except Xmax, fixed at its expectation for the current energy, then the source
+#         position fixed); background rejection with neural networks trained on Hillas parameters (Murach et al., ICRC 2015)
+#       azimuth: unknown
+#       cuts: 'Table 1 (tab-cuts), ''ImPACT mono Std'': Amp 60, Npix 6, Local distance 1.15 deg, theta^2 0.024 deg^2, zeta > 0.78, MSCW
+#         n/a, MSCL n/a'
+#       moon: unknown
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: hess2_mono
+#     data_kind: monte_carlo
+#     definition: other
+#     energy_type: 'true'
+#     instrument: hess
+#     label: H.E.S.S. II ImPACT (mono, Std cuts) effective area, simulated gamma rays at 20 deg zenith
+#     notes: The y axis has no unit; m2 comes from the text ('10^4 m2 of effective area'). The paper does not say whether the theta^2
+#       cut of Table 1 is applied to the effective area, hence the definition 'other'.
+#     provenance: {location: 'Figure 2, left (fig-performance, file Aeff.pdf)', method: vector_figure, original_column: 'Effective Area;
+#         red dashed curve with open squares (legend: Std Mono)'}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.0327 253.0
+0.0493 2780.0
+0.0746 12500.0
+0.113 28100.0
+0.17 40100.0
+0.257 51000.0
+0.388 58200.0
+0.587 63100.0
+0.885 64400.0
+1.34 66100.0
+2.02 56300.0
+3.05 46400.0
+4.6 40100.0

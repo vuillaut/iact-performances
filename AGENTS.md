@@ -65,6 +65,7 @@ then extract each from the best available form, in this order:
 | Table in the arXiv LaTeX source | `latex_table` | `iact_perf.extract.latex` |
 | Table in a PDF only | `pdf_table` | a PDF table parser called from `extract.py` |
 | Vector figure (PDF/EPS paths) | `vector_figure` | `iact_perf.extract.vector` (matplotlib PDF figures) |
+| Vector figure made by ROOT (TGraph with markers) | `vector_figure` | `iact_perf.extract.rootpdf` (markers are the points; no twin axis, so check against numbers of the text; 3 significant digits) |
 | Raster figure | `raster_digitized` | no shared tool yet: stop and ask |
 
 When a value exists both in a table and in a figure, use the table.

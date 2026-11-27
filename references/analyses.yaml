@@ -26,11 +26,25 @@ analyses:
     name: ImPACT
     description: >-
       Image Pixel-wise fit for Atmospheric Cherenkov Telescopes: likelihood
-      fit of the camera images to shower templates, with an analytical
-      convolved pixel charge PDF.
+      fit of the camera images to image templates generated from Monte Carlo
+      simulations (Parsons and Hinton 2014). Variants and settings (mono or
+      stereo fit for H.E.S.S. II, analytical convolved pixel charge PDF in
+      Schwefer et al. 2024) are given in the record conditions.
     references:
       - 10.1016/j.astropartphys.2014.03.002
       - 10.1016/j.astropartphys.2024.103008
+      - 10.22323/1.236.0826
+
+  - id: hillas-tmva
+    name: H.E.S.S. Hillas reconstruction with TMVA background rejection
+    description: >-
+      H.E.S.S. stereoscopic reconstruction from the Hillas parameters of the
+      cleaned images, with gamma/hadron separation by boosted decision trees
+      (TMVA) trained on Monte Carlo gamma rays and off-source data
+      (Ohm et al. 2009). The cut set (standard, hard) is given in the record
+      conditions.
+    references:
+      - 10.1016/j.astropartphys.2009.04.001
 
   - id: freepact
     name: FreePACT

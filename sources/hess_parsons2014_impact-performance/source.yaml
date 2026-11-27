@@ -1,0 +1,78 @@
+schema_version: "0.2"
+title: A Monte Carlo template based analysis for air-Cherenkov arrays
+authors: ["Parsons, R. D.", "Hinton, J. A."]
+year: 2014
+doi: 10.1016/j.astropartphys.2014.03.002
+arxiv: "1403.2993"
+ads_bibcode: 2014APh....56...26P
+source_type: article
+refereed: true
+instruments: [hess]
+reproducible: true
+notes: >-
+  Astroparticle Physics 56, 26 (2014): the ImPACT reconstruction (likelihood
+  fit of camera images to Monte Carlo image templates), compared with the
+  standard H.E.S.S. Hillas reconstruction with TMVA background rejection,
+  standard and hard cuts. The performance values exist only as ROOT figures
+  (EPS files of ROOT 5.28 in the arXiv source). extract.py converts them to
+  PDF with Ghostscript (gs must be installed) and reads them with
+  iact_perf.extract.rootpdf: the data points are the markers of the TGraphs,
+  the axes are calibrated on the tick labels.
+  Extracted: Figure 4 left (angular resolution as 68 % containment radius,
+  20 deg zenith), Figure 5 (energy bias and energy resolution), Figure 6
+  right (effective area), all versus the simulated (true) gamma-ray energy,
+  for ImPACT with standard cuts, Hillas with standard cuts and Hillas with
+  hard cuts, for the four-telescope H.E.S.S. I array simulated with mirrors at
+  70 % of their nominal optical efficiency. Records are named
+  <quantity>_[zd20-]std|hard_<analysis>. The figures have no error bars, so
+  the records have none.
+  Precision: the ROOT file stores positions to 0.05 pt and the tick marks are
+  off by up to 0.25 pt, so values are good to about 1 part in 4000 of the axis
+  range; they are rounded to 3 significant digits, not the usual 6.
+  Points outside the axes: ROOT draws no marker outside the frame, so such
+  points are not in the file and cannot be counted. The bias panel lacks the
+  lowest-energy point of Hillas std (0.126 TeV) and Hillas hard (0.199 TeV),
+  which the resolution panel has. They are probably above the visible range
+  of the bias axis (it ends at 0.3, the next points are 0.19 to 0.22): the
+  file does not say. The line of each curve continues to the frame edge (clipped
+  vertices, not data points, not extracted).
+  Unknown or unstated: the zenith angle of the energy bias, energy resolution
+  and effective area figures (only Figure 4 states 20 deg); azimuth, offset,
+  Moon and NSB of the simulations; whether the theta^2 cut of Table 1 is
+  applied to the effective area (definition recorded as other). The y axes of
+  Figures 4 to 6 carry units in their titles (deg, m^2) except the energy
+  bias and resolution, which are fractional (dimensionless, text). The energy
+  bias is the mean and the energy resolution the RMS of the fractional
+  deviation of reconstructed from simulated energy (text of the Energy
+  Resolution subsection). Table 1 gives the cuts (Amp in p.e., theta^2, zeta)
+  and the text a 2 deg cut on the image centroid; they are copied in the
+  conditions of each record.
+  Disagreements between the figures and the text, kept as published: (1) the
+  text says the ImPACT effective area is less than 10 % below Hillas std across
+  the full energy range; two of 38 points are lower (0.896 of Hillas std at
+  0.24 TeV, 0.833 at 66 TeV, the latter a noisy bin). (2) The text says the
+  energy resolution is lower than the Hillas ones at all energies, with an
+  improvement of around 50 % at low energy; the figure shows the improvement
+  over Hillas std is 21 % in the first bin (0.126 TeV) and at most 37 % (0.5
+  TeV), and in the last bin (79 TeV) ImPACT is slightly worse (0.108 against
+  0.104 and 0.098).
+  Not extracted: Figure 4 right (angular resolution versus zenith angle) and
+  Figure 7 (observation time versus source strength): the x axis is not an
+  energy and rootpdf does not read it. Figure 6 left (Xmax reconstruction),
+  Figures 1 to 3 (templates, likelihood surface, goodness of fit), Figures 8
+  and 9 and Table 2 (PKS 2155-304 data, theta^2 distribution, flux ratio):
+  not performance curves of the database. The Figure 10 curves (angular
+  resolution and effective area at zenith with 100 % nominal optical
+  efficiency, standard cuts, ImPACT, Hillas and the model analysis) are left
+  out: the zenith angle is only given as 'at zenith', the model curve is
+  reproduced from de Naurois and Rolland 2009 (another source) and the
+  ImPACT and Hillas curves are the same analyses at another mirror efficiency;
+  they can be added if wanted.
+  Checks against the text (run at every extraction): ImPACT effective area
+  within about 10 % of Hillas std; ImPACT angular resolution below both Hillas
+  ones; ImPACT energy bias below 5 % above 500 GeV; ImPACT energy resolution
+  below both Hillas ones except in the last bin, with a gain above 30 % at
+  low energy. The legend of EnRes.eps is missing in the file; its curves are
+  identified by the colour and shape of the markers of EnBias.eps, the other
+  panel of Figure 5, and the energies of both files coincide where both have
+  a point.

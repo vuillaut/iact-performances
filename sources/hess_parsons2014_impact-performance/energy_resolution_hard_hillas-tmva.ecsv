@@ -1,0 +1,41 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: hillas-tmva
+#     conditions: {analysis_details: 'Monte Carlo simulations of the four-telescope H.E.S.S. array with mirrors at 70% of their nominal
+#         optical efficiency (roughly the state of the array when written). Standard H.E.S.S. Hillas-parameter reconstruction with multivariate
+#         (TMVA boosted decision trees) background rejection (Ohm et al. 2009); hard cuts, optimised for a source of 1% Crab strength
+#         with an E^-2 spectrum', azimuth: unknown, cuts: 'Table 1 (tab-cuts), ''Hillas Hard'': Amp 160 p.e., theta^2 0.01 deg^2, zeta
+#         0.89; image centroid within 2 deg of the camera centre (text)', moon: unknown, offset: unknown, zenith_range: unknown}
+#     configuration: hess1_stereo
+#     data_kind: monte_carlo
+#     definition: rms
+#     energy_type: 'true'
+#     instrument: hess
+#     label: H.E.S.S. I Hillas, hard cuts energy resolution, simulated gamma rays
+#     notes: 'RMS of the fractional deviation of the reconstructed energy from the simulated energy (text: ''... shows the mean (energy
+#       bias) and RMS (energy resolution) of this distribution''). The paper does not give the zenith angle of the figure.'
+#     provenance: {location: 'Figure 5, right (fig-Eres, file EnRes.eps)', method: vector_figure, original_column: 'Energy Resolution;
+#         blue curve with open triangles (legend: Hillas hard)'}
+#     quantity: energy_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.199 0.174
+0.316 0.172
+0.501 0.167
+0.795 0.146
+1.26 0.127
+2.0 0.12
+3.17 0.12
+5.02 0.12
+7.95 0.123
+12.6 0.129
+20.0 0.141
+31.7 0.129
+50.2 0.127
+79.3 0.0983

@@ -1,0 +1,42 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: hillas-tmva
+#     conditions: {analysis_details: 'Monte Carlo simulations of the four-telescope H.E.S.S. array with mirrors at 70% of their nominal
+#         optical efficiency (roughly the state of the array when written). Standard H.E.S.S. Hillas-parameter reconstruction with multivariate
+#         (TMVA boosted decision trees) background rejection (Ohm et al. 2009); standard cuts, optimised for a source of 10% Crab strength
+#         with an E^-2.6 spectrum', azimuth: unknown, cuts: 'Table 1 (tab-cuts), ''Hillas Std'': Amp 60 p.e., theta^2 0.0125 deg^2, zeta
+#         0.84; image centroid within 2 deg of the camera centre (text)', moon: unknown, offset: unknown, zenith_range: unknown}
+#     configuration: hess1_stereo
+#     data_kind: monte_carlo
+#     definition: mean
+#     energy_type: 'true'
+#     instrument: hess
+#     label: H.E.S.S. I Hillas, standard cuts energy bias, simulated gamma rays
+#     notes: 'Mean of the fractional deviation of the reconstructed energy from the simulated energy (text: ''fractional deviation of
+#       the reconstructed energy from the simulated energy ... shows the mean (energy bias)''). The paper does not give the zenith angle
+#       of the figure.'
+#     provenance: {location: 'Figure 5, left (fig-Eres, file EnBias.eps)', method: vector_figure, original_column: 'Energy Bias; black
+#         curve with open circles (legend: Hillas std)'}
+#     quantity: energy_bias
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.199 0.187
+0.316 0.0283
+0.501 0.00502
+0.795 -0.00275
+1.26 -0.00312
+2.0 0.000211
+3.17 0.0065
+5.02 0.00687
+7.95 0.00835
+12.6 0.00539
+20.0 0.0065
+31.7 -0.00682
+50.2 -0.0046
+79.3 -0.0764
