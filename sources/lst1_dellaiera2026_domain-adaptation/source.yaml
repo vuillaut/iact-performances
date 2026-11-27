@@ -1,0 +1,54 @@
+schema_version: "0.2"
+title: >-
+  Unsupervised domain adaptation for multitask image analysis in realistic
+  context with extreme label shift; Application to the CTAO first large sized
+  telescope
+authors: ["Dell'aiera, M.", "Vuillaume, T.", "Benoit, A."]
+year: 2026
+doi: 10.1016/j.ascom.2026.101176
+arxiv: "2608.09630"
+source_type: article
+refereed: true
+instruments: [lst1]
+reproducible: true
+notes: >-
+  The paper itself publishes its LST-1 metrics integrated over energy
+  (Tables 4-7: AUC, angular resolution, energy resolution, bias); those
+  scalars are not extracted: AUC is not a performance quantity of this
+  database, the integrated resolutions and bias are single values with an
+  integration method the paper does not state, and no energy-resolved curve
+  is printed in the article. The paper refers the reader to its
+  supplementary data repository for the energy-resolved IRFs, which is where
+  the values below come from (GitLab tag v2.1.0, archived as 10.5281/zenodo.21824932, the
+  supplementary material of the published article; extract.py downloads only
+  the 5 vanilla IRF files from the pinned commit and checks their sha256;
+  they are byte-identical to the Zenodo archive and to the earlier 2024 record
+  10.5281/zenodo.13646001). Extracted: the IRFs of the vanilla gamma-PhysNet
+  "best scenario" (clean simulations, no added noise), the curves the
+  repository's "Comparison with lstchain" page is made of - angular
+  resolution (68 % containment, top 70 % gammaness), energy resolution
+  (68 % containment of the absolute relative energy error), energy bias
+  (median) and effective area (direction cut + 70 % gammaness cut), versus
+  true energy, 5 bins per decade from 0.02 to 20 TeV. Each curve is the
+  merging of 5 training seeds exactly as the published figures merge them:
+  the mean, with the min-max band over the seeds as errors. The under- and
+  overflow bins are dropped, as in every published curve. Not extracted:
+  the worst-scenario IRFs (degraded simulations) and every UDA
+  configuration of the archive (DANN, DeepCORAL, DeepJDOT and their
+  conditional and gradient-layer variants, NSB and label-shift ablations);
+  the AUC-per-energy HDU of the files; the digits benchmark; the integrated
+  metrics of the paper's tables (see above). The lstchain curves the
+  comparison page draws against these IRFs come from Abe et al. 2023
+  (zenith 23.63 deg, 70 % gamma efficiency) and are already in this
+  database as lst1_abe2023_crab-performance; they are not re-extracted
+  here. Caveats stated by the comparison page: the lstchain IRFs are for
+  zenith 23.63 deg while gamma-PhysNet uses 20 deg, and Abe et al. removed
+  wrong head-tail events when computing their angular resolution, which
+  flattens their curve at low energies and is not possible here. The
+  "dark" Moon condition means the simulations carry their intrinsic
+  night-sky background only (best scenario, no added noise). Judgement
+  call: the paper's text calls the energy resolution "one standard
+  deviation", but the values are computed as the 68 % containment of the
+  absolute relative energy error (pyirf energy_resolution_absolute_68, the
+  same estimator as Abe et al. 2023); the records follow the computation
+  (containment_68).

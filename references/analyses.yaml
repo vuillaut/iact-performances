@@ -90,6 +90,18 @@ analyses:
     references:
       - 10.3847/1538-4357/ace89d
 
+  - id: gphysnet
+    name: gamma-PhysNet (GammaLearn)
+    description: >-
+      Multitask deep-learning full-event reconstruction of GammaLearn for the
+      LST-1: a ResNet backbone with attention feeding heads for the particle
+      class, energy, arrival direction and impact point. The training variant
+      (vanilla or a domain-adaptation method) is given in the record
+      conditions.
+    references:
+      - 10.1109/CBMI50038.2021.9461918
+      - 10.1016/j.ascom.2026.101176
+
   - id: lstchain-srcdep
     name: cta-lstchain source-dependent analysis
     description: >-

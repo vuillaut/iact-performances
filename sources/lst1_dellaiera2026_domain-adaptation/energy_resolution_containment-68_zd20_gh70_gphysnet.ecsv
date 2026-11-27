@@ -1,0 +1,53 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# - {name: value_err_low, unit: '', datatype: float64}
+# - {name: value_err_high, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: gphysnet
+#     conditions:
+#       analysis_details: GammaLearn v0.14.0, gamma-PhysNet multitask network (3.5 M parameters), vanilla version (no domain adaptation)
+#         trained on clean Prod5 LST-1 mono-trigger simulations (CORSIKA + sim_telarray, dl1 charge integration), training run R_1974,
+#         test run R_1975 of the provenance report of the archive; IRFs computed with pyirf (girfs v0.1.0) on the labelled test simulations
+#         (1.1 M point-source gammas, 0.76 M protons); value is the mean over 5 training seeds, the errors the min-max band over the seeds
+#       azimuth: 180 deg
+#       cuts: gammaness cut keeping 70 % of the MC gamma rays in each bin of true energy
+#       moon: dark
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: mono
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: 'true'
+#     instrument: lst1
+#     label: LST-1 energy resolution, 68 % containment of |E_R - E_T|/E_T, gamma-PhysNet vanilla, clean simulations, zenith 20 deg
+#     notes: The value is the mean over the 5 training seeds of the archive; the errors are the min-max band over the seeds, as in the
+#       published figures.
+#     provenance: {location: 'Supplementary repository of the paper, ''Comparison with lstchain'' page (irfs_vs_lstchain), drawn from
+#         these files; GitLab repository https://gitlab.in2p3.fr/gammalearn/publications/2024_domain_adaptation_methods, tag v2.1.0 (archived
+#         as 10.5281/zenodo.21824932): irfs/vanilla/best_scenario/seed_0..4/irfs.fits.gz, HDU ENERGY_BIAS_RESOLUTION', method: official_data_file,
+#       original_column: 'resolution [], merged over the 5 seeds'}
+#     quantity: energy_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy energy_min energy_max value value_err_low value_err_high
+0.025848931924611136 0.020000000000000004 0.03169786384922227 0.3642467159179942 0.015689483082008293 0.025317564879689503
+0.040967796239706936 0.03169786384922227 0.050237728630191596 0.3020392459384908 0.005263061473895048 0.0048035480127272545
+0.06492958137044552 0.050237728630191596 0.07962143411069944 0.2753728262963116 0.003945657084302334 0.0043112228572518285
+0.10290645150336902 0.07962143411069944 0.1261914688960386 0.23973457866580117 0.0022050336311886243 0.0031956192266876793
+0.16309573444801934 0.1261914688960386 0.20000000000000004 0.21427175253509248 0.002834484034125867 0.003483130150588293
+0.2584893192461113 0.20000000000000004 0.3169786384922226 0.19499717229934918 0.002532972176632481 0.0027473761079453984
+0.409677962397069 0.3169786384922226 0.5023772863019155 0.18065101249338184 0.003516504032619966 0.0028823101479918123
+0.6492958137044547 0.5023772863019155 0.796214341106994 0.17243211104060377 0.005033657886122422 0.003074167406043188
+1.0290645150336901 0.796214341106994 1.2619146889603863 0.17224933366353706 0.00383969994838837 0.003952824859531134
+1.6309573444801924 1.2619146889603863 1.9999999999999982 0.17843593549431136 0.0034765189364133198 0.003940384139592384
+2.5848931924611103 1.9999999999999982 3.1697863849222223 0.18942138922750645 0.005411421655608012 0.007296923037379388
+4.096779623970688 3.1697863849222223 5.023772863019155 0.20813063685267 0.008280601125923964 0.007158582494288662
+6.492958137044547 5.023772863019155 7.962143411069939 0.2354960148965421 0.022601772972334316 0.010902156331021123
+10.290645150336887 7.962143411069939 12.619146889603835 0.26504601000931405 0.017139718590729824 0.020892208302893067
+16.3095734448019 12.619146889603835 19.99999999999996 0.2913613296075269 0.01735054292643634 0.014846349604947795

@@ -1,0 +1,53 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: m2, datatype: float64}
+# - {name: value_err_low, unit: m2, datatype: float64}
+# - {name: value_err_high, unit: m2, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: gphysnet
+#     conditions:
+#       analysis_details: GammaLearn v0.14.0, gamma-PhysNet multitask network (3.5 M parameters), vanilla version (no domain adaptation)
+#         trained on clean Prod5 LST-1 mono-trigger simulations (CORSIKA + sim_telarray, dl1 charge integration), training run R_1974,
+#         test run R_1975 of the provenance report of the archive; IRFs computed with pyirf (girfs v0.1.0) on the labelled test simulations
+#         (1.1 M point-source gammas, 0.76 M protons); value is the mean over 5 training seeds, the errors the min-max band over the seeds
+#       azimuth: 180 deg
+#       cuts: gammaness cut keeping 70 % of the MC gamma rays in each bin of true energy; direction cut keeping 70 % of the gamma rays
+#         in each bin of true energy
+#       moon: dark
+#       offset: unknown
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: mono
+#     data_kind: monte_carlo
+#     definition: direction_cut
+#     energy_type: 'true'
+#     instrument: lst1
+#     label: LST-1 effective area, after the direction and gammaness cuts, gamma-PhysNet vanilla, clean simulations, zenith 20 deg
+#     notes: The value is the mean over the 5 training seeds of the archive; the errors are the min-max band over the seeds, as in the
+#       published figures.
+#     provenance: {location: 'Supplementary repository of the paper, ''Comparison with lstchain'' page (irfs_vs_lstchain), drawn from
+#         these files; GitLab repository https://gitlab.in2p3.fr/gammalearn/publications/2024_domain_adaptation_methods, tag v2.1.0 (archived
+#         as 10.5281/zenodo.21824932): irfs/vanilla/best_scenario/seed_0..4/irfs.fits.gz, HDU EFFECTIVE_AREA', method: official_data_file,
+#       original_column: 'EFFAREA [m2], merged over the 5 seeds'}
+#     quantity: effective_area
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy_min energy_max value value_err_low value_err_high
+0.020000000000000004 0.03169786384922227 18026.95499703956 0.0 0.0
+0.03169786384922227 0.050237728630191596 37838.83256065353 0.0 0.0
+0.050237728630191596 0.07962143411069944 58406.16480929833 0.0 0.0
+0.07962143411069944 0.1261914688960386 79338.14685599251 0.0 0.0
+0.1261914688960386 0.20000000000000004 104937.56253645578 0.0 1.4551915228366852e-11
+0.20000000000000004 0.3169786384922226 136483.45170735137 0.0 0.0
+0.3169786384922226 0.5023772863019155 168729.61366108523 1.3814330458990298 5.525732183683431
+0.5023772863019155 0.796214341106994 197026.2504897099 0.0 0.0
+0.796214341106994 1.2619146889603863 225463.43999160716 0.0 0.0
+1.2619146889603863 1.9999999999999982 252513.3999193636 0.0 2.9103830456733704e-11
+1.9999999999999982 3.1697863849222223 263448.75485229684 0.0 0.0
+3.1697863849222223 5.023772863019155 289479.2947714553 0.0 0.0
+5.023772863019155 7.962143411069939 307066.69220115367 0.0 0.0
+7.962143411069939 12.619146889603835 301196.2538094895 0.0 0.0
+12.619146889603835 19.99999999999996 339049.35435105534 0.0 0.0
