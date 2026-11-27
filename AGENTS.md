@@ -66,7 +66,8 @@ then extract each from the best available form, in this order:
 | Table in a PDF only | `pdf_table` | a PDF table parser called from `extract.py` |
 | Vector figure (PDF/EPS paths) | `vector_figure` | `iact_perf.extract.vector` (matplotlib PDF figures) |
 | Vector figure made by ROOT (TGraph with markers) | `vector_figure` | `iact_perf.extract.rootpdf` (markers are the points; no twin axis, so check against numbers of the text; 3 significant digits) |
-| Raster figure | `raster_digitized` | no shared tool yet: stop and ask |
+| ROOT figure written by ROOT's own PDF driver (TGraphErrors, often included in a PoS PDF) | `vector_figure` | `iact_perf.extract.rootgraph` (`embedded_forms` reads the figures out of the paper PDF; points rebuilt from their error bars; a y error side smaller than the marker is not drawn; 4 significant digits) |
+| Raster figure (bitmap plot with markers, exact colours, e.g. ROOT PNG in a PDF) | `raster_digitized` | `iact_perf.extract.raster` (`pdf_images` reads the bitmaps out of the PDF; tick labels and legend texts typed in `extract.py` and checked against the ticks and legend colours; markers to about 1 pixel). JPEG or antialiased curves without markers: stop and ask |
 
 When a value exists both in a table and in a figure, use the table.
 
@@ -204,8 +205,21 @@ axis on its labelled ticks (the fit must be exact, or it raises), and
   the text or a table of the same paper, a value at a known point. Write the
   check into `extract.py` when you can.
 
-Raster figures need a digitizer with its own uncertainty
-(`provenance.digitization_uncertainty`); there is no shared tool yet.
+Raster figures are read with `iact_perf.extract.raster.RasterFigure`. The
+digitizer reads no text, so `extract.py` types the tick labels (`Axis`) and
+the legend texts as printed; this is the one place where you write numbers
+read from a figure, and the code checks them against the tick marks and the
+legend colours. Rules on top of the ones above:
+
+- **The calibration needs a check from the text.** A label list shifted by
+  one tick step or one decade passes the tick checks. Pin each axis with a
+  number of the text, or a property of the values (a grid, a curve drawn in
+  two figures).
+- **Covered markers are not values.** A marker hidden behind another series
+  is not found; one less than 30 % visible is dropped (`n_covered`). List
+  the energies with no visible marker in `notes` (see the VERITAS script).
+- **Uncertainty**: write it in `provenance.digitization_uncertainty` from
+  `Calibration.pixel_size`, and round with `Calibration.round` (one pixel).
 
 ### 8. Metadata checklist
 

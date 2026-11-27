@@ -23,3 +23,28 @@ spectra:
       cta-lstchain v0.9.9 give no analytic spectrum for its Crab units.
     reference: 10.3847/1538-4357/ace89d
     model: observed
+
+  - id: veritas_park2015_observed
+    description: >-
+      The Crab Nebula as observed by VERITAS in the same data set. The
+      differential sensitivities of Park et al. 2015 are computed on Crab
+      Nebula observations: the source strength is a fraction of the flux of
+      the Crab Nebula in each energy bin such that the source would be
+      detected at 5 sigma in 50 h. The paper gives no analytic Crab spectrum.
+    reference: 10.22323/1.236.0771
+    model: observed
+
+  - id: magic_albert2008
+    description: >-
+      Crab Nebula spectrum measured by MAGIC-I (60 GeV - 9 TeV), written as
+      dF/dE = f0 (E/300 GeV)^(a + b log10(E/300 GeV)) with
+      f0 = 6.0e-10 cm-2 s-1 TeV-1, a = -2.31, b = -0.26. Used for the Crab
+      guide lines of the ASTRI Mini-Array sensitivity figures (Lombardi et al.
+      2021).
+    reference: 10.1086/525270
+    model: log_parabola_log10
+    amplitude: 6.0e-10 cm-2 s-1 TeV-1
+    reference_energy: 300 GeV
+    index: 2.31
+    curvature: 0.26
+    energy_range: [60 GeV, 9 TeV]

@@ -1,0 +1,47 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: a-scisoft
+#     conditions:
+#       analysis_details: A-SciSoft 0.3.1 on Monte Carlo simulations (CORSIKA, sim_telarray) of the nine telescopes at the Teide site,
+#         nominal pointing (all telescopes to the same position), dark-sky night sky background; random forests for gamma/hadron separation
+#         and energy, direction from the intersection of the image major axes; background (protons, electrons) reweighted to measured
+#         spectra; results averaged between the azimuths 0 and 180 deg
+#       azimuth: average of 0 and 180 deg (pointing to geomagnetic North and South)
+#       cuts: cuts optimised on both the differential flux sensitivity and the angular resolution (exposure time not stated)
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: full_array
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: reconstructed
+#     instrument: astri-ma
+#     label: ASTRI Mini-Array on-axis angular resolution, cuts weighing sensitivity and resolution
+#     notes: 'Definition from the text: 68% gamma-ray containment radius. A line without markers or error bars: the energies are its vertices,
+#       which are the centres of the bins of the grey points (no bin edges given).'
+#     provenance: {location: 'Figure 3, left (figure3a.pdf)', method: vector_figure, original_column: 'Angular Resolution [deg]; dashed
+#         dark green line'}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy value
+0.3981 0.1766
+0.631 0.1149
+1.0 0.08389
+1.585 0.06582
+2.512 0.05218
+3.981 0.04272
+6.31 0.03702
+10.0 0.03181
+15.85 0.03104
+25.12 0.03048
+39.81 0.03077
+63.1 0.03198
+100.0 0.03863
+158.5 0.04187
+251.2 0.04254

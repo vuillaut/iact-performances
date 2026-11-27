@@ -1,0 +1,53 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: deg, datatype: float64}
+# - {name: value_err_low, unit: deg, datatype: float64}
+# - {name: value_err_high, unit: deg, datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: a-scisoft
+#     conditions:
+#       analysis_details: A-SciSoft 0.3.1 on Monte Carlo simulations (CORSIKA, sim_telarray) of the nine telescopes at the Teide site,
+#         nominal pointing (all telescopes to the same position), dark-sky night sky background; random forests for gamma/hadron separation
+#         and energy, direction from the intersection of the image major axes; background (protons, electrons) reweighted to measured
+#         spectra; results averaged between the azimuths 0 and 180 deg
+#       azimuth: average of 0 and 180 deg (pointing to geomagnetic North and South)
+#       cuts: cuts on background rejection, arrival direction and multiplicity optimised for the differential flux sensitivity in 50 h,
+#         in each energy bin and off-axis bin
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: full_array
+#     data_kind: monte_carlo
+#     definition: containment_68
+#     energy_type: reconstructed
+#     instrument: astri-ma
+#     label: ASTRI Mini-Array on-axis angular resolution, cuts optimised for the sensitivity in 50 h
+#     notes: 'Definition from the text: 68% gamma-ray containment radius. The paper notes that these cuts do not give the best resolution
+#       achievable. The y error bars are drawn on every point; the paper does not say what they represent.'
+#     observation_time: 50 h
+#     provenance: {location: 'Figure 3, left (figure3a.pdf)', method: vector_figure, original_column: 'Angular Resolution [deg]; dark
+#         grey points'}
+#     quantity: angular_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy energy_min energy_max value value_err_low value_err_high
+0.3981 0.3162 0.5012 0.1853 0.03633 0.03633
+0.631 0.5012 0.7943 0.1556 0.01802 0.01802
+1.0 0.7943 1.259 0.122 0.01306 0.01306
+1.585 1.259 1.995 0.09462 0.01023 0.01023
+2.512 1.995 3.162 0.06511 0.007165 0.007164
+3.981 3.162 5.012 0.05591 0.006431 0.006431
+6.31 5.012 7.943 0.0503 0.005471 0.005471
+10.0 7.943 12.59 0.0474 0.005973 0.005974
+15.85 12.59 19.95 0.04662 0.006351 0.006352
+25.12 19.95 31.62 0.0478 0.006713 0.006713
+39.81 31.62 50.12 0.04226 0.004839 0.004839
+63.1 50.12 79.43 0.05615 0.008669 0.008669
+100.0 79.43 125.9 0.0631 0.009858 0.009858
+158.5 125.9 199.5 0.08515 0.01332 0.01332
+251.2 199.5 316.2 0.07898 0.01285 0.01285

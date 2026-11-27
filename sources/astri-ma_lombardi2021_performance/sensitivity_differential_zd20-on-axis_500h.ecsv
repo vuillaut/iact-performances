@@ -1,0 +1,54 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: erg / (s cm2), datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: a-scisoft
+#     conditions:
+#       analysis_details: A-SciSoft 0.3.1 on Monte Carlo simulations (CORSIKA, sim_telarray) of the nine telescopes at the Teide site,
+#         nominal pointing (all telescopes to the same position), dark-sky night sky background; random forests for gamma/hadron separation
+#         and energy, direction from the intersection of the image major axes; background (protons, electrons) reweighted to measured
+#         spectra; results averaged between the azimuths 0 and 180 deg
+#       azimuth: average of 0 and 180 deg (pointing to geomagnetic North and South)
+#       cuts: cuts on background rejection, arrival direction and multiplicity optimised for the differential flux sensitivity in 500
+#         h, in each energy bin and off-axis bin
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: full_array
+#     data_kind: monte_carlo
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: astri-ma
+#     label: ASTRI Mini-Array differential sensitivity, on-axis point-like source, 500 h, zenith 20 deg (MC, A-SciSoft)
+#     notes: 'The figure draws a y error bar only where it is larger than the marker (2 lower and 1 upper sides of 15 points): errors
+#       not extracted. Energies are the marker positions, energy_min/energy_max the ends of the horizontal error bars (reconstructed energy
+#       bins).'
+#     observation_time: 500 h
+#     provenance: {location: Figure 2 (figure2_extended.pdf), method: vector_figure, original_column: 'E2 x Flux Sensitivity [erg cm-2
+#         s-1]; legend: ASTRI Mini-Array (500h)'}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 5.0, min_excess: 10.0, min_signal_to_background: 0.05, n_off_regions: 5, significance: 5.0,
+#       significance_formula: li_ma_eq17}
+# schema: astropy-2.0
+energy energy_min energy_max value
+0.3981 0.3162 0.5012 3.874e-12
+0.631 0.5012 0.7943 9.157e-13
+1.0 0.7943 1.259 4.539e-13
+1.585 1.259 1.995 2.734e-13
+2.512 1.995 3.162 1.841e-13
+3.981 3.162 5.012 1.39e-13
+6.31 5.012 7.943 1.426e-13
+10.0 7.943 12.59 1.362e-13
+15.85 12.59 19.95 1.517e-13
+25.12 19.95 31.62 1.673e-13
+39.81 31.62 50.12 2.101e-13
+63.1 50.12 79.43 2.936e-13
+100.0 79.43 125.9 4.044e-13
+158.5 125.9 199.5 5.397e-13
+251.2 199.5 316.2 8.222e-13

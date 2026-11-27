@@ -124,3 +124,41 @@ analyses:
       gammaness and alpha cuts. No angular resolution can be defined.
     references:
       - 10.3847/1538-4357/ace89d
+
+  - id: a-scisoft
+    name: A-SciSoft standard analysis (ASTRI)
+    description: >-
+      Standard reconstruction of A-SciSoft, the scientific software of the
+      ASTRI Project: random forests for gamma/hadron separation and energy,
+      arrival direction from the intersection of the image major axes; cuts
+      on gammaness, direction and multiplicity optimised for the flux
+      sensitivity in each energy and off-axis bin. The A-SciSoft version and
+      the cut optimisation are given in the record conditions.
+    references:
+      - 10.22323/1.395.0884
+      - 10.5281/zenodo.6827882
+
+  - id: veritas-standard
+    name: VERITAS standard analysis (box cuts)
+    description: >-
+      Standard VERITAS stereoscopic analysis: moment (Hillas) parametrisation
+      of the cleaned images, gamma/hadron separation with box cuts on the
+      scaled parameters, energy from look-up tables. Three a-priori cut sets
+      (soft, medium, hard; given in the record conditions) are provided by
+      both VERITAS analysis packages (VEGAS and a second one); which package
+      made a curve is given in the record conditions when the source says.
+    references:
+      - https://arxiv.org/abs/0709.4006
+      - https://arxiv.org/abs/0709.4233
+      - 10.22323/1.236.0771
+
+  - id: veritas-bdt
+    name: VERITAS boosted decision trees
+    description: >-
+      VERITAS analysis with gamma/hadron separation by boosted decision trees
+      (TMVA) trained on simulated gamma rays and real background events as a
+      function of energy and elevation, using the standard Hillas parameters
+      (Park et al. 2015, second analysis package).
+    references:
+      - https://arxiv.org/abs/physics/0703039
+      - 10.22323/1.236.0771
