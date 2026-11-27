@@ -1,0 +1,79 @@
+schema_version: "0.2"
+title: Performance of the ASTRI Mini-Array at the Observatorio del Teide
+authors:
+  - "Lombardi, S."
+  - "Antonelli, L. A."
+  - "Bigongiari, C."
+  - "Cardillo, M."
+  - "Gallozzi, S."
+  - "Green, J. G."
+  - "Lucarelli, F."
+  - "Saturni, F. G."
+year: 2021
+doi: 10.22323/1.395.0884
+url: https://pos.sissa.it/395/884/pdf
+source_type: proceedings
+refereed: false
+instruments: [astri-ma]
+reproducible: true
+notes: >-
+  ICRC 2021 proceedings (PoS(ICRC2021)884), not refereed, no arXiv version.
+  Monte Carlo performance of the nine-telescope ASTRI Mini-Array at the Teide
+  site, 20 deg zenith, dark sky, analysed with A-SciSoft 0.3.1. The values
+  exist only as ROOT figures (TGraphErrors written by ROOT's own PDF driver)
+  included in the PoS PDF. The ASTRI IRFs on Zenodo (Prod2 v1.0,
+  10.5281/zenodo.6827882) describe the same simulation and analysis settings
+  and cite this paper, but hold IRFs (effective area, PSF, energy migration,
+  background), not these curves; the paper does not name its MC production,
+  so the two are not assumed identical. extract.py reads the figures from the
+  PDF (md5 pinned) with iact_perf.extract.rootgraph.
+  Extracted: Figure 2, on-axis differential sensitivity for 0.5, 5, 50, 200
+  and 500 h (cuts optimised for each exposure time); Figure 3, on-axis
+  angular resolution (68 % containment radius) and energy resolution
+  (Gaussian fit around the peak of E_reco/E_true), with the cuts optimised
+  for the sensitivity in 50 h (grey points) and with cuts that also weigh the
+  resolution (dashed dark green line, no markers: energies are the line
+  vertices, which are the bin centres of the grey points); Figure 4 (left),
+  differential sensitivity in 50 h for the five off-axis bins (1 deg wide,
+  legend values 0.5 to 4.5 deg stored as the offset).
+  Energies: reconstructed (Section 4 and the energy resolution definition).
+  energy is the marker position, energy_min and energy_max the ends of the
+  horizontal error bars: 5 bins per decade, edges at log10(E/TeV) = 0.1 + 0.2
+  k. Bins per decade come from the figures, not from the text.
+  Precision: ROOT writes the coordinates to 0.001 pt and the tick labels fit
+  their ticks within 0.0006 pt, so values are rounded to 4 significant digits.
+  Error bars: ROOT draws one side of a y error bar only when it is longer
+  than the marker. Only the angular resolution (sens. cuts) has both sides on
+  every point; its errors are stored. The other records have no errors (each
+  record note counts the drawn sides). The paper does not say what the error
+  bars represent.
+  Points: every graph of Figure 2 and of the left pad of Figure 4 is drawn
+  twice in the file with identical coordinates (kept once). Figure 4 has no
+  point in the first bin (0.32-0.50 TeV) for 3.5 and 4.5 deg. ROOT does not
+  draw points outside the frame, so such points, if any, are not in the file
+  and cannot be counted.
+  Sensitivity criteria (Section 3): 5 sigma with Li & Ma eq. 17, off/on
+  exposure ratio 5 (stored as n_off_regions 5), excess above 10 events and
+  at least 5 times a background systematic of about 1 % (stored as a minimum
+  signal/background of 0.05).
+  Checks (in extract.py): legends of Figures 2 and 4; in Figure 4 the 0.5 deg
+  series has no marker in the legend (its ratio is the line at 1) and is the
+  remaining series of the left pad; the right-pad ratios equal S(0.5 deg) /
+  S(k) from the left pad within 1.3e-5; the Crab guide lines of Figures 2
+  and 4 follow E^2 dF/dE of Albert et al. 2008 (the caption's reference
+  [25], crab_spectra magic_albert2008) within 2e-4 at levels 10^k, and each
+  "N Crab" label sits on its line; the dashed light green reference lines of
+  Figure 3 are at 3 arcmin and 10 % as the caption says; above 3 TeV the
+  angular resolution is 2.5-5.1 arcmin and the energy resolution 0.095-0.13
+  ("a few arcmin and ~10% above a few TeV").
+  Finding: all Crab guide lines are 0.99864 x 10^k Crab, i.e. drawn with 1
+  TeV = 1.6 erg instead of 1.602 erg. Whether the ASTRI curves use the same
+  factor cannot be told from the figure; their values are stored as drawn.
+  Not extracted: the comparison curves of Figure 2 (MAGIC 50 h, HAWC 507 d,
+  LHAASO 1 yr, CTAO-N SV-N3 and Alpha 50 h), which belong to their own
+  sources; the ratio pad of Figure 4 (ratios of the left-pad curves, used as
+  a check); Figure 1 (layout) and Table 1 (simulation parameters), which hold
+  no performance values. The text says the effective area and background
+  rate were evaluated, but the paper does not show them.
+  Later work: "Renewed performance of the ASTRI Mini-Array" (ICRC 2025) uses
+  new simulations; not in the database yet.

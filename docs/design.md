@@ -103,7 +103,7 @@ Order of preference:
 1. Official machine-readable files (Zenodo, collaboration web pages).
 2. arXiv LaTeX sources: tables parsed from `.tex`, vector PDF figures read
    from their paths.
-3. Raster digitization.
+3. Raster digitization (`iact_perf.extract.raster`).
 
 An optional LLM, behind a small provider-agnostic interface (Claude by
 default), finds the performance figures and tables, identifies curves,
@@ -124,6 +124,23 @@ ROOT figures (TGraph plots drawn by ROOT and converted by Ghostscript) are read
 with `iact_perf.extract.rootpdf`: the points are the markers, each checked
 against a vertex of the polyline of its colour. ROOT rounds positions, so the
 axis fit has a tolerance in device units and values keep 3 significant digits.
+
+ROOT figures written by ROOT's own PDF driver (TPDF), often included as forms
+in a proceedings PDF, are read with `iact_perf.extract.rootgraph`: each
+`TGraphErrors` point is rebuilt from its x error bar (the bin) and its marker
+(the graph), y error bars are kept only where ROOT drew them (it leaves out a
+side shorter than the marker). Coordinates have 0.001 pt resolution, so values
+keep 4 significant digits.
+
+Raster figures (bitmaps with exact colours, such as ROOT PNG plots in a Word
+PDF) are read with `iact_perf.extract.raster`: the bitmaps are taken out of the
+PDF in memory, the axes are calibrated on the tick marks (both mirrored sides,
+the tick pattern of a linear or log axis fitted within 1 pixel), the tick
+labels and legend texts are given by the extraction script and checked against
+the ticks and the legend colours, and the markers are found with a matched
+filter on the legend marker shape, which places partly covered markers by
+their visible part. Values are good to about one pixel; the record states it in
+`digitization_uncertainty`.
 
 `iact-perf reproduce <slug>` runs `extract.py` (Python only) in a temporary
 directory and compares the output with the committed records. Contract: the

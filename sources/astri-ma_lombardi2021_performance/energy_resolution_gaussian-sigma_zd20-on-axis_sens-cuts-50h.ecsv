@@ -1,0 +1,51 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: '', datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: a-scisoft
+#     conditions:
+#       analysis_details: A-SciSoft 0.3.1 on Monte Carlo simulations (CORSIKA, sim_telarray) of the nine telescopes at the Teide site,
+#         nominal pointing (all telescopes to the same position), dark-sky night sky background; random forests for gamma/hadron separation
+#         and energy, direction from the intersection of the image major axes; background (protons, electrons) reweighted to measured
+#         spectra; results averaged between the azimuths 0 and 180 deg
+#       azimuth: average of 0 and 180 deg (pointing to geomagnetic North and South)
+#       cuts: cuts on background rejection, arrival direction and multiplicity optimised for the differential flux sensitivity in 50 h,
+#         in each energy bin and off-axis bin
+#       moon: dark
+#       offset: 0 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: full_array
+#     data_kind: monte_carlo
+#     definition: gaussian_sigma
+#     energy_type: reconstructed
+#     instrument: astri-ma
+#     label: ASTRI Mini-Array on-axis energy resolution, cuts optimised for the sensitivity in 50 h
+#     notes: 'Definition from the text: sigma of a Gaussian fit around the peak of E_reco/E_true, in each reconstructed-energy bin. The
+#       paper notes that these cuts do not give the best resolution achievable. The figure draws a y error bar only where it is larger
+#       than the marker (1 lower and 1 upper sides of 15 points): errors not extracted.'
+#     observation_time: 50 h
+#     provenance: {location: 'Figure 3, right (figure3b.pdf)', method: vector_figure, original_column: Energy Resolution; dark grey points}
+#     quantity: energy_resolution
+#     schema_version: '0.2'
+# schema: astropy-2.0
+energy energy_min energy_max value
+0.3981 0.3162 0.5012 0.1704
+0.631 0.5012 0.7943 0.1508
+1.0 0.7943 1.259 0.1278
+1.585 1.259 1.995 0.1153
+2.512 1.995 3.162 0.105
+3.981 3.162 5.012 0.09839
+6.31 5.012 7.943 0.09626
+10.0 7.943 12.59 0.09538
+15.85 12.59 19.95 0.09589
+25.12 19.95 31.62 0.1036
+39.81 31.62 50.12 0.1119
+63.1 50.12 79.43 0.1213
+100.0 79.43 125.9 0.124
+158.5 125.9 199.5 0.1317
+251.2 199.5 316.2 0.1143

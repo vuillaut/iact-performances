@@ -1,0 +1,24 @@
+schema_version: "0.2"
+id: astri-ma
+name: ASTRI Mini-Array
+type: IACT
+site:
+  name: Observatorio del Teide, Tenerife
+  latitude: 28.30 deg
+  longitude: -16.51 deg
+  altitude: 2390 m
+configurations:
+  - id: full_array
+    description: >-
+      The nine ASTRI telescopes (small-sized, about 4 m diameter, dual-mirror
+      Schwarzschild-Couder optics, SiPM cameras, field of view about 10 deg)
+      at the Teide Observatory, all pointing to the same sky position; layout
+      of the telescope positions as of July 2021 (Lombardi et al. 2021)
+    mode: array
+    n_telescopes: 9
+references:
+  - 10.22323/1.395.0884
+notes: >-
+  Led by INAF with the Instituto de Astrofisica de Canarias. Under
+  construction in 2021; the telescopes are an evolution of the ASTRI-Horn
+  prototype (Mt. Etna, Italy).

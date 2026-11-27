@@ -1,0 +1,53 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: energy, unit: TeV, datatype: float64}
+# - {name: energy_min, unit: TeV, datatype: float64}
+# - {name: energy_max, unit: TeV, datatype: float64}
+# - {name: value, unit: erg / (s cm2), datatype: float64}
+# meta: !!omap
+# - iact_perf:
+#     analysis: a-scisoft
+#     conditions:
+#       analysis_details: A-SciSoft 0.3.1 on Monte Carlo simulations (CORSIKA, sim_telarray) of the nine telescopes at the Teide site,
+#         nominal pointing (all telescopes to the same position), dark-sky night sky background; random forests for gamma/hadron separation
+#         and energy, direction from the intersection of the image major axes; background (protons, electrons) reweighted to measured
+#         spectra; results averaged between the azimuths 0 and 180 deg
+#       azimuth: average of 0 and 180 deg (pointing to geomagnetic North and South)
+#       cuts: cuts on background rejection, arrival direction and multiplicity optimised for the differential flux sensitivity in 50 h,
+#         in each energy bin and off-axis bin
+#       moon: dark
+#       offset: 4.5 deg
+#       zenith_range: [20 deg, 20 deg]
+#     configuration: full_array
+#     data_kind: monte_carlo
+#     energy_integration: differential
+#     energy_type: reconstructed
+#     instrument: astri-ma
+#     label: ASTRI Mini-Array differential sensitivity, point-like source 4.5 deg off-axis, 50 h, zenith 20 deg (MC, A-SciSoft)
+#     notes: 'Off-axis bin of 1 deg width centred on 4.5 deg (five bins between 0 and 5 deg; the legend gives the centre). The figure
+#       draws a y error bar only where it is larger than the marker (8 lower and 6 upper sides of 14 points): errors not extracted. Energies
+#       are the marker positions, energy_min/energy_max the ends of the horizontal error bars (reconstructed energy bins).'
+#     observation_time: 50 h
+#     provenance: {location: 'Figure 4, left (figure4.pdf)', method: vector_figure, original_column: 'E2 x Flux Sensitivity [erg cm-2
+#         s-1]; legend: ASTRI Mini-Array (50h) 4.5 degrees off-axis'}
+#     quantity: sensitivity
+#     schema_version: '0.2'
+#     sensitivity_criteria: {bins_per_decade: 5.0, min_excess: 10.0, min_signal_to_background: 0.05, n_off_regions: 5, significance: 5.0,
+#       significance_formula: li_ma_eq17}
+# schema: astropy-2.0
+energy energy_min energy_max value
+0.631 0.5012 0.7943 6.062e-12
+1.0 0.7943 1.259 2.631e-12
+1.585 1.259 1.995 1.777e-12
+2.512 1.995 3.162 1.481e-12
+3.981 3.162 5.012 1.372e-12
+6.31 5.012 7.943 1.492e-12
+10.0 7.943 12.59 1.673e-12
+15.85 12.59 19.95 2.073e-12
+25.12 19.95 31.62 2.64e-12
+39.81 31.62 50.12 3.53e-12
+63.1 50.12 79.43 4.72e-12
+100.0 79.43 125.9 5.676e-12
+158.5 125.9 199.5 6.764e-12
+251.2 199.5 316.2 1.688e-11
